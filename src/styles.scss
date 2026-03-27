@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  border: inherit;
+  font-family: inherit;
+  color: inherit;
+  background: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "poppins";
+  src: url("../public/assets/fonts/poppins/Poppins-Regular.ttf") format("truetype");
+}

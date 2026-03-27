@@ -1,0 +1,56 @@
+header {
+  display: flex;
+  justify-content: center;
+  background-color: #7ca4f5;
+  height: 110px;
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // gap: 20px;
+    height: 100%;
+    width: 100%;
+    max-width: 1440px;
+    color: #ffffff;
+    background-color: #141d2f;
+
+    img {
+        left: 100px;
+        bottom: 8px;
+    }
+  }
+}
+
+.content-nav-lang {
+  display: flex;
+  right: 200px;
+  bottom: 8px;
+
+  ul {
+    display: flex;
+    gap: 20px;
+    font-size: 23px;
+    font-family: "poppins";
+  }
+
+  .lang {
+    display: flex;
+    gap: 15px;
+    left: 100px;
+    font-family: "poppins";
+    
+
+    button{
+        width: 40px;
+        height: 32px;
+        border: 1px solid #70E61C;
+        border-radius: 10px;
+        font-size: 18px;
+    }
+  }
+
+  .btn-lang-active {
+    background-color: #70E61C;
+  }
+}
