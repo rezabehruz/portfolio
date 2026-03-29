@@ -4,7 +4,7 @@ import { Header } from './layout/header/header/header';
 
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-root', 
   imports: [RouterOutlet, Header],
   templateUrl: './app.html',
   styleUrl: './app.scss'

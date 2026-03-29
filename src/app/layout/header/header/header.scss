@@ -1,56 +1,60 @@
+// Variables
+
+$color-primary: #70e61c;
+$color-secondary: #9747ff;
+$color-disabled: #b6b6b6;
+$color-white: #ffffff;
+$color-dark: #141d2f;
+
+// header component
+
 header {
   display: flex;
   justify-content: center;
-  background-color: #7ca4f5;
+  align-items: center;
+  background-color: $color-dark;
   height: 110px;
-
-  .content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    // gap: 20px;
-    height: 100%;
-    width: 100%;
-    max-width: 1440px;
-    color: #ffffff;
-    background-color: #141d2f;
-
-    img {
-        left: 100px;
-        bottom: 8px;
-    }
-  }
 }
 
-.content-nav-lang {
+.content {
   display: flex;
-  right: 200px;
-  bottom: 8px;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  max-width: 1440px;
+  color: $color-white;
+  background-color: $color-dark;
 
-  ul {
-    display: flex;
-    gap: 20px;
-    font-size: 23px;
-    font-family: "poppins";
-  }
-
-  .lang {
-    display: flex;
-    gap: 15px;
+  &__logo {
     left: 100px;
-    font-family: "poppins";
-    
-
-    button{
-        width: 40px;
-        height: 32px;
-        border: 1px solid #70E61C;
-        border-radius: 10px;
-        font-size: 18px;
-    }
+    bottom: 8px;
   }
 
-  .btn-lang-active {
-    background-color: #70E61C;
+  &__nav-lang {
+    display: flex;
+    right: 200px;
+    bottom: 8px;
+
+    &__nav {
+      display: flex;
+      gap: 20px;
+
+      &__option {
+        font-size: 23px;
+        font-family: "poppins";
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+
+    &__lang {
+      display: flex;
+      gap: 15px;
+      left: 100px;
+    }
   }
 }
