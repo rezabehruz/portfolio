@@ -1,17 +1,11 @@
-// Variables
-
-$color-primary: #70e61c;
-$color-secondary: #9747ff;
-$color-disabled: #b6b6b6;
-$color-white: #ffffff;
-$color-dark: #141d2f;
+@use "../../../../styles/abstract/variables" as variables;
 
 section {
   display: flex;
   justify-content: center;
   width: 100%;
   height: 90dvh;
-  background-color: $color-secondary;
+  background-color: variables.$color-secondary;
 }
 
 .content-hero {
@@ -22,8 +16,8 @@ section {
   height: 100%;
   max-width: 1440px;
   font-family: 'Poppins-regular';
-  color: $color-white;
-  background-color: $color-dark;
+  color: variables.$color-white;
+  background-color: variables.$color-dark;
 }
 
 .character {
@@ -98,7 +92,7 @@ section {
        
         margin-block-start: 0;
         margin-block-end: 0;
-        color: $color-secondary;
+        color: variables.$color-secondary;
       }
 
       button {

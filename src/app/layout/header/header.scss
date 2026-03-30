@@ -1,18 +1,10 @@
-// Variables
-
-$color-primary: #70e61c;
-$color-secondary: #9747ff;
-$color-disabled: #b6b6b6;
-$color-white: #ffffff;
-$color-dark: #141d2f;
-
-// header component
+@use "../../../styles/abstract/variables" as variables;
 
 header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $color-dark;
+  background-color: variables.$color-dark;
   height: 10dvh;
 }
 
@@ -24,8 +16,8 @@ header {
   height: 100%;
   width: 100%;
   max-width: 1440px;
-  color: $color-white;
-  background-color: $color-dark;
+  color: variables.$color-white;
+  background-color: variables.$color-dark;
 
   &__logo {
     left: 100px;
@@ -46,9 +38,9 @@ header {
         font-family: 'Poppins-regular';
 
         &:hover {
-          color: $color-primary;
+          color: variables.$color-primary;
         }
-      }
+      } 
     }
 
     &__lang {

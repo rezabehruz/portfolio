@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Header } from './layout/header/header/header';
+import { Header } from './layout/header/header';
 import { Hero } from './shared/components/hero/hero';
 
 

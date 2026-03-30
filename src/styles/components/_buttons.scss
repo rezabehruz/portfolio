@@ -1,0 +1,37 @@
+
+@use "../abstract/variables" as variables;
+.button {
+  font-family: "Poppins-regular";
+  font-size: 23px;
+  padding: 12px 30px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button--lang {
+  width: 40px;
+  height: 32px;
+  font-size: 18px;
+  padding: 1px 8px 5px;
+}
+
+.button--primary {
+  background-color: variables.$color-primary;
+}
+
+.button--secondary {
+  background-color: variables.$color-secondary;
+}
+
+.button--transparent {
+  border: 1px solid variables.$color-primary;
+
+  &:hover {
+    border: none;
+    background-color: variables.$color-secondary
+  }
+}
+
+.button--disabled {
+  background-color: variables.$color-disabled;;
+}
