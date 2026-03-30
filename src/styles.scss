@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@use "../public/assets/fonts/fonts";
+@use "./styles/base/typography";
 
 
 * {
@@ -56,7 +56,7 @@ $color-dark: #141d2f;
 //  Button Block
       
 .button {
-  font-family: "poppins";
+  font-family: "Poppins-regular";
   font-size: 23px;
   padding: 12px 30px;
   border-radius: 10px;
