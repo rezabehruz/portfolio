@@ -1,3 +1,5 @@
+@use '../abstract/variables' as variables;
+ 
 * {
   position: relative;
   margin: 0;
@@ -16,4 +18,14 @@ a {
 
 li {
   list-style: none;
+}
+
+section {
+  font-family: 'Poppins-regular';
+  color: variables.$color-white;
+}
+
+h2 {
+  font-family: "Poppins-bold";
+  font-size: 90px;
 }

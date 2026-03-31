@@ -1,0 +1,56 @@
+@use '../../../../../public/styles/abstract/variables' as variables;
+
+.about-me {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  
+.content {
+  display: flex;
+  justify-content: space-between;
+
+  height: 700px;
+  width: 100%;
+  max-width: 1440px;
+
+  background-color: #141d2f;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 470px;
+  padding-top: 20px;
+  left: 90px;
+
+  &__paragraph {
+    display: flex;
+    gap: 10px;
+
+    &__icon {
+      height: 48px;
+      width: 48px;
+      top: 3px;
+    }
+  }
+}
+
+.content-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  &__img {
+    bottom: 40px;
+    width: 480px;
+    height: 480px;
+    border: 5px solid variables.$color-primary;
+    border-radius: 50%;
+  }
+
+  &__line{
+    bottom: 40px;
+  }
+}
