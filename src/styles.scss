@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@use "./styles/base/typography";
-@use "./styles/base/reset";
-@use "./styles/components/buttons";
+@use "../public/styles/base/typography";
+@use "../public/styles/base/reset";
+@use "../public/styles/layouts/buttons";
 
