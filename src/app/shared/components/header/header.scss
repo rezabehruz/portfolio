@@ -11,8 +11,8 @@ header {
 .content {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
   align-items: center;
+  gap: 10px;
   height: 100%;
   width: 100%;
   max-width: 1440px;
@@ -24,16 +24,16 @@ header {
     bottom: 8px;
   }
 
-  &__nav-lang {
+  &__menu {
     display: flex;
     right: 200px;
     bottom: 8px;
 
-    &__nav {
+    ul {
       display: flex;
       gap: 20px;
 
-      &__option {
+      a {
         font-size: 23px;
         font-family: 'Poppins-regular';
 

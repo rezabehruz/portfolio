@@ -4,44 +4,44 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #141d2f;
 }
-  
+
 .content {
   display: flex;
   justify-content: space-between;
-
-  height: 700px;
+  top: 50px;
+  height: 730px;
   width: 100%;
   max-width: 1440px;
-
-  background-color: #141d2f;
 }
 
 .details {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 470px;
-  padding-top: 20px;
+  top: 20px;
   left: 90px;
+  width: 470px;
 
-  &__paragraph {
+  &__p {
     display: flex;
     gap: 10px;
 
     &__icon {
+      top: 3px;
       height: 48px;
       width: 48px;
-      top: 3px;
     }
   }
 }
 
 .content-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 10px;
+
   &__img {
     bottom: 40px;
     width: 480px;
@@ -50,7 +50,7 @@
     border-radius: 50%;
   }
 
-  &__line{
+  &__line {
     bottom: 40px;
   }
 }
