@@ -10,22 +10,78 @@ section {
 
 .content {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
-  flex-flow: column wrap;
   width: 100%;
   height: 100%;
   max-width: 1440px;
   font-family: 'Poppins-regular';
   color: variables.$color-white;
   background-color: variables.$color-dark;
+}
+
+.content-1 {
+  display: flex;
+  justify-content: space-around;
 
   &__character {
-    top: 40px;
-    left: 100px;
+    left: 20px;
     height: 750px;
     width: 550px;
   }
+}
 
+.title {
+  display: flex;
+  justify-content: center;
+  top: 200px;
+  right: 50px;
+
+  &__part-1 {
+    top: 30px;
+    left: 65px;
+    height: 150px;
+    width: 80px;
+    transform: rotate(270deg);
+
+    p {
+      bottom: 55px;
+      right: 30px;
+      width: 150px;
+      font-size: 64px;
+    }
+  }
+
+  &__part-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      height: 105px;
+      font-size: 90px;
+      font-family: 'Poppins-bold';
+      letter-spacing: 1.5px;
+    }
+
+    h2 {
+      height: 70px;
+      font-size: 58px;
+      margin-block-start: 0;
+      margin-block-end: 0;
+      color: variables.$color-secondary;
+    }
+
+    button {
+      top: 80px;
+    }
+  }
+}
+
+.content-2 {
+  display: flex;
+  justify-content: space-between;
+  top: 30px; 
   &__social-media {
     display: flex;
     align-items: center;
@@ -48,65 +104,17 @@ section {
   }
 
   &__scroll-notice {
-    align-self: flex-end;
-    top: 70px;
+    top: -75px;
     right: 60px;
     font-size: 23px;
     transform: rotate(90deg);
 
     img {
-      height: 16px;
-      width: 16px;
       top: 2px;
       left: 10px;
+      height: 16px;
+      width: 16px;
       transform: rotate(270deg);
-    }
-  }
-}
-
-.title {
-  display: flex;
-  justify-content: center;
-  top: 100px;
-  right: 50px;
-
-  &__content-1 {
-    top: 30px;
-    left: 65px;
-    height: 150px;
-    width: 80px;
-    transform: rotate(270deg);
-
-    p {
-      bottom: 55px;
-      right: 30px;
-      width: 150px;
-      font-size: 64px;
-    }
-  }
-
-  &__content-2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    h1 {
-      height: 105px;
-      font-size: 90px;
-      font-family: 'Poppins-bold';
-      letter-spacing: 1.5px;
-    }
-
-    h2 {
-      height: 70px;
-      font-size: 58px;
-      margin-block-start: 0;
-      margin-block-end: 0;
-      color: variables.$color-secondary;
-    }
-
-    button {
-      top: 80px;
     }
   }
 }
