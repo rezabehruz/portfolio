@@ -1,11 +1,11 @@
-@use '../../../../../public/styles/abstract/variables' as variables;
+@use '../../../../../public/styles/main' as all;
 
 section {
   display: flex;
   justify-content: center;
   width: 100%;
   height: 90dvh;
-  background-color: variables.$color-secondary;
+  background-color: all.$color-secondary;
 }
 
 .content {
@@ -16,8 +16,8 @@ section {
   height: 100%;
   max-width: 1440px;
   font-family: 'Poppins-regular';
-  color: variables.$color-white;
-  background-color: variables.$color-dark;
+  color: all.$color-white;
+  background-color: all.$color-dark;
 }
 
 .content-1 {
@@ -69,7 +69,7 @@ section {
       font-size: 58px;
       margin-block-start: 0;
       margin-block-end: 0;
-      color: variables.$color-secondary;
+      color: all.$color-secondary;
     }
 
     button {

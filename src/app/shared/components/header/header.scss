@@ -1,10 +1,10 @@
-@use "../../../../../public/styles/abstract/variables" as variables;
+@use "../../../../../public/styles/main" as all;
 
 header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: variables.$color-dark;
+  background-color: all.$color-dark;
   height: 10dvh;
 }
 
@@ -16,8 +16,8 @@ header {
   height: 100%;
   width: 100%;
   max-width: 1440px;
-  color: variables.$color-white;
-  background-color: variables.$color-dark;
+  color: all.$color-white;
+  background-color: all.$color-dark;
 
   &__logo {
     left: 100px;
@@ -38,7 +38,7 @@ header {
         font-family: 'Poppins-regular';
 
         &:hover {
-          color: variables.$color-primary;
+          color: all.$color-primary;
         }
       } 
     }

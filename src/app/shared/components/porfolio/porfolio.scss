@@ -1,4 +1,4 @@
-@use '../../../../../public/styles/abstract/variables' as variables;
+@use '../../../../../public/styles/main' as all;
 
 .portfolio {
   display: flex;
@@ -11,7 +11,7 @@
   height: 2500px;
   width: 100%;
   max-width: 1440px;
-  background-color: variables.$color-dark;
+  background-color: all.$color-dark;
 
   &__p-1 {
     text-align: center;
@@ -70,13 +70,13 @@
   h3 {
     font-family: 'Poppins-bold';
     font-size: 32px;
-    color: variables.$color-secondary;
+    color: all.$color-secondary;
   }
 
   &__p-1 {
     top: 13px;
     font-size: 23px;
-    color: variables.$color-primary;
+    color: all.$color-primary;
   }
 
   &__p-2 {
@@ -108,7 +108,7 @@
     height: 280px;
     padding: 40px 70px;
     font-family: "Montserrat-regular";
-    border: 4px solid variables.$color-primary;
+    border: 4px solid all.$color-primary;
     border-radius: 30px;
 
     p {
@@ -139,7 +139,7 @@
 
   &__photo {
     height: 250px;
-    border: 4px solid variables.$color-secondary;
+    border: 4px solid all.$color-secondary;
     border-radius: 50%;
   }
 

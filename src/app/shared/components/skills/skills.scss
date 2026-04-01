@@ -1,4 +1,4 @@
-@use '../../../../../public/styles/abstract/variables' as variables;
+@use '../../../../../public/styles/main' as all;
 
 .skills {
   display: flex;
@@ -12,7 +12,7 @@
   width: 100%;
   height: 650px;
   max-width: 1440px;
-  background-color: variables.$color-dark;
+  background-color: all.$color-dark;
 
   &__img {
     top: 145px;
@@ -40,7 +40,7 @@
     top: 20px;
     text-align: right;
     span {
-      color: variables.$color-secondary;
+      color: all.$color-secondary;
     }
   }
 
