@@ -1,17 +1,46 @@
+@use "./variables" as variables;
+
+@mixin my-section {
+  display: flex;
+  justify-content: center;
+  background-color: variables.$color-dark;
+}
+
+
 @mixin flex-center {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-@mixin flex-space-between {
+@mixin flex-v-center {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
-@mixin flex-space-around {
+
+@mixin flex-s-around {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+}
+
+@mixin flex-c-s-around {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+@mixin flex-s-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flex-c-s-between {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
 }

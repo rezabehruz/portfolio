@@ -1,17 +1,14 @@
 @use '../../../../../public/styles/main' as all;
 
 .portfolio {
-  display: flex;
-  justify-content: center;
+  @include all.my-section;
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
+  @include all.flex-column;
   height: 2500px;
   width: 100%;
   max-width: 1440px;
-  background-color: all.$color-dark;
 
   &__p-1 {
     text-align: center;
@@ -20,9 +17,8 @@
 }
 
 .title {
-  display: flex;
+  @include all.flex-v-center;
   flex-direction: row-reverse;
-  align-items: center;
   gap: 30px;
 
   &__line-1 {
@@ -37,14 +33,12 @@
 }
 
 .projects {
-  display: flex;
-  flex-direction: column;
+  @include all.flex-column;
   gap: 120px;
   top: 20px;
 
   &__project {
-    display: flex;
-    justify-content: center;
+    @include all.flex-center;
     gap: 80px;
     top: 150px;
 
@@ -61,8 +55,7 @@
 }
 
 .details {
-  display: flex;
-  flex-direction: column;
+  @include all.flex-column;
   width: 520px;
   height: 320px;
   top: 20px;
@@ -101,9 +94,7 @@
   gap: 50px;
 
   &__details {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include all.flex-c-s-between;
     width: 800px;
     height: 280px;
     padding: 40px 70px;
@@ -117,9 +108,8 @@
     }
 
     div {
-      display: flex;
+      @include all.flex-v-center;
       align-self: end;
-      align-items: center;
       gap: 20px;
       font-size: 18px;
       border: none;
@@ -134,8 +124,7 @@
 }
 
 .character {
-  display: flex;
-  align-items: center;
+  @include all.flex-v-center;
 
   &__photo {
     height: 250px;
@@ -148,3 +137,4 @@
     width: 100px;
   }
 }
+

@@ -1,16 +1,13 @@
 @use "../../../../../public/styles/main" as all;
 
 header {
-  display: flex;
-  justify-content: center;
+  @include all.my-section;
   align-items: center;
-  background-color: all.$color-dark;
   height: 10dvh;
 }
 
 .content {
-  display: flex;
-  justify-content: space-between;
+  @include all.flex-s-between;
   align-items: center;
   gap: 10px;
   height: 100%;
