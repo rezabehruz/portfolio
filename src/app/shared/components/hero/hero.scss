@@ -2,13 +2,13 @@
 
 section {
   @include all.my-section;
-  height: 90dvh;
 }
 
 .content {
   @include all.flex-c-s-around;
+  top: 20px;
   width: 100%;
-  height: 100%;
+  height: 100dvh;
   max-width: 1440px;
   font-family: 'Poppins-regular';
   color: all.$color-white;

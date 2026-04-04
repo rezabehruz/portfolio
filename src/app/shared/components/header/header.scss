@@ -1,9 +1,15 @@
-@use "../../../../../public/styles/main" as all;
+@use '../../../../../public/styles/main' as all;
 
 header {
+
   @include all.my-section;
   align-items: center;
-  height: 10dvh;
+    position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  height: 130px;
 }
 
 .content {
@@ -37,7 +43,7 @@ header {
         &:hover {
           color: all.$color-primary;
         }
-      } 
+      }
     }
 
     &__lang {

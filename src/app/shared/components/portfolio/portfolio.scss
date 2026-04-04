@@ -2,10 +2,12 @@
 
 .portfolio {
   @include all.my-section;
+  
 }
 
 .content {
   @include all.flex-column;
+  margin-top: 140px;
   height: 2500px;
   width: 100%;
   max-width: 1440px;
@@ -98,7 +100,7 @@
     width: 800px;
     height: 280px;
     padding: 40px 70px;
-    font-family: "Montserrat-regular";
+    font-family: 'Montserrat-regular';
     border: 4px solid all.$color-primary;
     border-radius: 30px;
 
@@ -137,4 +139,3 @@
     width: 100px;
   }
 }
-
