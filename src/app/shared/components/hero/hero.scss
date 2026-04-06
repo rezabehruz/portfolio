@@ -22,6 +22,7 @@ section {
 
 .content-1 {
   @include all.flex-s-around;
+  top: 60px;
   background-image: url('/assets/images/shadows/shadow-1.png');
   background-repeat: no-repeat;
   background-position-x: 0%;

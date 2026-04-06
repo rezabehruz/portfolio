@@ -73,21 +73,38 @@
       </div>
     </div>
 
-     <div class="testemonials"> 
-      <div class="testemonials__details">
-        <p>
-          Michael really kept the team together with his great organization and clear communication.
-          We wouldn't have got this far without his commitment.
-        </p>
-        <div>
-          <img src="assets/icons/line-horizontal.png" alt="line-horizontal">
-          <p>V. Schuster - Team Partner</p>
+    <div class="testimonials">
+      <div class="main">
+        <div class="main__details">
+          <p>
+            {{ testimonials[currentTestimonial].detail }}
+          </p>
+          <div>
+            <img src="assets/icons/line-horizontal.png" alt="line-horizontal" />
+            <p>{{ testimonials[currentTestimonial].name }}</p>
+          </div>
+        </div>
+        <div class="character">
+          <img [src]="testimonials[currentTestimonial].imageSrc" alt="character" class="character__photo" />
+          <img
+            src="assets/icons/line-horizontal.png"
+            alt="line-horizontal"
+            class="character__line"
+          />
         </div>
       </div>
-      <div class="character">
-        <img src="assets/images/colleague-1.png" alt="character" class="character__photo">
-        <img src="assets/icons/line-horizontal.png" alt="line-horizontal" class="character__line">
+
+      <div class="switch">
+        <button (click)="switchTestimonial('back')">
+          <img src="assets/icons/arrow-back.png" alt="arrow backward" />
+        </button>
+        <div class="switch__ellipse">
+          <img [src]="testimonials[0].display ? 'assets/icons/ellipse-selected.png' : 'assets/icons/ellipse.png'" alt="ellipse" />
+          <img [src]="testimonials[1].display ? 'assets/icons/ellipse-selected.png': 'assets/icons/ellipse.png' " alt="ellipse" />
+          <img [src]="testimonials[2].display ? 'assets/icons/ellipse-selected.png' : 'assets/icons/ellipse.png'" alt="ellipse" />
+        </div>
+        <button (click)="switchTestimonial('next')"><img src="assets/icons/arrow-forward.png" alt="arrow forward" /></button>
       </div>
-    </div> 
+    </div>
   </div>
 </section>

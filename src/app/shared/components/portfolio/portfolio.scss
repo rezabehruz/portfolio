@@ -98,10 +98,14 @@
   }
 }
 
-.testemonials {
+.testimonials {
+  @include all.flex-column;
+  top: 300px;
+}
+
+.main {
   display: flex;
   align-self: flex-end;
-  top: 300px;
   gap: 50px;
 
   &__details {
@@ -120,15 +124,14 @@
 
     div {
       @include all.flex-v-center;
-      align-self: end;
       gap: 20px;
       font-size: 18px;
       border: none;
 
       img {
-        height: 4px;
-        width: 360px;
-        border: none;
+        display: flex;
+        flex: 1;
+        height: 2px;
       }
     }
   }
@@ -139,12 +142,41 @@
 
   &__photo {
     height: 250px;
+    width: 250px;
     border: 4px solid all.$color-secondary;
     border-radius: 50%;
+    text-align: center;
   }
 
   &__line {
     height: 4px;
     width: 100px;
+  }
+}
+
+.switch {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  top: 40px;
+  left: 40px;
+
+  button {
+    background-color: inherit;
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+  }
+
+  &__ellipse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    img {
+      height: 8px;
+      width: 8px;
+    }
   }
 }
