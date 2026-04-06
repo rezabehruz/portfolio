@@ -7,10 +7,15 @@
 
 .content {
   @include all.flex-s-between;
-  margin-top: 120px;
-  height: 650px;
+  padding-top: 120px;
+  height: 700px;
   width: 100%;
   max-width: 1440px;
+
+  background-image: url('/assets/images/shadows/shadow-2.png');
+  background-repeat: no-repeat;
+  background-position-x: 165%;
+  background-position-y: -180px;
 }
 
 .details {

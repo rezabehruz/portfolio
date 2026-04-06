@@ -2,15 +2,19 @@
 
 .portfolio {
   @include all.my-section;
-  
 }
 
 .content {
   @include all.flex-column;
-  margin-top: 140px;
-  height: 2500px;
+  padding-top: 140px;
+  height: 2800px;
   width: 100%;
   max-width: 1440px;
+
+  background-image: url('/assets/images/shadows/shadow-3.png');
+  background-repeat: no-repeat;
+  background-position-x: -575px;
+  background-position-y: -240px;
 
   &__p-1 {
     text-align: center;
@@ -37,12 +41,17 @@
 .projects {
   @include all.flex-column;
   gap: 120px;
-  top: 20px;
+  top: 170px;
+  height: fit-content;
+
+  background-image: url('/assets/images/shadows/shadow-4.png');
+  background-repeat: no-repeat;
+  background-position-x: -300px;
+  background-position-y: 550px;
 
   &__project {
     @include all.flex-center;
     gap: 80px;
-    top: 150px;
 
     img {
       height: 280px;

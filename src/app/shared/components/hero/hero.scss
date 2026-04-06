@@ -13,10 +13,19 @@ section {
   font-family: 'Poppins-regular';
   color: all.$color-white;
   background-color: all.$color-dark;
+
+  background-image: url('/assets/images/shadows/shadow-2.png');
+  background-repeat: no-repeat;
+   background-position-x: 175%;
+  background-position-y: 250%;
 }
 
 .content-1 {
   @include all.flex-s-around;
+  background-image: url('/assets/images/shadows/shadow-1.png');
+  background-repeat: no-repeat;
+  background-position-x: 0%;
+  background-position-y: 100%;
 
   &__character {
     left: 20px;
@@ -104,6 +113,6 @@ section {
       height: 16px;
       width: 16px;
       transform: rotate(270deg);
-    } 
+    }
   }
 }

@@ -12,8 +12,13 @@
   height: 520px;
   max-width: 1440px;
 
+  background-image: url('/assets/images/shadows/shadow-3.png');
+  background-repeat: no-repeat;
+  background-position-x: -565px;
+  background-position-y: 285px;
+
   &__img {
-    top: 180px;
+    top: 210px;
     width: 80px;
     height: 4px;
   }
@@ -22,7 +27,7 @@
 .title {
   @include all.flex-column;
   align-items: flex-end;
-  top: 110px;
+  top: 140px;
   height: 480px;
   width: 450px;
 
@@ -36,7 +41,7 @@
     font-size: 32px;
     top: 20px;
     text-align: right;
-    
+
     span {
       color: all.$color-secondary;
     }
@@ -56,7 +61,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
-  top: 130px;
+  top: 160px;
   right: 190px;
   height: 380px;
   width: 400px;

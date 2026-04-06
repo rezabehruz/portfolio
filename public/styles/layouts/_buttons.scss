@@ -6,24 +6,25 @@
   padding: 12px 30px;
   border-radius: 10px;
   cursor: pointer;
+  background-color: variables.$color-dark;
 }
 
-.button--lang {
+.btn--lang {
   width: 40px;
   height: 32px;
   font-size: 18px;
   padding: 1px 8px 5px;
 }
 
-.button--primary {
+.btn--primary {
   background-color: variables.$color-primary;
 }
 
-.button--secondary {
+.btn--secondary {
   background-color: variables.$color-secondary;
 }
 
-.button--transparent {
+.btn--transparent {
   border: 1px solid variables.$color-primary;
 
   &:hover {
@@ -32,6 +33,6 @@
   }
 }
 
-.button--disabled {
+.btn--disabled {
   background-color: variables.$color-disabled;;
 }
