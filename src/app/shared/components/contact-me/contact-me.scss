@@ -1,0 +1,117 @@
+@use '../../../../../public/styles/main' as all;
+
+section {
+  @include all.my-section;
+}
+
+.content {
+  @include all.flex-column;
+  height: 1000px;
+  width: 100%;
+  max-width: 1440px;
+
+  &__title {
+    @include all.flex-v-center;
+    gap: 20px;
+
+    img {
+      height: 4px;
+      width: 500px;
+    }
+  }
+
+  &__details {
+    @include all.flex-s-around;
+    top: 20px;
+  }
+
+  &__arrow-up {
+    display: flex;
+    align-self: flex-end;
+    top: 70px;
+    right: 70px;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+  }
+}
+
+.detail {
+  width: 480px;
+  h4 {
+    font-family: 'Poppins-bold';
+    font-size: 32px;
+  }
+
+  &__p-1 {
+    top: 20px;
+  }
+
+  &__p-2 {
+    top: 30px;
+
+    span {
+      font-family: 'Poppins-bold';
+    }
+  }
+}
+
+.form {
+  @include all.flex-column;
+  align-items: center;
+  gap: 30px;
+  width: 700px;
+  color: all.$color-white;
+
+  input[type='text'],
+  input[type='email'] {
+    height: 50px;
+    width: 100%;
+    padding: 15px 25px;
+    border: 2px solid all.$color-secondary;
+    border-radius: 10px;
+    background: inherit;
+    color: inherit;
+  }
+
+  textarea {
+    height: 300px;
+    width: 100%;
+    padding: 15px 25px;
+    border: 2px solid all.$color-secondary;
+    border-radius: 10px;
+    background: inherit;
+  }
+
+  &__checkbox {
+    @include all.flex-v-center;
+    bottom: 15px;
+    left: 15px;
+    width: 100%;
+
+    input[type='checkbox'] {
+      display: none;
+    }
+
+    label {
+      cursor: pointer;
+    }
+
+    label:before {
+      content: '';
+      top: 4px;
+      right: 10px;
+      height: 15px;
+      width: 15px;
+      border: 2px solid all.$color-primary;
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+    }
+
+    input[type='checkbox']:checked + label:before {
+      background-image: url('/assets/icons/check-box.png');
+      background-repeat: no-repeat;
+    }
+  }
+}
