@@ -29,10 +29,11 @@
 
   &:hover {
     border: none;
-    background-color: variables.$color-secondary
+    background-color: variables.$color-secondary;
   }
 }
 
 .btn--disabled {
-  background-color: variables.$color-disabled;;
+  background-color: variables.$color-disabled;
+  cursor: auto;
 }

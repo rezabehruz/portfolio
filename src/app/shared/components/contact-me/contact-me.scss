@@ -59,28 +59,49 @@ section {
 .form {
   @include all.flex-column;
   align-items: center;
-  gap: 30px;
+  gap: 25px;
   width: 700px;
   color: all.$color-white;
 
-  input[type='text'],
-  input[type='email'] {
-    height: 50px;
+  label[for='name'],
+  label[for='email'] {
+    height: 60px;
+    width: 100%;
+  }
+
+  input[name='name'],
+  input[name='email'] {
+    height: 95%;
     width: 100%;
     padding: 15px 25px;
+    outline: none;
     border: 2px solid all.$color-secondary;
     border-radius: 10px;
+    transition: 0.4s;
     background: inherit;
-    color: inherit;
+    color: all.$color-white;
+  }
+
+  label[for='message'] {
+    height: 300px;
+    width: 100%;
   }
 
   textarea {
-    height: 300px;
+    height: 94%;
     width: 100%;
     padding: 15px 25px;
+    outline: none;
     border: 2px solid all.$color-secondary;
     border-radius: 10px;
+    transition: 0.4s;
     background: inherit;
+    color: all.$color-white;
+  }
+
+  input:focus,
+  textarea:focus {
+    border: 2px solid all.$color-primary;
   }
 
   &__checkbox {
@@ -113,5 +134,19 @@ section {
       background-image: url('/assets/icons/check-box.png');
       background-repeat: no-repeat;
     }
+  }
+
+  ::placeholder {
+    color: all.$color-white;
+    opacity: 1;
+  }
+
+  &--warning {
+    color: red;
+  }
+
+  input[class~='no-valid'],
+  textarea[class~='no-valid'] {
+    border: 2px solid red;
   }
 }

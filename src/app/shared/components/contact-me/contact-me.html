@@ -14,19 +14,70 @@
         <p class="detail__p-2">Need a Frontend developer? <span>Contact me!</span></p>
       </div>
       <div>
-        <form action="#" class="form">
-          <input type="text" name="name" id="name" value="Your name" />
-          <input type="email" name="email" id="email" value="Your email" />
-          <textarea name="message" id="message">Your message</textarea>
+        <form action="#" class="form" [formGroup]="contactForm" (ngSubmit)="submitForm()">
+          <label for="name" [class]="name?.touched && !name?.valid ? 'form--warning' : ''">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              formControlName="name"
+              [class]="name?.touched && !name?.valid ? 'no-valid' : ''"
+              placeholder="Your name"
+            />
+
+            @if (name?.touched && !name?.valid) {
+              Your name is required.
+            }
+          </label>
+
+          <label for="email" [class]="email?.touched && !email?.valid ? 'form--warning' : ''">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              formControlName="email"
+              [class]="email?.touched && !email?.valid ? 'no-valid' : ''"
+              placeholder="Your email"
+            />
+
+            @if (email?.touched && !email?.valid) {
+              @if (email?.value == '') {
+                Your email is required.
+              } @else {
+                Your email is not valid.
+              }
+            }
+          </label>
+          <label for="message" [class]="message?.touched && !message?.valid ? 'form--warning' : ''">
+            <textarea
+              name="message"
+              id="message"
+              placeholder="Your message"
+              formControlName="message"
+              [class]="message?.touched && !message?.valid ? 'no-valid' : ''"
+            ></textarea>
+            @if (message?.touched && !message?.valid) {
+              Your Message is required. min 20 Character.
+            }
+          </label>
           <div class="form__checkbox">
-            <input type="checkbox" name="privacy-policy" id="privacy1" value="privacy" />
-            <label for="privacy1"
-              >I've read the privacy policy and agree to the processing of my data as
-              outlined.</label
-            >
+            <input type="checkbox" name="privacy" id="privacy" formControlName="privacy" />
+            <label for="privacy">
+              I've read the privacy policy and agree to the processing of my data as outlined.
+            </label>
           </div>
 
-          <button type="submit" class="button btn--disabled">Send message :)</button>
+          <button
+            type="submit"
+            [class]="
+              name?.valid && email?.valid && message?.valid && privacy?.valid
+                ? 'button btn--primary'
+                : 'button btn--disabled'
+            "
+            [disabled]="!contactForm.get('privacy')?.valid"
+          >
+            Send message :)
+          </button>
         </form>
       </div>
     </div>
