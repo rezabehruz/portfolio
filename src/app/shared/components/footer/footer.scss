@@ -2,23 +2,24 @@
 
 .footer {
   @include all.my-section;
-  border-top: 5px solid all.$color-primary;
 }
 
 .content {
-  height: 200px;
+  height: 300px;
   width: 100%;
   max-width: 1440px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: none;
+  border-top: 3px solid all.$color-primary;
 
   &__logo {
     margin-left: 100px;
+    border: none;
   }
 
   &__register {
+    border: none;
     p {
       font-size: 23px;
     }
@@ -28,5 +29,6 @@
     display: flex;
     gap: 30px;
     margin-right: 100px;
+    border: none;
   }
 }

@@ -131,7 +131,7 @@ section {
     }
 
     input[type='checkbox']:checked + label:before {
-      background-image: url('/assets/icons/check-box.png');
+      background-image: url('../../../../../public/assets/icons/check-box.png');
       background-repeat: no-repeat;
     }
   }
