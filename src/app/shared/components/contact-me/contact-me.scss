@@ -10,6 +10,11 @@ section {
   width: 100%;
   max-width: 1440px;
 
+    background-image: url('../../../../../public/assets/images/shadows/shadow-6.png');
+  background-repeat: no-repeat;
+  background-position-x: 0%;
+  background-position-y: 210%;
+
   &__title {
     @include all.flex-v-center;
     gap: 20px;

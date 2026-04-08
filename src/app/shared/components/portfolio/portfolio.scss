@@ -6,7 +6,7 @@
 
 .content {
   @include all.flex-column;
-  padding-top: 140px;
+  padding-top: 120px;
   height: 2800px;
   width: 100%;
   max-width: 1440px;
@@ -101,6 +101,11 @@
 .testimonials {
   @include all.flex-column;
   top: 300px;
+
+  background-image: url('../../../../../public/assets/images/shadows/shadow-5.png');
+  background-repeat: no-repeat;
+  background-position-x: 103%;
+  background-position-y: 20%;
 }
 
 .main {
