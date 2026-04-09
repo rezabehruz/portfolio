@@ -54,6 +54,16 @@
 
   &__btn {
     top: 50px;
+    font-size: 23px;
+    padding: 12px 30px;
+    border-radius: 10px;
+    background-color: all.$color-primary;
+    transition: 0.3s;
+
+    &:hover {
+      padding: 18px 36px;
+      background-color: all.$color-secondary;
+    }
   }
 }
 
