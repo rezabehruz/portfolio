@@ -30,5 +30,23 @@
     gap: 30px;
     margin-right: 100px;
     border: none;
+
+    a {
+      @include all.flex-center;
+      align-items: center;
+      height: 45px;
+      width: 45px;
+
+      img {
+        height: 30px;
+        width: 30px;
+        transition: 0.2s;
+
+        &:hover {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
   }
 }
