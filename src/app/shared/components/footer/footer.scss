@@ -16,6 +16,10 @@
   &__logo {
     margin-left: 100px;
     border: none;
+
+    a {
+      display: block;
+    }
   }
 
   &__register {

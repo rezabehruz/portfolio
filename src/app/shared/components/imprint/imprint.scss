@@ -1,12 +1,50 @@
-.imprint {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 300px;
+@use '../../../../../public/styles/main' as all;
 
-  h1 {
-    font-size: 70px;
+.imprint {
+  @include all.my-section;
+  height: 95dvh;
+}
+
+.content {
+  width: 100%;
+  max-width: 1440px;
+  top: 130px;
+}
+
+.title {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+
+  &__img-1 {
+    width: 10%;
+    height: 4px;
+  }
+
+  h2 {
+    font-family: 'Poppins-bold';
+    font-size: 50px;
     text-align: center;
-    color: black;
+    color: all.$color-primary;
+  }
+
+  &__img-2 {
+    width: 35%;
+    height: 4px;
+  }
+}
+
+.detail {
+  margin-left: 10%;
+  h3 {
+    font-family: 'Poppins-bold';
+    font-size: 40px;
+  }
+
+  &__source {
+    margin-top: 20px;
+    font-family: 'Poppins-bold';
+    font-size: 18px;
   }
 }
