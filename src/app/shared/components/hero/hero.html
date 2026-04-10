@@ -4,11 +4,13 @@
       <img src="assets/images/character.png" alt="character" class="content-1__character" />
 
       <div class="title">
-        <div class="title__part-1"><p>I am</p></div>
+        <div class="title__part-1">
+          <p>{{ 'portfolio.hero.i-am' | translate }}</p>
+        </div>
         <div class="title__part-2">
-          <h1>Reza Behruz</h1>
-          <h2>Frontend Developer</h2>
-          <a href="#contact-me">Let's Talk!</a>
+          <h1>{{ 'portfolio.hero.my-name' | translate }}</h1>
+          <h2>{{ 'portfolio.hero.my-carrier' | translate }}</h2>
+          <a href="#contact-me">{{ 'portfolio.hero.link-contact' | translate }}</a>
         </div>
       </div>
     </div>
@@ -28,7 +30,7 @@
         <p>behruz.mreza@gmail.com</p>
       </div>
       <div class="content-2__scroll-notice">
-        <span>Scroll down</span>
+        <span>{{ 'portfolio.hero.scroll-down' | translate }}</span>
         <img src="assets/icons/vector.png" alt="vector" />
       </div>
     </div>

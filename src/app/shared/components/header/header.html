@@ -6,14 +6,20 @@
     <div class="content__menu">
       <nav>
         <ul>
-          <li><a href="#about-me">About me</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
+          <li>
+            <a href="#about-me">{{ 'portfolio.header.link-1' | translate }}</a>
+          </li>
+          <li>
+            <a href="#skills">{{ 'portfolio.header.link-2' | translate }}</a>
+          </li>
+          <li>
+            <a href="#portfolio">{{ 'portfolio.header.link-3' | translate }}</a>
+          </li>
         </ul>
       </nav>
       <div class="content__menu__lang">
-        <button class="button btn--transparent btn--lang">DE</button>
-        <button class="button btn--primary btn--lang">EN</button>
+        <button class="button btn--transparent btn--lang" (click)="useLanguage('de')">DE</button>
+        <button class="button btn--primary btn--lang" (click)="useLanguage('en')">EN</button>
       </div>
     </div>
   </div>

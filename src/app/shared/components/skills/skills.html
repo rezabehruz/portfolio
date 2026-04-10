@@ -2,13 +2,17 @@
   <div class="content">
     <img src="./assets/icons/line-horizontal.png" alt="line" class="content__img" />
     <div class="title">
-      <h2>My Skills</h2>
+      <h2>{{ 'portfolio.skills.title' | translate }}</h2>
       <p class="title__p1">
-        Show that you have used a variety of front-end technologies in your projects.
+        {{ 'portfolio.skills.p-1' | translate }}
       </p>
-      <p class="title__p2">Looking for <span>another skills</span>?</p>
-      <p class="title__p3">Reveal enthusiasm for learning new technologies and frameworks.</p>
-      <a href="#contact-me" class="title__btn">Get in touch</a>
+      <p class="title__p2">
+        {{ 'portfolio.skills.p-2-part-1' | translate }}
+        <span>{{ 'portfolio.skills.p-2-part-2' | translate }}</span
+        >?
+      </p>
+      <p class="title__p3">{{ 'portfolio.skills.p-3' | translate }}</p>
+      <a href="#contact-me" class="title__btn">{{ 'portfolio.skills.link' | translate }}</a>
     </div>
     <div class="tech">
       <figure class="tech__icons">

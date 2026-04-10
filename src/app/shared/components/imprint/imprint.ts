@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { Header } from '../header/header';
-import { Footer } from '../footer/footer';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-imprint',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './imprint.html',
   styleUrl: './imprint.scss',
 })

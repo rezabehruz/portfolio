@@ -2,16 +2,18 @@
   <div class="content">
     <div class="content__title">
       <img src="assets/icons/line-horizontal.png" alt="line-horizontal" />
-      <h2>Contact</h2>
+      <h2>{{ 'portfolio.contact-me.title' | translate }}</h2>
     </div>
     <div class="content__details">
       <div class="detail">
-        <h4>Got a problem to solve?</h4>
+        <h4>{{ 'portfolio.contact-me.title-1' | translate }}</h4>
         <p class="detail__p-1">
-          Encourage people to contact you and describe what role you are interested in. Show that
-          you will add value to their projects through your work.
+          {{ 'portfolio.contact-me.p-1' | translate }}
         </p>
-        <p class="detail__p-2">Need a Frontend developer? <span>Contact me!</span></p>
+        <p class="detail__p-2">
+          {{ 'portfolio.contact-me.p-2' | translate }}
+          <span>{{ 'portfolio.contact-me.p-3' | translate }}</span>
+        </p>
       </div>
       <div>
         <form action="#" class="form" [formGroup]="contactForm" (ngSubmit)="submitForm()">
@@ -26,7 +28,7 @@
             />
 
             @if (name?.touched && !name?.valid) {
-              Your name is required.
+              {{ 'portfolio.contact-me.warning-1' | translate }}
             }
           </label>
 
@@ -42,9 +44,9 @@
 
             @if (email?.touched && !email?.valid) {
               @if (email?.value == '') {
-                Your email is required.
+                {{ 'portfolio.contact-me.warning-2' | translate }}
               } @else {
-                Your email is not valid.
+                {{ 'portfolio.contact-me.warning-3' | translate }}
               }
             }
           </label>
@@ -57,13 +59,13 @@
               [class]="message?.touched && !message?.valid ? 'no-valid' : ''"
             ></textarea>
             @if (message?.touched && !message?.valid) {
-              Your Message is required. min 20 Character.
+              {{ 'portfolio.contact-me.warning-4' | translate }}
             }
           </label>
           <div class="form__checkbox">
             <input type="checkbox" name="privacy" id="privacy" formControlName="privacy" />
             <label for="privacy">
-              I've read the privacy policy and agree to the processing of my data as outlined.
+              {{ 'portfolio.contact-me.checkbox-label' | translate }}
             </label>
           </div>
 
@@ -76,7 +78,7 @@
             "
             [disabled]="!contactForm.get('privacy')?.valid"
           >
-            Send message :)
+            {{ 'portfolio.contact-me.btn-submit' | translate }}
           </button>
         </form>
       </div>
