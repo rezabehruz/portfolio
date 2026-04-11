@@ -9,16 +9,15 @@
   flex-direction: row-reverse;
   gap: 30px;
   width: 100%;
-  height: 550px;
   max-width: 1440px;
-
+  padding: 100px 0 30px 0;
   background-image: url('../../../../../public/assets/images/shadows/shadow-3.png');
   background-repeat: no-repeat;
   background-position-x: -570px;
   background-position-y: 310px;
 
   &__img {
-    top: 210px;
+    margin-top: 55px;
     width: 80px;
     height: 4px;
   }
@@ -27,19 +26,17 @@
 .title {
   @include all.flex-column;
   align-items: flex-end;
-  top: 140px;
-  height: 480px;
   width: 450px;
 
   &__p1 {
-    top: 10px;
+    margin-top: 10px;
     text-align: right;
   }
 
   &__p2 {
     font-family: 'Poppins-bold';
     font-size: 32px;
-    top: 20px;
+    margin-top: 20px;
     text-align: right;
 
     span {
@@ -48,21 +45,24 @@
   }
 
   &__p3 {
-    top: 25px;
+    margin-top: 25px;
     text-align: right;
   }
 
   &__btn {
-    top: 50px;
+    margin-top: 50px;
     font-size: 23px;
-    padding: 12px 30px;
-    border-radius: 10px;
-    background-color: all.$color-primary;
-    transition: 0.3s;
 
-    &:hover {
-      padding: 18px 36px;
-      background-color: all.$color-secondary;
+    span {
+      padding: 12px 30px;
+      border-radius: 10px;
+      background-color: all.$color-primary;
+      transition: 0.1s;
+
+      &:hover {
+        padding: 18px 36px;
+        background-color: all.$color-secondary;
+      }
     }
   }
 }
@@ -71,10 +71,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
-  top: 160px;
-  right: 190px;
-  height: 380px;
   width: 400px;
+  margin-right: 10%;
+  padding: 2% 0;
 
   &__icons {
     @include all.flex-c-s-around;

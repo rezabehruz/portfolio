@@ -6,8 +6,7 @@
 
 .content {
   @include all.flex-column;
-  padding-top: 120px;
-  height: 2600px;
+  padding-top: 100px;
   width: 100%;
   max-width: 1440px;
 
@@ -18,7 +17,7 @@
 
   &__p-1 {
     text-align: center;
-    top: 20px;
+    margin-top: 20px;
   }
 }
 
@@ -41,8 +40,8 @@
 .projects {
   @include all.flex-column;
   gap: 120px;
-  top: 170px;
-  height: fit-content;
+  margin-top: 100px;
+  margin-left: 80px;
 
   background-image: url('../../../../../public/assets/images/shadows/shadow-4.png');
   background-repeat: no-repeat;
@@ -59,7 +58,7 @@
 
     &--right {
       flex-direction: row-reverse;
-      margin-right: 100px;
+      margin-right: 80px;
       text-align: right;
     }
   }
@@ -69,7 +68,7 @@
   @include all.flex-column;
   width: 520px;
   height: 320px;
-  top: 20px;
+  margin-top: 20px;
 
   h3 {
     font-family: 'Poppins-bold';
@@ -78,19 +77,19 @@
   }
 
   &__p-1 {
-    top: 13px;
+    margin-top: 13px;
     font-size: 23px;
     color: all.$color-primary;
   }
 
   &__p-2 {
-    top: 23px;
+    margin-top: 23px;
   }
 
   &__options {
     display: flex;
     gap: 80px;
-    top: 50px;
+    margin-top: 50px;
 
     &--right {
       justify-content: flex-end;
@@ -100,7 +99,7 @@
 
 .testimonials {
   @include all.flex-column;
-  top: 300px;
+  margin-top: 180px;
 
   background-image: url('../../../../../public/assets/images/shadows/shadow-5.png');
   background-repeat: no-repeat;
@@ -163,8 +162,8 @@
   display: flex;
   justify-content: center;
   gap: 20px;
-  top: 40px;
-  left: 40px;
+  margin-top: 40px;
+  padding-left: 5%;
 
   button {
     background-color: inherit;
