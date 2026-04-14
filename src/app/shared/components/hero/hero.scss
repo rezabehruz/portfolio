@@ -5,57 +5,59 @@ section {
 }
 
 .content {
-  @include all.flex-c-s-around;
+  @include all.flex-c-s-between;
   width: 100%;
   height: 100dvh;
   max-width: 1440px;
-  padding-top: 100px;
+  padding-top: 130px;
   font-family: 'Poppins-regular';
   color: all.$color-white;
-  background-color: all.$color-dark;
 
-  background-image: url('../../../../../public/assets/images/shadows/shadow-2.png');
-  background-repeat: no-repeat;
-  background-position-x: 175%;
-  background-position-y: 250%;
+  // background-image: url('../../../../../public/assets/images/shadows/shadow-2.png');
+  // background-repeat: no-repeat;
+  // background-position-x: 175%;
+  // background-position-y: 250%;
 }
 
 .content-1 {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-  padding: 0 100px;
-  background-image: url('../../../../../public/assets/images/shadows/shadow-1.png');
-  background-repeat: no-repeat;
-  background-position-x: 0%;
-  background-position-y: 80%;
+  @include all.flex-v-center;
+  // background-image: url('../../../../../public/assets/images/shadows/shadow-1.png');
+  // background-repeat: no-repeat;
+  // background-position-x: 0%;
+  // background-position-y: 80%;
 
   &__character {
-    height: 700px;
-    width: 500px;
+    @include all.flex-center;
+    flex-grow: 1;
+
+    img {
+      height: 550px;
+      width: 391px;
+    }
   }
 }
 
 .title {
-  @include all.flex-center;
+  display: flex;
+  flex-grow: 1;
   margin-bottom: 40px;
 
   &__part-1 {
     height: 120px;
-    width: 80px;
+    width: 70px;
     transform: rotate(270deg);
 
     p {
-      right: 50px;
-      margin-top: 15px;
+      right: 55px;
       width: 120px;
+      height: 70px;
+      padding-top: 5px;
       font-size: 54px;
     }
   }
 
   &__part-2 {
-    @include all.flex-column;
-    align-items: center;
+    @include all.flex-c-center;
 
     h1 {
       font-size: 80px;
@@ -70,8 +72,8 @@ section {
     }
 
     a {
-      font-size: 23px;
       margin-top: 50px;
+      font-size: 23px;
 
       span {
         padding: 12px 30px;
@@ -89,11 +91,11 @@ section {
 
 .content-2 {
   @include all.flex-s-between;
+  margin-bottom: 30px;
 
   &__social-media {
     @include all.flex-v-center;
     gap: 20px;
-    width: 650px;
     font-size: 23px;
 
     img {
@@ -103,8 +105,8 @@ section {
     a {
       @include all.flex-center;
       align-items: center;
-      height: 45px;
-      width: 45px;
+      height: 40px;
+      width: 40px;
 
       img {
         height: 30px;
@@ -120,12 +122,13 @@ section {
   }
 
   &__scroll-notice {
-    display: flex;
-    align-items: center;
+    @include all.flex-v-center;
+    justify-content: center;
     gap: 10px;
-    margin-right: 30px;
-    bottom: 50px;
+    right: 4%;
+    bottom: 160%;
     font-size: 23px;
+    width: 160px;
     transform: rotate(90deg);
 
     img {
@@ -136,3 +139,7 @@ section {
     }
   }
 }
+
+@include all.notebook;
+@include all.tablet;
+@include all.mobile;

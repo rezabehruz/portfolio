@@ -2,41 +2,101 @@
 
 .skills {
   @include all.my-section;
-}
+  background-color: blue;
 
-.content {
-  display: flex;
-  flex-direction: row-reverse;
-  gap: 30px;
-  width: 100%;
-  max-width: 1440px;
-  padding: 100px 0 30px 0;
-  background-image: url('../../../../../public/assets/images/shadows/shadow-3.png');
-  background-repeat: no-repeat;
-  background-position-x: -570px;
-  background-position-y: 310px;
-
-  &__img {
-    margin-top: 55px;
-    width: 80px;
-    height: 4px;
+  &__content {
+    background-color: all.$color-dark;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 30px;
+    width: 100%;
+    max-width: 1440px;
+    padding: 100px 0 30px 0;
+    // background-image: url('../../../../../public/assets/images/shadows/shadow-3.png');
+    // background-repeat: no-repeat;
+    // background-position-x: -570px;
+    // background-position-y: 310px;
   }
 }
 
 .title {
-  @include all.flex-column;
-  align-items: flex-end;
-  width: 450px;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 30px;
 
-  &__p1 {
-    margin-top: 10px;
-    text-align: right;
+  img {
+    margin-top: 45px;
+    width: 60px;
+    height: 4px;
   }
+
+  .content-1 {
+    @include all.flex-column;
+    align-items: flex-end;
+    width: 450px;
+
+    &__p1 {
+      margin-top: 10px;
+      text-align: right;
+    }
+
+    &__p2 {
+      font-family: 'Poppins-bold';
+      font-size: 32px;
+      margin-top: 20px;
+      text-align: right;
+
+      span {
+        color: all.$color-secondary;
+      }
+    }
+
+    &__p3 {
+      margin-top: 25px;
+      text-align: right;
+    }
+
+    &__btn {
+      margin-top: 50px;
+      font-size: 23px;
+
+      span {
+        padding: 12px 30px;
+        border-radius: 10px;
+        background-color: all.$color-primary;
+        transition: 0.1s;
+
+        &:hover {
+          padding: 18px 36px;
+          background-color: all.$color-secondary;
+        }
+      }
+    }
+  }
+}
+
+.tech {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  gap: 50px;
+  margin: 0 2% 0 6%;
+
+  &__icons {
+    @include all.flex-c-s-around;
+    align-items: center;
+    width: 100px;
+  }
+}
+
+.title-2 {
+  display: none;
+  margin: 0% 10%;
 
   &__p2 {
     font-family: 'Poppins-bold';
     font-size: 32px;
-    margin-top: 20px;
+    
     text-align: right;
 
     span {
@@ -45,12 +105,14 @@
   }
 
   &__p3 {
-    margin-top: 25px;
+    margin-top: 10px;
     text-align: right;
   }
 
   &__btn {
+    align-self: center;
     margin-top: 50px;
+    
     font-size: 23px;
 
     span {
@@ -67,17 +129,6 @@
   }
 }
 
-.tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
-  width: 400px;
-  margin-right: 10%;
-  padding: 2% 0;
-
-  &__icons {
-    @include all.flex-c-s-around;
-    align-items: center;
-    width: 100px;
-  }
-}
+@include all.notebook;
+@include all.tablet;
+@include all.mobile;

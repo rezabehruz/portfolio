@@ -3,25 +3,25 @@
 .about-me {
   @include all.my-section;
   align-items: center;
-}
 
-.content {
-  @include all.flex-s-between;
-  padding: 100px 0 60px 0;
-  width: 100%;
-  max-width: 1440px;
+  &__content {
+    @include all.flex-s-between;
+    padding: 100px 0 60px 0;
+    width: 100%;
+    max-width: 1440px;
 
-  background-image: url('../../../../../public/assets/images/shadows/shadow-2.png');
-  background-repeat: no-repeat;
-  background-position-x: 165%;
-  background-position-y: -180px;
+    // background-image: url('../../../../../public/assets/images/shadows/shadow-2.png');
+    // background-repeat: no-repeat;
+    // background-position-x: 165%;
+    // background-position-y: -180px;
+  }
 }
 
 .details {
   @include all.flex-column;
+  flex-grow: 1;
   gap: 20px;
-  left: 90px;
-  width: 470px;
+  margin: 0 10% 0 8%;
 
   &__p {
     display: flex;
@@ -36,13 +36,24 @@
 }
 
 .content-img {
-  @include all.flex-center;
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
 
   &__img {
-    width: 480px;
-    height: 480px;
+    width: 330px;
+    height: 330px;
+    padding: 20px 0 0 0;
     border: 5px solid all.$color-primary;
     border-radius: 50%;
   }
+
+  &__line {
+    width: 160px;
+    height: 4px;
+  }
 }
+
+@include all.notebook;
+@include all.tablet;
+@include all.mobile;
