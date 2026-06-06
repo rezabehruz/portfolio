@@ -1,40 +1,105 @@
 <section>
   <div class="content">
-    <div class="content-1">
-      <div class="content-1__character">
-        <img src="assets/images/character-5.png" alt="character" />
+    <div class="navigation-mobile">
+      <div class="logo-name">
+        <img src="assets/images/logo/logo.png" alt="logo" class="img-normal" />
+        <p>R.Behruz</p>
+        <p class="profession">developer</p>
       </div>
-      <div class="title">
-        <div class="title__part-1">
-          <p>{{ 'portfolio.hero.i-am' | translate }}</p>
+
+      <button (click)="toggleMenu()">
+        <svg
+          width="30"
+          height="30"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#333"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="burger-icon"
+          role="button"
+          aria-label="Toggle menu"
+          tabindex="0"
+        >
+          <line x1="3" y1="5" x2="38" y2="5"></line>
+          <line x1="3" y1="14" x2="38" y2="14"></line>
+          <line x1="3" y1="23" x2="38" y2="23"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="profile">
+      <div class="image-menu">
+        @if (isMenuOpen) {
+          <div class="mobile-menu">
+            <ul>
+              <li>Why me</li>
+              <li>Skills</li>
+              <li>Projects</li>
+              <li>Contact</li>
+            </ul>
+            <div class="language">
+              <button>DE</button>
+              <button>EN</button>
+            </div>
+          </div>
+        } @else {
+          <img src="assets/images/character-5.png" alt="character" class="profile__img" />
+        }
+      </div>
+      <div class="logo-media-title">
+        <div class="logo-media">
+          <div class="logo-name">
+            <img src="assets/images/logo/logo.png" alt="logo" class="img-normal" />
+            <img src="assets/images/logo/logo-hover.png" alt="logo" class="img-hover" />
+            <p class="name">R.Behruz</p>
+            <p class="profession">developer</p>
+          </div>
+          <div class="media">
+            <a href="mailto:behruz.mreza@gmail.com">
+              <img src="assets/icons/mail.png" alt="email" class="img-normal" />
+              <img src="assets/icons/mail-hover.png" alt="email" class="img-hover" />
+            </a>
+            <a href="https://github.com/rezabehruz">
+              <img src="assets/icons/github.png" alt="gihtub" class="img-normal" />
+              <img src="assets/icons/github-hover.png" alt="gihtub" class="img-hover" />
+            </a>
+            <a href="https://www.linkedin.com/in/reza-behruz/">
+              <img src="assets/icons/linkedin.png" alt="linkedin" class="img-normal" />
+              <img src="assets/icons/linkedin-hover.png" alt="linkedin" class="img-hover" />
+            </a>
+          </div>
         </div>
-        <div class="title__part-2">
-          <h1>{{ 'portfolio.hero.my-name' | translate }}</h1>
-          <p>{{ 'portfolio.hero.my-carrier' | translate }}</p>
-          <a href="#contact-me">
-            <span>{{ 'portfolio.hero.link-contact' | translate }}</span>
+        <div class="title">
+          <div>
+            <h1>Reza Behruz</h1>
+            <p>Frontend Developer</p>
+          </div>
+          <a href="">
+            <img src="assets/icons/arrow.png" alt="arrow" class="img-normal" />
+            <img src="assets/icons/arrow-hover.png" alt="arrow" class="img-hover" />
           </a>
         </div>
       </div>
     </div>
-
-    <div class="content-2">
-      <div class="content-2__social-media">
-        <img src="assets/icons/line-horizontal.png" alt="line-horizontal" />
-        <a href="https://github.com/rezabehruz" target="_blank">
-          <img src="assets/icons/github.png" alt="github" />
-        </a>
-        <a href="mailto:behruz.mreza@gmail.com" target="_blank">
-          <img src="assets/icons/email.png" alt="mail" />
-        </a>
-        <a href="https://www.linkedin.com/in/reza-behruz/" target="_blank">
-          <img src="assets/icons/linkedIn.png" alt="linkedin" />
-        </a>
-        <p>behruz.mreza@gmail.com</p>
+    <div class="navigation">
+      <div class="logo-name">
+        <div class="logo">
+          <img src="assets/images/logo/logo-dark.png" alt="logo" class="img-normal" />
+          <img src="assets/images/logo/logo-dark-hover.png" alt="logo" class="img-hover" />
+        </div>
+        <p class="name">R.Behruz</p>
+        <p class="profession">developer</p>
       </div>
-      <div class="content-2__scroll-notice">
-        <span>{{ 'portfolio.hero.scroll-down' | translate }}</span>
-        <img src="assets/icons/vector.png" alt="vector" />
+      <ul>
+        <li>Why me</li>
+        <li>Skills</li>
+        <li>Projects</li>
+        <li>Contact</li>
+      </ul>
+      <div class="language">
+        <button>DE</button>
+        <button>EN</button>
       </div>
     </div>
   </div>

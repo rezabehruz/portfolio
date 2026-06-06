@@ -1,0 +1,84 @@
+@use '../../../../../public/styles/main' as all;
+
+section {
+  @include all.display-flex($justify: center);
+  background-color: all.$color-background;
+}
+
+.content {
+  width: 100%;
+  max-width: 1440px;
+  background-color: all.$color-background;
+  font-family: 'Josefin Sans regular';
+  padding-top: 78px;
+
+  @include all.mobile {
+    padding-top: 48px;
+  }
+
+  .location-about {
+    margin: 56px 12px 0;
+    color: all.$color-secondary;
+    @include all.display-flex($justify: center, $gap: 62px);
+
+    @include all.mobile {
+      margin-top: 28px;
+      @include all.display-flex($direction: column, $align: center, $gap: 22px);
+    }
+
+    .location {
+      font-size: 30px;
+      font-weight: 700;
+
+      span {
+        color: all.$color-primary;
+      }
+
+      &__details {
+        @include all.display-flex($align: center, $gap: 8px);
+      }
+
+      @include all.mobile {
+        font-size: 18px;
+        font-weight: 400;
+
+        img {
+          height: 30px;
+          width: 35px;
+        }
+      }
+    }
+
+    .about {
+      @include all.display-flex($direction: column, $align: flex-end, $gap: 32px);
+      font-size: 18px;
+      width: 336px;
+
+      @include all.mobile {
+        width: 300px;
+
+        &__details {
+          @include all.display-flex($direction: column, $justify: center, $gap: 12px);
+          text-align: center;
+          font-size: 16px;
+        }
+      }
+
+      button {
+        @include all.display-flex($justify: center, $align: center);
+        border: 1px solid all.$color-primary;
+        color: all.$color-primary;
+        padding: 16px 28px;
+        border-radius: 24px;
+
+        &:hover {
+          background-color: #364049;
+        }
+
+        @include all.mobile {
+          display: none;
+        }
+      }
+    }
+  }
+}

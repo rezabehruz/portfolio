@@ -1,0 +1,106 @@
+@use '../../../../../public/styles/main' as all;
+
+section {
+  @include all.display-flex($justify: center);
+  background: all.$color-background;
+}
+
+.content {
+  @include all.display-flex($direction: column, $align: center, $gap: clamp(36px, 12vw, 88px));
+  width: 100%;
+  max-width: 1440px;
+  padding: clamp(36px, 12vw, 88px) 0;
+  font-family: 'Josefin Sans regular';
+  font-size: 16px;
+  color: all.$color-secondary;
+
+  .title {
+    padding: 0 clamp(10px, 2vw, 22px);
+    color: all.$color-primary;
+    font-weight: 400;
+    font-size: clamp(22px, 3vw, 32px);
+
+    @include all.mobile {
+      @include all.display-flex($direction: column);
+
+      .question {
+        color: all.$color-secondary;
+      }
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 1px;
+    height: 1px;
+  }
+
+  ::-webkit-scrollbar-button {
+    width: 1px;
+    height: 1px;
+  }
+
+  .references {
+    @include all.display-flex($justify: space-around, $gap: 12px);
+    width: 100%;
+    padding: clamp(10px, 3vw, 24px);
+    overflow-x: scroll;
+
+    .reference {
+      @include all.display-flex($direction: column, $justify: center, $align: center, $gap: 4px);
+
+      flex-basis: 400px;
+      flex-shrink: 0;
+      height: 400px;
+      padding: 12px 22px;
+
+      background-image: url('../../../../../public/assets/images/shadows/reference.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      transition: 800ms;
+
+      &:hover {
+        background-image: url('../../../../../public/assets/images/shadows/reference-hover.png');
+        transition: 800ms;
+      }
+
+      @include all.mobile {
+        align-items: start;
+        flex-basis: 320px;
+        height: 320px;
+        padding-left: 58px;
+      }
+
+      h4 {
+        font-size: clamp(20px, 2vw, 26px);
+      }
+
+      p {
+        font-size: 18px;
+
+        @include all.mobile {
+          font-size: 16px;
+        }
+
+        span {
+          color: all.$color-primary;
+        }
+      }
+      .statement {
+        margin-top: 18px;
+        text-align: center;
+
+        @include all.mobile {
+          text-align: start;
+        }
+      }
+
+      a {
+        margin-top: 48px;
+        font-size: 16px;
+        color: all.$color-primary;
+        text-decoration: underline;
+      }
+    }
+  }
+}

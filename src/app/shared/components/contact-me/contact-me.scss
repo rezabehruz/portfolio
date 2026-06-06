@@ -1,158 +1,188 @@
 @use '../../../../../public/styles/main' as all;
 
 section {
-  @include all.my-section;
+  @include all.display-flex($justify: center);
+  background-color: rgb(243, 235, 222);
 }
 
 .content {
-  @include all.flex-column;
-  height: 1000px;
+  @include all.display-flex($direction: column, $align: center, $gap: clamp(48px, 15vw, 78px));
   width: 100%;
   max-width: 1440px;
-  margin-top: 130px;
+  padding: clamp(68px, 15vw, 78px) clamp(10px, 3vw, 88px) 100px clamp(10px, 3vw, 88px);
+  color: all.$color-secondary;
+  background: all.$color-background;
+  font-family: 'Josefin Sans regular';
+}
 
-  background-image: url('../../../../../public/assets/images/shadows/shadow-6.png');
-  background-repeat: no-repeat;
-  background-position-x: 0%;
-  background-position-y: 210%;
+.header {
+  @include all.display-flex($justify: center);
+  width: 100%;
 
-  &__title {
-    @include all.flex-v-center;
-    gap: 20px;
+  h2 {
+    color: all.$color-primary;
+  }
+
+  a {
+    position: absolute;
+    right: 2vw;
+    bottom: 1vw;
+    width: 38px;
+    height: 89px;
 
     img {
-      height: 4px;
-      width: 500px;
+      transform: rotate(180deg);
     }
-  }
-
-  &__details {
-    @include all.flex-s-around;
-    top: 20px;
-  }
-
-  &__arrow-up {
-    display: flex;
-    align-self: flex-end;
-    top: 70px;
-    right: 70px;
-    height: 50px;
-    width: 50px;
-    cursor: pointer;
-  }
-}
-
-.detail {
-  width: 480px;
-  h4 {
-    font-family: 'Poppins-bold';
-    font-size: 32px;
-  }
-
-  &__p-1 {
-    top: 20px;
-  }
-
-  &__p-2 {
-    top: 30px;
-
-    span {
-      font-family: 'Poppins-bold';
-    }
-  }
-}
-
-.form {
-  @include all.flex-column;
-  align-items: center;
-  gap: 25px;
-  width: 700px;
-  color: all.$color-white;
-
-  label[for='name'],
-  label[for='email'] {
-    height: 60px;
-    width: 100%;
-  }
-
-  input[name='name'],
-  input[name='email'] {
-    height: 95%;
-    width: 100%;
-    padding: 15px 25px;
-    outline: none;
-    border: 2px solid all.$color-secondary;
-    border-radius: 10px;
-    transition: 0.4s;
-    background: inherit;
-    color: all.$color-white;
-  }
-
-  label[for='message'] {
-    height: 300px;
-    width: 100%;
-  }
-
-  textarea {
-    height: 94%;
-    width: 100%;
-    padding: 15px 25px;
-    outline: none;
-    border: 2px solid all.$color-secondary;
-    border-radius: 10px;
-    transition: 0.4s;
-    background: inherit;
-    color: all.$color-white;
-  }
-
-  input:focus,
-  textarea:focus {
-    border: 2px solid all.$color-primary;
-  }
-
-  &__checkbox {
-    @include all.flex-v-center;
-    bottom: 15px;
-    left: 15px;
-    width: 100%;
-
-    input[type='checkbox'] {
+    .arrow-hover {
       display: none;
     }
 
-    label {
-      cursor: pointer;
+    &:hover {
+      .arrow-normal {
+        display: none;
+      }
+
+      .arrow-hover {
+        display: block;
+      }
+    }
+  }
+}
+
+.details-contact {
+  @include all.display-flex($justify: center, $gap: 24px);
+
+  .details {
+    width: clamp(300px, 28vw, 480px);
+
+    // width: 470px;
+    font-size: clamp(16px, 2vw, 18px);
+  }
+
+  .contact {
+    @include all.display-flex($direction: column, $gap: 22px);
+    font-size: clamp(16px, 2vw, 20px);
+
+    a {
+      @include all.display-flex($align: center, $gap: 16px);
+
+      p {
+        padding-top: 3px;
+      }
+
+      .icon-hover {
+        display: none;
+      }
+
+      &:hover {
+        color: all.$color-primary;
+
+        .icon-normal {
+          display: none;
+        }
+
+        .icon-hover {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+form {
+  @include all.display-flex($direction: column, $align: center, $gap: 24px);
+  width: 812px;
+
+  label {
+    @include all.display-flex($direction: column, $gap: 4px);
+    color: all.$color-primary;
+    width: 390px;
+
+    span {
+      margin-left: 32px;
     }
 
-    label:before {
-      content: '';
-      top: 4px;
-      right: 10px;
-      height: 15px;
-      width: 15px;
-      border: 2px solid all.$color-primary;
-      display: inline-block;
-      position: relative;
-      cursor: pointer;
-    }
+    input {
+      border: 1px solid all.$color-primary;
+      padding: 22px;
+      border-radius: 28px;
+      outline: none;
 
-    input[type='checkbox']:checked + label:before {
-      background-image: url('../../../../../public/assets/icons/check-box.png');
-      background-repeat: no-repeat;
+      &:focus {
+        background-color: #435361;
+      }
     }
   }
 
-  ::placeholder {
-    color: all.$color-white;
-    opacity: 1;
+  .name-email {
+    @include all.display-flex($gap: 24px);
   }
 
-  &--warning {
-    color: red;
+  .message-label {
+    width: 100%;
+    textarea {
+      padding: 22px;
+      width: 100%;
+      height: 180px;
+      border: 1px solid all.$color-primary;
+      border-radius: 32px;
+      resize: none;
+      outline: none;
+
+      &:focus {
+        background-color: #435361;
+      }
+    }
   }
 
-  input[class~='no-valid'],
-  textarea[class~='no-valid'] {
-    border: 2px solid red;
+  .checkbox {
+    @include all.display-flex($align: center, $gap: 16px);
+    align-self: flex-start;
+
+    span {
+      color: all.$color-primary;
+    }
+
+    button {
+      height: 24px;
+      width: 24px;
+
+      .checkbox-hover {
+        display: none;
+      }
+
+      .checkbox-checked {
+        display: none;
+      }
+
+      .checkbox-warnning {
+        display: none;
+      }
+    }
+
+    &:hover {
+      button {
+        .checkbox-normal {
+          display: none;
+        }
+
+        .checkbox-hover {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .btn-submit {
+    align-self: flex-end;
+    font-size: 18px;
+    color: #aca9a0;
+    padding: 12px 32px;
+    border-radius: 22px;
+    border: 1px solid #aca9a0;
+
+    &:hover {
+      background-color: #435361;
+    }
   }
 }

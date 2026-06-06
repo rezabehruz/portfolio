@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { Hero } from '../hero/hero';
-import { AboutMe } from '../about-me/about-me';
-import { Skills } from '../skills/skills';
-import { Portfolio } from '../portfolio/portfolio';
+import { WhyMe } from '../why-me/why-me';
+import { MySkills } from '../my-skills/my-skills';
+import { MyProjects } from '../my-projects/my-projects';
+import { Testemonials } from '../testemonials/testemonials';
 import { ContactMe } from '../contact-me/contact-me';
 
 @Component({
   selector: 'app-home',
-  imports: [Hero, AboutMe, Skills, Portfolio, ContactMe],
+  imports: [Hero, WhyMe, MySkills, MyProjects, Testemonials, ContactMe],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

@@ -1,0 +1,116 @@
+@use '../../../../../public/styles/main' as all;
+section {
+  @include all.display-flex($justify: center);
+  background-color: all.$color-background;
+}
+
+.content {
+  width: 100%;
+  max-width: 1440px;
+  font-family: 'Josefin Sans regular';
+  font-size: 16px;
+  padding: clamp(68px, 15vw, 78px) clamp(10px, 3vw, 88px) 0 clamp(10px, 3vw, 88px);
+  color: all.$color-primary;
+
+  .techs {
+    @include all.display-flex($justify: center, $gap: 24px);
+    padding-top: clamp(48px, 4vw, 82px);
+
+    @include all.notebook {
+      @include all.display-flex($direction: column, $align: center, $gap: 18px);
+    }
+  }
+}
+
+.icons {
+  @include all.display-flex($justify: center, $gap: clamp(16px, 2vw, 18px), $wrap: wrap);
+  width: 540px;
+
+  .tech {
+    @include all.display-flex($direction: column, $align: center, $gap: 12px);
+    width: 117px;
+
+    img {
+      width: 60px;
+    }
+  }
+
+  @include all.mobile {
+    width: 300px;
+
+    .tech {
+      width: 50px;
+
+      img {
+        width: 40px;
+      }
+
+      p {
+        display: none;
+      }
+    }
+  }
+}
+
+.current-learning {
+  @include all.display-flex($direction: column, $justify: center, $align: center, $gap: 22px);
+  max-width: 380px;
+  height: 380px;
+  font-size: 18px;
+  color: all.$color-secondary;
+
+  background-image: url(../../../../../public/assets/images/shadows/skills.png);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &:hover {
+    background-image: url(../../../../../public/assets/images/shadows/skills-hover.png);
+  }
+
+  @include all.mobile {
+    background-image: none;
+    height: auto;
+
+    &:hover {
+      background-image: none;
+    }
+  }
+
+  p {
+    text-align: center;
+
+    @include all.mobile {
+      color: all.$color-primary;
+    }
+  }
+
+  .icons-details {
+    @include all.display-flex($direction: column, $align: center, $gap: 22px);
+
+    .learning-icons {
+      @include all.display-flex($gap: 12px);
+
+      .tech {
+        @include all.display-flex($direction: column, $align: center, $gap: 8px);
+      }
+    }
+
+    @include all.mobile {
+      @include all.display-flex($direction: row-reverse, $align: center, $gap: 16px);
+      font-size: 16px;
+
+      .learning-icons {
+        padding: 16px;
+        background-image: url(../../../../../public/assets/images/shadows/skills.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      p {
+        text-align: start;
+        color: all.$color-secondary;
+      }
+    }
+  }
+}

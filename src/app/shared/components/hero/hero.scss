@@ -5,141 +5,378 @@ section {
 }
 
 .content {
-  @include all.flex-c-s-between;
+  @include all.display-flex(column, center);
   width: 100%;
   height: 100dvh;
   max-width: 1440px;
-  padding-top: 130px;
-  font-family: 'Poppins-regular';
-  color: all.$color-white;
+  background-color: all.$color-background;
 
-  // background-image: url('../../../../../public/assets/images/shadows/shadow-2.png');
-  // background-repeat: no-repeat;
-  // background-position-x: 175%;
-  // background-position-y: 250%;
-}
-
-.content-1 {
-  @include all.flex-v-center;
-  // background-image: url('../../../../../public/assets/images/shadows/shadow-1.png');
-  // background-repeat: no-repeat;
-  // background-position-x: 0%;
-  // background-position-y: 80%;
-
-  &__character {
-    @include all.flex-center;
-    flex-grow: 1;
-
-    img {
-      height: 550px;
-      width: 391px;
-    }
+  @include all.mobile {
+    justify-content: space-between;
   }
 }
 
-.title {
-  display: flex;
-  flex-grow: 1;
-  margin-bottom: 40px;
+.navigation-mobile {
+  display: none;
 
-  &__part-1 {
-    height: 120px;
-    width: 70px;
-    transform: rotate(270deg);
+  @include all.mobile {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
 
-    p {
-      right: 55px;
-      width: 120px;
-      height: 70px;
-      padding-top: 5px;
-      font-size: 54px;
+    .logo-name {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 3px;
+
+      img {
+        height: 29px;
+        width: 48px;
+      }
+
+      .profession {
+        color: all.$color-primary;
+      }
     }
-  }
+    .burger-icon {
+      cursor: pointer;
+      transition: stroke 0.3s ease;
+      stroke: all.$color-secondary;
+      outline: none;
 
-  &__part-2 {
-    @include all.flex-c-center;
-
-    h1 {
-      font-size: 80px;
-      font-family: 'Poppins-bold';
-      letter-spacing: 3.5px;
-      height: 90px;
-    }
-
-    p {
-      font-size: 54px;
-      color: all.$color-secondary;
-    }
-
-    a {
-      margin-top: 50px;
-      font-size: 23px;
-
-      span {
-        padding: 12px 30px;
-        border-radius: 10px;
-        background-color: all.$color-primary;
-        transition: 0.1s;
-        &:hover {
-          padding: 18px 36px;
-          background-color: all.$color-secondary;
-        }
+      &:hover {
+        stroke: #a8a2a2;
       }
     }
   }
 }
 
-.content-2 {
-  @include all.flex-s-between;
-  margin-bottom: 30px;
+.profile {
+  @include all.display-flex(row, space-evenly);
+ 
+  @include all.mobile {
+    @include all.display-flex($direction: column, $align: center);
+  }
 
-  &__social-media {
-    @include all.flex-v-center;
-    gap: 20px;
-    font-size: 23px;
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 
-    img {
-      width: 100px;
+  .image-menu {
+    padding: 0 28px;
+
+    @include all.notebook {
+      padding: 0 12px;
     }
 
-    a {
-      @include all.flex-center;
-      align-items: center;
-      height: 40px;
-      width: 40px;
+    @include all.tablet {
+      padding: 0 4px;
+    }
 
-      img {
-        height: 30px;
-        width: 30px;
-        transition: 0.2s;
+    @include all.mobile {
+      padding: 8px 22px;
+    }
+
+    img {
+      height: clamp(290px, 50vw, 680px);
+      width: clamp(206px, 36vw, 490px);
+      padding: 0;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .mobile-menu {
+      @include all.display-flex(column, center, center, 22px);
+      height: 290px;
+      width: 206px;
+      color: all.$color-background;
+      animation: fadeIn 0.3s ease-in-out;
+
+      ul {
+        @include all.display-flex($direction:column, $gap:22px);
+        font-size: 22px;
+
+        li:hover {
+          color: all.$color-secondary;
+          cursor: pointer;
+        }
+      }
+
+      .language {
+        @include all.display-flex($gap: 8px);
+        font-size: 18px;
+
+        button:hover {
+          color: all.$color-secondary;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .image-menu::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url(../../../../../public/assets/images/shadows/hero.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(-35deg);
+    transition: 500ms;
+
+    @include all.mobile {
+      height: 310px;
+      width: 250px;
+      transform: rotate(0deg);
+    }
+  }
+
+  @include all.desktop {
+    .image-menu:hover::before {
+      background-image: url(../../../../../public/assets/images/shadows/hero-hover.png);
+    }
+  }
+
+  .logo-media-title {
+    @include all.display-flex($direction: column, $align: end, $gap: 36px);
+    padding: 56px 0 86px 0;
+
+    @include all.notebook {
+      padding: 26px 0;
+    }
+
+    .logo-media {
+      @include all.display-flex($justify:space-between, $align: end);
+      width: clamp(0px, 28vw, 452px);
+
+      @include all.mobile {
+        display: none;
+      }
+
+      .logo-name {
+        @include all.display-flex($direction: column, $align: center);
+        cursor: pointer;
+
+        .img-hover {
+          display: none;
+        }
+
+        img {
+          height: 38px;
+          width: 57px;
+
+          @include all.notebook {
+            height: 32px;
+            width: 48px;
+          }
+        }
+
+        .name {
+          margin-top: 3px;
+          font-size: 18px;
+
+          @include all.notebook {
+            font-size: 16px;
+          }
+        }
+
+        .profession {
+          font-width: 300;
+          color: all.$color-primary;
+        }
 
         &:hover {
+          .img-normal {
+            display: none;
+          }
+
+          .img-hover {
+            display: block;
+            width: 63px;
+            height: 38px;
+          }
+        }
+      }
+
+      .media {
+        @include all.display-flex($direction:column, $gap: 12px);
+
+        a {
+          height: 30px;
+          width: 30px;
+
+          @include all.notebook {
+            height: 25px;
+            width: 25px;
+          }
+
+          .img-hover {
+            display: none;
+          }
+
+          &:hover {
+            .img-normal {
+              display: none;
+            }
+
+            .img-hover {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+    .title {
+     @include all.display-flex($direction: column, $justify: space-between, $align: center, $grow: 1);
+
+      @include all.mobile {
+        gap: 6vw;
+      }
+
+      h1 {
+        text-align: center;
+        font-family: 'Anta regular';
+        font-size: clamp(22px, 7vw, 118px);
+
+        @include all.mobile {
+          font-size: 42px;
+        }
+      }
+
+      p {
+        font-size: clamp(16px, 2.8vw, 58px);
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 6px;
+      }
+
+      a {
+        height: 65px;
+        width: 28px;
+
+        @include all.notebook {
+          height: 40px;
+          width: 17px;
+        }
+
+        .img-hover {
+          display: none;
+        }
+
+        img {
           height: 100%;
           width: 100%;
         }
+
+        &:hover {
+          .img-normal {
+            display: none;
+          }
+
+          .img-hover {
+            display: block;
+          }
+        }
       }
-    }
-  }
-
-  &__scroll-notice {
-    @include all.flex-v-center;
-    justify-content: center;
-    gap: 10px;
-    right: 4%;
-    bottom: 160%;
-    font-size: 23px;
-    width: 160px;
-    transform: rotate(90deg);
-
-    img {
-      margin-top: 5px;
-      height: 16px;
-      width: 16px;
-      transform: rotate(270deg);
     }
   }
 }
 
-@include all.notebook;
-@include all.tablet;
-@include all.mobile;
+.navigation {
+  @include all.display-flex($align: center, $gap: 96px);
+  padding: 12px 86px;
+  color: all.$color-background;
+  background-color: all.$color-primary;
+
+  @include all.notebook {
+    gap: 46px;
+    padding: 3px 26px;
+  }
+
+  @include all.mobile {
+    display: none;
+  }
+
+  .logo-name {
+    @include all.display-flex($direction: column, $align: center);
+
+    .logo {
+      @include all.display-flex($justify: center);
+      height: 38px;
+      width: 63px;
+
+      @include all.notebook {
+        height: 29px;
+        width: 48px;
+      }
+
+      .img-hover {
+        display: none;
+      }
+
+      &:hover {
+        .img-normal {
+          display: none;
+          transition: 2s;
+        }
+
+        .img-hover {
+          display: block;
+        }
+      }
+    }
+
+    .name {
+      margin-top: 3px;
+      font-size: 18px;
+      color: all.$color-secondary;
+
+      @include all.notebook {
+        font-size: 16px;
+      }
+    }
+
+    .profession {
+      font-width: 300;
+      color: all.$color-background;
+    }
+  }
+
+  ul {
+    @include all.display-flex($justify: space-around, $grow:1);
+    padding: 0 26px;
+    font-size: 28px;
+
+    @include all.notebook {
+      font-size: 20px;
+    }
+
+    li:hover {
+      color: all.$color-secondary;
+      cursor: pointer;
+    }
+  }
+
+  .language {
+    @include all.display-flex($gap: 6px);
+    font-size: 18px;
+
+    @include all.notebook {
+      font-size: 16px;
+    }
+
+    button:hover {
+      color: all.$color-secondary;
+    }
+  }
+}

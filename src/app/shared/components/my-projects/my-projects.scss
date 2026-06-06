@@ -1,0 +1,244 @@
+@use '../../../../../public/styles/main' as all;
+
+section {
+  @include all.display-flex($justify: center);
+  background: all.$color-background;
+}
+
+.content {
+  @include all.display-flex($direction: column);
+  width: 100%;
+  max-width: 1440px;
+  padding-top: clamp(68px, 15vw, 98px);
+  font-family: 'Josefin Sans regular';
+  background: all.$color-background;
+
+  .navigation-details {
+    @include all.display-flex($direction: column);
+  }
+}
+
+.navigation {
+  padding: clamp(68px, 15vw, 78px) clamp(10px, 3vw, 98px) 0;
+
+  ol {
+    @include all.display-flex($gap: clamp(6px, 2vw, 32px));
+
+    li {
+      padding: clamp(6px, 2vw, 32px);
+      border-top-left-radius: clamp(12px, 3vw, 28px);
+      border-top-right-radius: clamp(12px, 3vw, 28px);
+      font-size: clamp(16px, 2vw, 38px);
+      color: all.$color-primary;
+
+      button {
+        @include all.mobile {
+          display: none;
+        }
+
+        &:hover {
+          color: all.$color-secondary;
+        }
+      }
+
+      .nav-mobile {
+        display: none;
+
+        @include all.mobile {
+          display: block;
+        }
+      }
+    }
+
+    .selected {
+      background: #89bcd912;
+      color: all.$color-secondary;
+    }
+  }
+}
+
+.details {
+  @include all.display-flex($gap: 64px);
+  width: 100%;
+  padding: clamp(24px, 8vw, 48px) clamp(10px, 8vw, 98px);
+  background: #89bcd912;
+  color: all.$color-secondary;
+
+  @include all.notebook {
+    @include all.display-flex($direction: column-reverse, $gap: clamp(18px, 5vw, 64px));
+  }
+
+  @include all.mobile {
+    padding: 24px 10px;
+  }
+
+  .descriptions {
+    @include all.display-flex($direction: column, $gap: clamp(18px, 4vw, 36px));
+    width: clamp(300px, 80vw, 700px);
+
+    @include all.mobile {
+      width: 100%;
+    }
+
+    .description {
+      @include all.display-flex($direction: column, $gap: 16px);
+      .title {
+        @include all.display-flex($gap: clamp(6px, 2vw, 12px));
+        font-size: clamp(16px, 5vw, 28px);
+
+        img {
+          width: 24px;
+          height: 21px;
+        }
+
+        @include all.mobile {
+          color: all.$color-primary;
+          img {
+            width: 19px;
+            height: 17px;
+          }
+        }
+
+        span {
+          margin-top: 6px;
+          margin-left: 28px;
+          font-size: 18px;
+
+          @include all.mobile {
+            display: none;
+          }
+        }
+      }
+
+      .details {
+        padding: 0 0 0 42px;
+        font-size: clamp(16px, 4vw, 22px);
+        background-color: inherit;
+
+        @include all.mobile {
+          padding: 0;
+        }
+      }
+    }
+
+    .options-notebook {
+      display: none;
+
+      @include all.notebook {
+        @include all.display-flex($justify: center, $gap: 18px);
+        width: 100%;
+        margin-top: 18px;
+
+        a {
+          padding: 14px 22px 12px;
+          border-radius: 26px;
+        }
+
+        .live {
+          color: all.$color-background;
+          background: all.$color-primary;
+
+          &:hover {
+            background: all.$color-secondary;
+          }
+        }
+
+        .github {
+          border: 1px solid all.$color-primary;
+          color: all.$color-primary;
+
+          &:hover {
+            background: #89bcd912;
+          }
+        }
+      }
+    }
+  }
+
+  .techs-photo-options {
+    @include all.display-flex($direction: column, $gap: 18px);
+
+    .detail-mobile {
+      display: none;
+
+      @include all.mobile {
+        @include all.display-flex($direction: column, $gap: 6px);
+
+        h3 {
+          margin: 6px 0;
+          color: all.$color-primary;
+          font-size: 22px;
+        }
+
+        span {
+          text-transform: capitalize;
+        }
+      }
+    }
+
+    .techs {
+      @include all.display-flex($direction: column, $align: center, $gap: 18px);
+      width: 100%;
+      background-color: inherit;
+
+      @include all.mobile {
+        display: none;
+      }
+
+      h3 {
+        font-size: 18px;
+      }
+
+      .photos {
+        @include all.display-flex($gap: 32px);
+      }
+    }
+
+    .photo {
+      @include all.display-flex($justify: center);
+      width: 100%;
+      img {
+        width: 454px;
+        height: 312px;
+
+        @include all.mobile {
+          width: 300px;
+          height: 206px;
+        }
+      }
+    }
+
+    .options {
+      @include all.display-flex($justify: center, $gap: 18px);
+      width: 100%;
+      margin-top: 18px;
+
+      @include all.notebook {
+        display: none;
+      }
+
+      a {
+        padding: 16px 32px;
+        border-radius: 28px;
+      }
+
+      .live {
+        color: all.$color-background;
+        background: all.$color-primary;
+
+        &:hover {
+          background: all.$color-secondary;
+        }
+      }
+
+      .github {
+        border: 1px solid all.$color-primary;
+        color: all.$color-primary;
+
+        &:hover {
+          background: #89bcd912;
+        }
+      }
+    }
+  }
+}

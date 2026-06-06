@@ -1,0 +1,78 @@
+<section>
+  <div class="content">
+    <h2>My Projects</h2>
+    <div class="navigation-details">
+      <div class="navigation">
+        <ol>
+          @for (project of projects; track $index) {
+            <li [class]="currentProject == $index ? 'selected' : ''">
+              <button (click)="changeCurrentProject($index)">
+                {{ $index + 1 + '. ' + project.name }}
+              </button>
+
+              <button (click)="changeCurrentProject($index)" class="nav-mobile">
+                {{ $index + 1 + '. Project' }}
+              </button>
+            </li>
+          }
+        </ol>
+      </div>
+
+      <div class="details">
+        @for (project of projects; track $index) {
+          @if (currentProject == $index) {
+            <div class="descriptions">
+              @for (des of project.description; track $index) {
+                <div class="description">
+                  <p class="title">
+                    <img src="assets/icons/list-style.png" alt="list-style-icon" />{{ des.title }}
+                    @if ($index == 0) {
+                      <span class="duration"> Duration: {{ project.duration }}</span>
+                    }
+                  </p>
+                  <p class="details">{{ des.details }}</p>
+                </div>
+              }
+
+              <div class="options-notebook">
+                <a href="" class="live">Live Test</a>
+                <a href="" class="github">GitHub</a>
+              </div>
+            </div>
+            <div class="techs-photo-options">
+              <div class="detail-mobile">
+                <h3>{{ project.name }}</h3>
+                <p>
+                  Technologies:
+                  @for (tech of project.techs; track $index) {
+                    @if ($index != project.techs.length - 1) {
+                      <span>{{ tech.name + ', ' }}</span>
+                    } @else {
+                      <span>{{ tech.name }}</span>
+                    }
+                  }
+                </p>
+                <p>Duration: {{ project.duration }}</p>
+              </div>
+              <section class="techs">
+                <h3 class="title">Technologies</h3>
+                <div class="photos">
+                  @for (tech of project.techs; track $index) {
+                    <img [src]="tech.url" [alt]="tech.name" />
+                  }
+                </div>
+              </section>
+              <div class="photo">
+                <img [src]="project.photo" [alt]="project.name" />
+              </div>
+              <div class="options">
+                <a href="" class="live">Live Test</a>
+                <a href="" class="github">GitHub</a>
+              </div>
+            </div>
+          }
+        }
+      </div>
+    </div>
+  </div>
+</section>

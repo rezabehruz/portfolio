@@ -1,0 +1,21 @@
+<section>
+  <div class="content">
+    <div class="title">
+      <span class="question">Need a teamplayer?</span>
+      <span> Here’s what my colleagues say about me</span>
+    </div>
+
+    <div class="references">
+      @for (ref of references; track $index) {
+        <div [class]="$index == 0 || $index == references.length - 1 ? 'reference' : 'reference'">
+          <h4>{{ ref.name }}</h4>
+          <p>
+            Project <span>{{ ref.project }}</span>
+          </p>
+          <p class="statement">{{ ref.statement }}</p>
+          <a [href]="ref.linkedIn">Linked In Profile</a>
+        </div>
+      }
+    </div>
+  </div>
+</section>

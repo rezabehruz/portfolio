@@ -1,90 +1,60 @@
-<section id="contact-me">
+<section>
   <div class="content">
-    <div class="content__title">
-      <img src="assets/icons/line-horizontal.png" alt="line-horizontal" />
-      <h2>{{ 'portfolio.contact-me.title' | translate }}</h2>
+    <div class="header">
+      <h2>Contact Me</h2>
+      <a href="">
+        <img src="assets/icons/arrow.png" alt="arrow" class="arrow-normal" />
+        <img src="assets/icons/arrow-hover.png" alt="arrow" class="arrow-hover"
+      /></a>
     </div>
-    <div class="content__details">
-      <div class="detail">
-        <h4>{{ 'portfolio.contact-me.title-1' | translate }}</h4>
-        <p class="detail__p-1">
-          {{ 'portfolio.contact-me.p-1' | translate }}
-        </p>
-        <p class="detail__p-2">
-          {{ 'portfolio.contact-me.p-2' | translate }}
-          <span>{{ 'portfolio.contact-me.p-3' | translate }}</span>
-        </p>
-      </div>
-      <div>
-        <form action="#" class="form" [formGroup]="contactForm" (ngSubmit)="submitForm()">
-          <label for="name" [class]="name?.touched && !name?.valid ? 'form--warning' : ''">
-            <input
-              type="text"
-              name="name"
-              id="name"
-              formControlName="name"
-              [class]="name?.touched && !name?.valid ? 'no-valid' : ''"
-              placeholder="Your name"
-            />
-
-            @if (name?.touched && !name?.valid) {
-              {{ 'portfolio.contact-me.warning-1' | translate }}
-            }
-          </label>
-
-          <label for="email" [class]="email?.touched && !email?.valid ? 'form--warning' : ''">
-            <input
-              type="email"
-              name="email"
-              id="email"
-              formControlName="email"
-              [class]="email?.touched && !email?.valid ? 'no-valid' : ''"
-              placeholder="Your email"
-            />
-
-            @if (email?.touched && !email?.valid) {
-              @if (email?.value == '') {
-                {{ 'portfolio.contact-me.warning-2' | translate }}
-              } @else {
-                {{ 'portfolio.contact-me.warning-3' | translate }}
-              }
-            }
-          </label>
-          <label for="message" [class]="message?.touched && !message?.valid ? 'form--warning' : ''">
-            <textarea
-              name="message"
-              id="message"
-              placeholder="Your message"
-              formControlName="message"
-              [class]="message?.touched && !message?.valid ? 'no-valid' : ''"
-            ></textarea>
-            @if (message?.touched && !message?.valid) {
-              {{ 'portfolio.contact-me.warning-4' | translate }}
-            }
-          </label>
-          <div class="form__checkbox">
-            <input type="checkbox" name="privacy" id="privacy" formControlName="privacy" />
-            <label for="privacy">
-              {{ 'portfolio.contact-me.checkbox-label' | translate }}
-            </label>
-          </div>
-
-          <button
-            type="submit"
-            [class]="
-              name?.valid && email?.valid && message?.valid && privacy?.valid
-                ? 'button btn--primary'
-                : 'button btn--disabled'
-            "
-            [disabled]="!contactForm.get('privacy')?.valid"
-          >
-            {{ 'portfolio.contact-me.btn-submit' | translate }}
-          </button>
-        </form>
+    <div class="details-contact">
+      <p class="details">
+        Encourage people to contact you and describe what role you are interested in. Show that you
+        will add value to their projects through your work. <br />
+        Example: Feel free to get in touch with job offers or opportunities such as: ...
+      </p>
+      <div class="contact">
+        <a href="mailto:behruz.mreza@gmail.com" class="mail">
+          <img src="assets/icons/mail-contact.png" alt="mail" class="icon-normal" />
+          <img src="assets/icons/mail-contact-hover.png" alt="mail" class="icon-hover" />
+          <p>E-mail: behruz.mreza@gmail.com</p>
+        </a>
+        <a href="tel:015751492254" class="phone">
+          <img src="assets/icons/phone.png" alt="phone" class="icon-normal" />
+          <img src="assets/icons/phone-hover.png" alt="phone" class="icon-hover" />
+          <p>Tel: 0157 514 922 54</p>
+        </a>
       </div>
     </div>
-    <a href="#" class="content__arrow-up">
-      <img src="assets/icons/arrow-up.png" alt="move up" />
-    </a>
+    <form action="">
+      <div class="name-email">
+        <label for="name">
+          <span>Your name</span>
+          <input type="text" id="name" />
+        </label>
+        <label for="email">
+          <span>Your Email</span>
+          <input type="email" id="email" />
+        </label>
+      </div>
+      <label for="message" class="message-label">
+        <span>Your message</span>
+        <textarea name="message" id="message"></textarea>
+      </label>
+      <div class="checkbox">
+        <button>
+          <img src="assets/icons/checkbox.png" alt="checkbox" class="checkbox-normal" />
+          <img src="assets/icons/checkbox-hover.png" alt="checkbox" class="checkbox-hover" />
+          <img src="assets/icons/checkbox-checked.png" alt="checkbox" class="checkbox-checked" />
+          <img src="assets/icons/checkbox-warnning.png" alt="checkbox" class="checkbox-warnning" />
+        </button>
+        <p>
+          I've read the <span>privacy policy</span> and agree to the processing of my data as
+          outlined.
+        </p>
+      </div>
+
+      <button type="submit" class="btn-submit">Send</button>
+    </form>
   </div>
 </section>

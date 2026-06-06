@@ -1,31 +1,28 @@
-@use '../abstract/variables' as variables;
- 
+@use '../abstract/variables' as all;
+
 * {
-  position: relative;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   scroll-behavior: smooth;
-  border: inherit;
-  font-family: inherit;
-  color: inherit;
-  // background-color: inherit;
-}
-
-a {
+  box-sizing: border-box;
   text-decoration: none;
-}
-
-li {
+  position: relative;
   list-style: none;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  background: initial;
+  border: initial;
 }
 
-section {
-  font-family: 'Poppins-regular';
-  color: variables.$color-white;
+button {
+  cursor: pointer;
 }
 
 h2 {
-  font-family: "Poppins-bold";
-  font-size: 66px;
+  text-align: center;
+  font-family: 'Anta regular';
+  font-size: clamp(28px, 5vw, 78px);
+  font-weight: 400;
+  color: all.$color-primary;
 }

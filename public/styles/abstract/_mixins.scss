@@ -1,52 +1,21 @@
-@use "./variables" as variables;
+@use './variables' as all;
 
 @mixin my-section {
   display: flex;
   justify-content: center;
-  background-color: variables.$color-dark;
+  font-family: 'Josefin Sans regular';
+  font-size: 16px;
+  color: all.$color-secondary;
+  background-color: all.$color-background;
 }
 
-
-@mixin flex-center {
+@mixin display-flex($direction: row, $justify: flex-start, $align: stretch, $gap: 0, $grow: 0, $wrap: nowrap) {
   display: flex;
-  justify-content: center;
-}
-
-@mixin flex-c-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-@mixin flex-v-center {
-  display: flex;
-  align-items: center;
-}
-
-
-@mixin flex-s-around {
-  display: flex;
-  justify-content: space-around;
-}
-
-@mixin flex-c-s-around {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-@mixin flex-s-between {
-  display: flex;
-  justify-content: space-between;
-}
-
-@mixin flex-c-s-between {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-@mixin flex-column {
-  display: flex;
-  flex-direction: column;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+  flex-grow: $grow;
+  flex-wrap: $wrap;
+  
 }
