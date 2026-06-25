@@ -1,0 +1,297 @@
+@use '../../../../public/styles/main' as all;
+
+section {
+  @include all.display-flex($justify: center);
+  background: all.$color-background;
+}
+
+.content {
+  @include all.display-flex($direction: column, $align: center, $gap: clamp(48px, 15vw, 78px));
+  width: 100%;
+  max-width: 1440px;
+  margin-bottom: clamp(68px, 15vw, 78px);
+  color: all.$color-secondary;
+  font-family: 'Josefin Sans regular';
+
+  @include all.tablet {
+    gap: 24px;
+  }
+}
+
+.header {
+  @include all.display-flex($justify: center);
+  width: 100%;
+  margin-top: clamp(68px, 15vw, 78px);
+  h2 {
+    color: all.$color-primary;
+  }
+
+  a {
+    position: absolute;
+    right: 7vw;
+    bottom: 1vw;
+    width: 38px;
+    height: 89px;
+
+    @include all.notebook {
+      height: 68px;
+      width: 29px;
+    }
+
+    @include all.tablet {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      transform: rotate(180deg);
+    }
+
+    .arrow-hover {
+      display: none;
+    }
+
+    &:hover {
+      .arrow-normal {
+        display: none;
+      }
+
+      .arrow-hover {
+        display: block;
+      }
+    }
+  }
+}
+
+.details-contact {
+  @include all.display-flex($justify: center, $gap: 24px);
+
+  @include all.tablet {
+    margin-top: 16px;
+  }
+
+  .details {
+    width: 444px;
+    font-size: clamp(16px, 2vw, 18px);
+  }
+
+  .contact {
+    @include all.display-flex($direction: column, $gap: 22px);
+    width: 444px;
+    font-size: clamp(16px, 2vw, 20px);
+
+    a {
+      @include all.display-flex($align: center, $gap: 16px);
+
+      p {
+        padding-top: 3px;
+      }
+
+      .icon-hover {
+        display: none;
+      }
+
+      &:hover {
+        color: all.$color-primary;
+
+        .icon-normal {
+          display: none;
+        }
+
+        .icon-hover {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .invitation {
+    display: none;
+  }
+
+  @include all.notebook {
+    .details,
+    .contact {
+      width: 352px;
+    }
+  }
+
+  @include all.tablet {
+    @include all.display-flex($direction: column-reverse, $align: center, $gap: 24px);
+
+    .details {
+      width: 70%;
+    }
+
+    .contact {
+      gap: 12px;
+      width: 70%;
+    }
+
+    .invitation {
+      display: block;
+      font-size: 18px;
+      color: all.$color-primary;
+    }
+  }
+
+  @include all.mobile {
+    .details,
+    .contact {
+      width: 100%;
+      padding: 0 clamp(15px, 4vw, 32px);
+    }
+  }
+}
+
+form {
+  @include all.display-flex($direction: column, $align: center, $gap: 24px);
+  width: 912px;
+
+  label {
+    @include all.display-flex($direction: column, $gap: 4px);
+    flex: 1;
+
+    color: all.$color-primary;
+
+    span {
+      margin-left: 32px;
+    }
+
+    input {
+      padding: 22px;
+      border-radius: 28px;
+      border: 1px solid all.$color-primary;
+      outline: none;
+
+      &:focus {
+        background-color: #435361;
+      }
+    }
+
+    .error {
+      border: 2px solid red;
+    }
+  }
+
+  .name-email {
+    @include all.display-flex($gap: 24px);
+    width: 100%;
+  }
+
+  .message-label {
+    width: 100%;
+
+    textarea {
+      width: 100%;
+      height: 180px;
+      padding: 22px;
+      border: 1px solid all.$color-primary;
+      border-radius: 32px;
+      resize: none;
+      outline: none;
+
+      &:focus {
+        background-color: #435361;
+      }
+    }
+
+    .error {
+      border: 2px solid red;
+    }
+  }
+
+  .checkbox {
+    @include all.display-flex($align: center, $gap: 16px);
+    align-self: flex-start;
+
+    span {
+      color: all.$color-primary;
+    }
+
+    button {
+      height: 24px;
+      width: 24px;
+
+      .checkbox-hover {
+        display: none;
+      }
+    }
+
+    &:hover {
+      button {
+        .checkbox-normal {
+          display: none;
+        }
+
+        .checkbox-hover {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .btn-submit {
+    align-self: flex-end;
+    padding: 12px 32px;
+    border: 1px solid #aca9a0;
+    border-radius: 22px;
+    font-size: clamp(16px, 2vw, 18px);
+    color: #aca9a0;
+
+    &:hover {
+      background-color: #435361;
+    }
+  }
+
+  @include all.notebook {
+    width: 728px;
+  }
+
+  @include all.tablet {
+    width: 70%;
+
+    .name-email {
+      flex-direction: column;
+    }
+
+    .checkbox {
+      align-items: start;
+    }
+  }
+
+  @include all.mobile {
+    width: 100%;
+    padding: 0 clamp(15px, 4vw, 32px);
+  }
+}
+
+.nav-tablet {
+  display: none;
+  height: 54px;
+  width: 23px;
+  margin-top: 38px;
+  img {
+    width: 100%;
+    height: 100%;
+    transform: rotate(180deg);
+  }
+
+  .arrow-hover {
+    display: none;
+  }
+
+  &:hover {
+    .arrow-normal {
+      display: none;
+    }
+
+    .arrow-hover {
+      display: block;
+    }
+  }
+  @include all.tablet {
+    display: block;
+  }
+}

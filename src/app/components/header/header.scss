@@ -1,0 +1,149 @@
+@use '../../../../public/styles/main' as all;
+
+section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: all.$color-primary;
+
+  
+}
+
+.navigation-mobile {
+  display: none;
+
+  @include all.mobile {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+
+    .logo-name {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 3px;
+
+      img {
+        height: 29px;
+        width: 48px;
+      }
+
+      .profession {
+        color: all.$color-primary;
+      }
+    }
+    .burger-icon {
+      cursor: pointer;
+      transition: stroke 0.3s ease;
+      stroke: all.$color-secondary;
+      outline: none;
+
+      &:hover {
+        stroke: #a8a2a2;
+      }
+    }
+  }
+}
+
+.navigation {
+  @include all.display-flex($align: center, $gap: 96px);
+  padding: 12px 86px;
+  color: all.$color-background;
+
+  width: 100%;
+  max-width: 1440px;
+
+  @include all.notebook {
+    gap: 46px;
+    padding: 3px 26px;
+  }
+
+  @include all.mobile {
+    display: none;
+  }
+
+  .logo-name {
+    @include all.display-flex($direction: column, $align: center);
+
+    .logo {
+      @include all.display-flex($justify: center);
+      height: 38px;
+      width: 63px;
+
+      @include all.notebook {
+        height: 29px;
+        width: 48px;
+      }
+
+      .img-hover {
+        display: none;
+      }
+
+      &:hover {
+        .img-normal {
+          display: none;
+          transition: 2s;
+        }
+
+        .img-hover {
+          display: block;
+        }
+      }
+    }
+
+    .name {
+      margin-top: 3px;
+      font-size: 18px;
+      color: all.$color-secondary;
+
+      @include all.notebook {
+        font-size: 16px;
+      }
+    }
+
+    .profession {
+      font-width: 300;
+      color: all.$color-background;
+    }
+  }
+
+  ul {
+    @include all.display-flex($justify: space-around, $grow: 1);
+    padding: 0 26px;
+    font-size: 28px;
+
+    @include all.notebook {
+      font-size: 20px;
+    }
+
+    li:hover {
+      color: all.$color-secondary;
+      cursor: pointer;
+    }
+  }
+
+  .language {
+    @include all.display-flex($gap: 6px);
+    font-size: 18px;
+
+    @include all.notebook {
+      font-size: 16px;
+    }
+
+    button {
+      width: 40px;
+      height: 30px;
+    }
+
+    button:hover {
+      color: all.$color-secondary;
+    }
+
+    .active-lang {
+      background-image: url(../../../../public/assets/images/shadows/language.png);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
