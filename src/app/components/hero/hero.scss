@@ -26,22 +26,54 @@ section {
   }
 }
 
+// Animations
+
+@keyframes fadeIn-background {
+  from {
+    transform: scale(0.7) rotate(0deg) translateY(-80px);
+  }
+  to {
+    transform: scale(1) rotate(-35deg) translateY(0px);
+  }
+}
+
+@keyframes fadeIn-logo-media {
+  from {
+    top: -78px;
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+    top: 0px;
+  }
+}
+
+@keyframes fadeIn-title {
+  from {
+    transform: scale(1.1);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn-why-me-link {
+  from {
+    top: 32px;
+    transform: scale(2);
+  }
+  to {
+    top: 0px;
+    transform: scale(1);
+  }
+}
+
 .profile {
   @include all.display-flex(row, space-evenly);
 
   @include all.mobile {
     @include all.display-flex($direction: column, $align: center);
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
   }
 
   .image-menu {
@@ -63,7 +95,10 @@ section {
       height: clamp(290px, 50vw, 680px);
       width: clamp(206px, 36vw, 490px);
       padding: 0;
-      animation: fadeIn 0.3s ease-in-out;
+
+      @include all.fade-in($scale-0: 1.3, $scale-1: 1, $time: 1s, $ease: ease-out );
+
+      z-index: 200;
     }
 
     .mobile-menu {
@@ -71,7 +106,7 @@ section {
       height: 290px;
       width: 206px;
       color: all.$color-background;
-      animation: fadeIn 0.3s ease-in-out;
+      animation: fadeIn 1s ease-in-out;
 
       ul {
         @include all.display-flex($direction: column, $gap: 22px);
@@ -106,6 +141,9 @@ section {
     transform: rotate(-35deg);
     transition: 500ms;
 
+    // animation: fadeIn-background 1.5s ease-in-out;
+    @include all.fade-in( $time:1.5s, $ease: ease-in-out, $scale-0: 0.7, $scale-1: 1, $rotate-0: 0deg, $rotate-1: -35deg, $translateY-0: -80px, $translateY-1: 0px);
+
     @include all.mobile {
       height: 310px;
       width: 250px;
@@ -130,6 +168,8 @@ section {
     .logo-media {
       @include all.display-flex($justify: space-between, $align: end);
       width: clamp(0px, 28vw, 452px);
+
+      animation: fadeIn-logo-media 2s ease-out;
 
       @include all.mobile {
         display: none;
@@ -216,6 +256,8 @@ section {
         $align: center,
         $grow: 1
       );
+
+      animation: fadeIn-title 1s;
 
       @include all.mobile {
         gap: 6vw;

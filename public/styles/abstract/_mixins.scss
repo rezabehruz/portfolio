@@ -9,7 +9,14 @@
   background-color: all.$color-background;
 }
 
-@mixin display-flex($direction: row, $justify: flex-start, $align: stretch, $gap: 0, $grow: 0, $wrap: nowrap) {
+@mixin display-flex(
+  $direction: row,
+  $justify: flex-start,
+  $align: stretch,
+  $gap: 0,
+  $grow: 0,
+  $wrap: nowrap
+) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
@@ -17,5 +24,34 @@
   gap: $gap;
   flex-grow: $grow;
   flex-wrap: $wrap;
+}
+
+// Animations
+
+@mixin fade-in(
+  $time: 0.5s,
+  $ease: ease-in-out,
+  $scale-0: 1,
+  $scale-1: 1,
+  $rotate-0: 0,
+  $rotate-1: 0,
+  $translateY-0: 0px,
+  $translateY-1: 0px,
+  $top-0: 0px,
+  $top-1: 0px
+) {
   
+  @keyframes fadeIn {
+    from {
+      transform: scale($scale-0) rotate($rotate-0) translateY($translateY-0);
+      top: $top-0;
+    }
+    to {
+      transform: scale($scale-1) rotate($rotate-1) translateY($translateY-1);
+      top: $top-1;
+    }
+  }
+  
+  animation: fadeIn $time $ease;
+
 }
