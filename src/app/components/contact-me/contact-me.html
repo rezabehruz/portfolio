@@ -1,9 +1,9 @@
 <section>
-  <div class="content">
+  <div class="content" id="contact-me">
     <div class="header">
       <h2>{{ 'portfolio.contact-me.title' | translate}}</h2>
       <a href="">
-        <img src="assets/icons/arrow.png" alt="arrow" class="arrow-normal" />
+        <img src="assets/icons/arrow.png" alt="arrow" class="arrow-normal"/>
         <img src="assets/icons/arrow-hover.png" alt="arrow" class="arrow-hover"
       /></a>
     </div>
@@ -25,7 +25,7 @@
         </a>
       </div>
     </div>
-    <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
+    <form [formGroup]="contactForm" (ngSubmit)="submitForm()" class="contact-form">
       <div class="name-email">
         <label for="name">
           <span>{{ 'portfolio.contact-me.label-name' | translate}}</span>
@@ -75,7 +75,7 @@
           }
         </button>
         <p>
-          {{ 'portfolio.contact-me.checkbox-label-1' | translate}} <span>{{ 'portfolio.contact-me.checkbox-label-2' | translate}}</span>{{ 'portfolio.contact-me.checkbox-label-3' | translate}}
+          {{ 'portfolio.contact-me.checkbox-label-1' | translate}} <span> {{ 'portfolio.contact-me.checkbox-label-2' | translate }} </span> {{ 'portfolio.contact-me.checkbox-label-3' | translate }}
         </p>
       </div>
 

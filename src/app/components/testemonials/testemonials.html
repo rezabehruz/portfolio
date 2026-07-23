@@ -7,7 +7,7 @@
 
     <div class="references">
       @for (ref of references(); track $index) {
-        <div [class]="$index == 0 || $index == references.length - 1 ? 'reference' : 'reference'">
+        <div class='reference'>
           <h4>{{ ref.name }}</h4>
           <p>
             Project <span>{{ ref.project }}</span>

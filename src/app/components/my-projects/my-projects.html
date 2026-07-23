@@ -1,4 +1,4 @@
-<section>
+<section id="my-projects">
   <div class="content">
     <h2>My Projects</h2>
     <div class="navigation-details">
@@ -25,7 +25,7 @@
               @for (des of project.description; track $index) {
                 <div class="description">
                   <p class="title">
-                    <img src="assets/icons/list-style.png" alt="list-style-icon" />{{ des.title }}
+                    <img src="assets/icons/list-style.png" alt="list-style-icon"/>{{ des.title }}
                     @if ($index == 0) {
                       <span class="duration"> Duration: {{ project.duration }}</span>
                     }

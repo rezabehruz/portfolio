@@ -15,15 +15,15 @@ export class Hero {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  elementRef = inject(ElementRef);
-  renderer = inject(Renderer2);
+  elementRef: ElementRef = inject(ElementRef);
+  renderer: Renderer2 = inject(Renderer2);
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    const el = this.elementRef.nativeElement.querySelector('.navigation-bar');
+    const el: HTMLElement = this.elementRef.nativeElement.querySelector('.navigation-bar');
     this.renderer.removeClass(el, 'navigation-fixed');
 
-    const rect = el.getBoundingClientRect();
+    const rect: DOMRect = el.getBoundingClientRect();
 
     if (rect.top <= 0) this.renderer.addClass(el, 'navigation-fixed');
     else this.renderer.removeClass(el, 'navigation-fixed');

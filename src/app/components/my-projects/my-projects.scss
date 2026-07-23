@@ -9,7 +9,7 @@ section {
   @include all.display-flex($direction: column);
   width: 100%;
   max-width: 1440px;
-  padding-top: clamp(68px, 15vw, 98px);
+  padding-top: clamp(68px, 15vw, 112px);
   font-family: 'Josefin Sans regular';
   background: all.$color-background;
 
@@ -82,6 +82,7 @@ section {
 
     .description {
       @include all.display-flex($direction: column, $gap: 16px);
+
       .title {
         @include all.display-flex($gap: clamp(6px, 2vw, 12px));
         font-size: clamp(16px, 5vw, 28px);
@@ -93,6 +94,7 @@ section {
 
         @include all.mobile {
           color: all.$color-primary;
+
           img {
             width: 19px;
             height: 17px;
@@ -194,9 +196,20 @@ section {
       }
     }
 
+    @keyframes pho-anim {
+      from {
+        scale: 1.05;
+      }
+
+      to {
+        scale: 1.05;
+      }
+    }
+
     .photo {
       @include all.display-flex($justify: center);
       width: 100%;
+
       img {
         width: 454px;
         height: 312px;
@@ -204,6 +217,11 @@ section {
         @include all.mobile {
           width: 300px;
           height: 206px;
+        }
+
+        &:hover {
+          animation: pho-anim 2s ease-in;
+          animation-iteration-count: infinite;
         }
       }
     }

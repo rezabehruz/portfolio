@@ -29,6 +29,7 @@
 // Animations
 
 @mixin fade-in(
+  $name: '',
   $time: 0.5s,
   $ease: ease-in-out,
   $scale-0: 1,
@@ -38,20 +39,28 @@
   $translateY-0: 0px,
   $translateY-1: 0px,
   $top-0: 0px,
-  $top-1: 0px
+  $top-1: 0px,
+  $left-0: 0px,
+  $left-1: 0px,
+  $gap-0: 0px,
+  $gap-1: 0px
 ) {
   
-  @keyframes fadeIn {
+  @keyframes #{'fadeIn'+ $name} {
     from {
       transform: scale($scale-0) rotate($rotate-0) translateY($translateY-0);
       top: $top-0;
+      gap: $gap-0;
+      left: $left-0;
     }
     to {
       transform: scale($scale-1) rotate($rotate-1) translateY($translateY-1);
       top: $top-1;
+      gap: $gap-1;
+      left: $left-1;
     }
   }
   
-  animation: fadeIn $time $ease;
+  animation: #{'fadeIn'+ $name} $time $ease;
 
 }

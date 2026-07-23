@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, inject, Signal, signal } from '@angular/core';
 import { LanguageService } from '../../services/language-service';
 
 interface Project {
@@ -145,7 +145,7 @@ export class MyProjects {
   ];
 
   currentProject: number = 0;
-  current = signal<number>(0);
+  current: Signal<number> = signal(0);
 
   changeCurrentProject(index: number): void {
     this.currentProject = index;

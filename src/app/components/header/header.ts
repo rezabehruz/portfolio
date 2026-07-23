@@ -12,7 +12,6 @@ export class Header {
   openMenu = output<void>();
 
   translateService = inject(TranslateService);
-
   languageService = inject(LanguageService);
   
 

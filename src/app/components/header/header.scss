@@ -6,7 +6,7 @@ section {
   width: 100%;
   background-color: all.$color-primary;
 
-  
+
 }
 
 .navigation-mobile {
@@ -33,6 +33,7 @@ section {
         color: all.$color-primary;
       }
     }
+
     .burger-icon {
       cursor: pointer;
       transition: stroke 0.3s ease;
@@ -53,6 +54,7 @@ section {
 
   width: 100%;
   max-width: 1440px;
+  @include all.fade-in($name: 'navigation', $time: 2s, $scale-0: 1.1, $scale-1: 1, $gap-0: 96px, $gap-1: 96px);
 
   @include all.notebook {
     gap: 46px;
@@ -74,21 +76,6 @@ section {
       @include all.notebook {
         height: 29px;
         width: 48px;
-      }
-
-      .img-hover {
-        display: none;
-      }
-
-      &:hover {
-        .img-normal {
-          display: none;
-          transition: 2s;
-        }
-
-        .img-hover {
-          display: block;
-        }
       }
     }
 

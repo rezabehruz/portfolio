@@ -6,20 +6,8 @@
   </div>
 
   <button (click)="openMenu.emit()">
-    <svg
-      width="30"
-      height="30"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="#333"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="burger-icon"
-      role="button"
-      aria-label="Toggle menu"
-      tabindex="0"
-    >
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round" class="burger-icon" role="button" aria-label="Toggle menu" tabindex="0">
       <line x1="3" y1="5" x2="38" y2="5"></line>
       <line x1="3" y1="14" x2="38" y2="14"></line>
       <line x1="3" y1="23" x2="38" y2="23"></line>
@@ -32,28 +20,21 @@
     <div class="logo-name">
       <div class="logo">
         <img src="assets/images/logo/logo-dark.png" alt="logo" class="img-normal" />
-        <img src="assets/images/logo/logo-dark-hover.png" alt="logo" class="img-hover" />
       </div>
       <p class="name">R.Behruz</p>
       <p class="profession">developer</p>
     </div>
     <ul>
-      <li>{{ 'portfolio.header.link-1' | translate }}</li>
-      <li>{{ 'portfolio.header.link-2' | translate }}</li>
-      <li>{{ 'portfolio.header.link-3' | translate }}</li>
-      <li>{{ 'portfolio.header.link-4' | translate }}</li>
+      <li><a href="#why-me">{{ 'portfolio.header.link-1' | translate }}</a></li>
+      <li><a href="#skills">{{ 'portfolio.header.link-2' | translate }}</a></li>
+      <li><a href="#my-projects">{{ 'portfolio.header.link-3' | translate }}</a></li>
+      <li><a href="#contact-me">{{ 'portfolio.header.link-4' | translate }}</a></li>
     </ul>
     <div class="language">
-      <button
-        (click)="changeLanguage('de')"
-        [class]="languageService.language() == 'deutsch' ? 'active-lang' : ''"
-      >
+      <button (click)="changeLanguage('de')" [class]="languageService.language() == 'deutsch' ? 'active-lang' : ''">
         DE
       </button>
-      <button
-        (click)="changeLanguage('en')"
-        [class]="languageService.language() == 'english' ? 'active-lang' : ''"
-      >
+      <button (click)="changeLanguage('en')" [class]="languageService.language() == 'english' ? 'active-lang' : ''">
         EN
       </button>
     </div>

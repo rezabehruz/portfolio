@@ -1,4 +1,5 @@
 @use '../../../../public/styles/main' as all;
+
 section {
   @include all.display-flex($justify: center);
   background-color: all.$color-background;
@@ -9,11 +10,23 @@ section {
   max-width: 1440px;
   font-family: 'Josefin Sans regular';
   font-size: 16px;
-  padding: clamp(68px, 15vw, 78px) clamp(10px, 3vw, 88px) 0 clamp(10px, 3vw, 88px);
+  margin: clamp(68px, 15vw, 112px) clamp(10px, 3vw, 88px) 0 clamp(10px, 3vw, 88px);
   color: all.$color-primary;
 
   @include all.mobile {
     padding: 8px;
+  }
+
+  .my-animation {
+    @include all.fade-in($name: 'icons-learning' ,$time: 2s, $gap-0: 100px, $gap-1: 24px);
+  }
+
+  .animation-icons-mobile {
+    @include all.fade-in($name: 'icons-mobile', $time: 3s, $scale-0: 1.2, $scale-1: 1,  $gap-0: clamp(16px, 2vw, 18px), $gap-1: clamp(16px, 2vw, 18px));
+  }
+  
+  .animation-learning-mobile {
+    @include all.fade-in($name: 'learning-mobile', $time: 2s, $scale-0: 0.9, $scale-1: 1,  $gap-0: 22px, $gap-1: 22px);
   }
 
   .techs {

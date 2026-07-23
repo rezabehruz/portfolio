@@ -1,6 +1,7 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, ElementRef, HostListener, inject, Renderer2 } from '@angular/core';
 import { LanguageService } from '../../services/language-service';
 import { Reference } from '../../interfaces/reference';
+import { windowWhen } from 'rxjs';
 
 @Component({
   selector: 'app-testemonials',
@@ -12,9 +13,12 @@ export class Testemonials {
 
   languageService = inject(LanguageService);
 
-  references = computed<Reference[]>(()=> {
-          if(this.languageService.language() == 'english') return this.referencesEN;
-          else return this.referencesDE;
+  renderer = inject(Renderer2);
+  elementRef = inject(ElementRef);
+
+  references = computed<Reference[]>(() => {
+    if (this.languageService.language() == 'english') return this.referencesEN;
+    else return this.referencesDE;
   });
 
   referencesEN: Reference[] = [
@@ -64,4 +68,30 @@ export class Testemonials {
       linkedIn: 'https://www.linkedin.com/',
     },
   ];
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+
+    const eleReferences: HTMLElement = this.elementRef.nativeElement.querySelector('.references');
+    const eleReferenceArr: HTMLElement[] = this.elementRef.nativeElement.querySelectorAll('.reference');
+    const eleReferencesRect: DOMRect = eleReferences.getBoundingClientRect();
+
+    if (eleReferencesRect.top <= window.innerHeight) {
+      if (window.innerWidth > 640) {
+        eleReferenceArr.forEach(reference => {
+          this.renderer.addClass(reference, 'my-animation');
+        });
+      } else {
+        eleReferenceArr.forEach(reference => {
+          this.renderer.addClass(reference, 'animation-mobile');
+        });
+      }
+    }
+    else eleReferenceArr.forEach(reference => {
+      if (window.innerWidth > 640)
+        this.renderer.removeClass(reference, 'my-animation');
+      else
+        this.renderer.removeClass(reference, 'animation-mobile');
+    })
+  }
 }

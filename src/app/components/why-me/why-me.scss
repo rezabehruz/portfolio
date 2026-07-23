@@ -10,10 +10,19 @@ section {
   max-width: 1440px;
   background-color: all.$color-background;
   font-family: 'Josefin Sans regular';
-  padding-top: 78px;
+  padding-top: clamp(68px, 15vw, 112px);
 
   @include all.mobile {
     padding-top: 48px;
+  }
+
+  .my-animation {
+    @include all.fade-in($name: 'location-about', $time: 2s, $gap-0: 200px, $gap-1: 62px);
+  }
+
+  .my-animation-mobile {
+    @include all.fade-in($name: 'location-about-mobile', $time: 2s, $scale-0: 0.9, $scale-1: 1, $gap-0: 22px, $gap-1: 22px);
+    z-index: 100;
   }
 
   .location-about {

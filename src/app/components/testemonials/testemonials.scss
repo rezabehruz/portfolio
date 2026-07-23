@@ -44,6 +44,20 @@ section {
     width: 100%;
     padding: clamp(10px, 3vw, 24px);
     overflow-x: scroll;
+    z-index: 1000;
+
+    @include all.bigscreen {
+      overflow: visible;
+    }
+
+    .my-animation {
+      @include all.fade-in($name: 'reference', $time: 4s, $left-0: 1400px, $left-1: 0px, $gap-0: 4px, $gap-1: 4px);
+
+    }
+
+    .animation-mobile {
+      @include all.fade-in($name: 'reference-mobile', $time: 3s, $left-0: 600px, $left-1: 0px, $gap-0: 4px, $gap-1: 4px);
+    }
 
     .reference {
       @include all.display-flex($direction: column, $justify: center, $align: center, $gap: 4px);
@@ -86,6 +100,7 @@ section {
           color: all.$color-primary;
         }
       }
+
       .statement {
         margin-top: 18px;
         text-align: center;
