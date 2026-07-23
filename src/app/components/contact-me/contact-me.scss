@@ -29,6 +29,7 @@ section {
 
   a {
     position: absolute;
+    top: 1vw;
     right: 7vw;
     bottom: 1vw;
     width: 38px;
@@ -70,7 +71,13 @@ section {
 }
 
 .details-animation {
-  @include all.fade-in($name: 'details-animation', $time: 3s, $scale-0: 0.9, $scale-1: 1, $gap-0: 24px, $gap-1: 24px);
+  @include all.desktop {
+    @include all.fade-in($name: 'details-animation', $time: 3s, $scale-0: 0.8, $scale-1: 1, $gap-0: 24px, $gap-1: 24px);
+  }
+
+  @include all.notebook {
+    @include all.fade-in($name: 'details-animation', $time: 3s, $scale-0: 0.9, $scale-1: 1, $gap-0: 24px, $gap-1: 24px);
+  }
 }
 
 .details-contact {
@@ -157,7 +164,13 @@ section {
 }
 
 .form-animation {
-  @include all.fade-in($name: 'form-animation', $time: 3s, $scale-0: 1.08, $scale-1: 1, $gap-0: 24px, $gap-1: 24px);
+  @include all.desktop {
+    @include all.fade-in($name: 'form-animation', $time: 3s, $scale-0: 1.2, $scale-1: 1, $gap-0: 24px, $gap-1: 24px);
+  }
+
+  @include all.notebook {
+    @include all.fade-in($name: 'form-animation', $time: 3s, $scale-0: 1.08, $scale-1: 1, $gap-0: 24px, $gap-1: 24px);
+  }
 }
 
 form {

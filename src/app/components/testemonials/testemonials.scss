@@ -44,7 +44,7 @@ section {
     width: 100%;
     padding: clamp(10px, 3vw, 24px);
     overflow-x: scroll;
-    z-index: 1000;
+    z-index: 50;
 
     @include all.bigscreen {
       overflow: visible;

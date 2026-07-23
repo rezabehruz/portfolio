@@ -1,5 +1,6 @@
 import { Component, ElementRef, HostListener, inject, Renderer2 } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
+import { NavigationService } from '../../services/navigation-service';
 
 @Component({
   selector: 'app-my-skills',
@@ -11,6 +12,8 @@ export class MySkills {
 
   elementRef: ElementRef = inject(ElementRef);
   renderer: Renderer2 = inject(Renderer2);
+
+  navigationsSerive = inject(NavigationService);
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -36,5 +39,8 @@ export class MySkills {
       else
         this.renderer.removeClass(techsElement, 'my-animation');
     }
+
+    if (techRect.top < -100) this.navigationsSerive.changeNavigationSection('myProjects');
+
   }
 }

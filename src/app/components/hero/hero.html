@@ -1,24 +1,30 @@
-<section>
+<section id="hero">
   <div class="content">
     <app-header (openMenu)="toggleMenu()" class="navigation-mobile"></app-header>
 
     <div class="profile">
       <div class="image-menu">
         @if (isMenuOpen) {
-          <div class="mobile-menu">
-            <ul>
-              <li>{{ 'portfolio.header.link-1' | translate }}</li>
-              <li>{{ 'portfolio.header.link-2' | translate }}</li>
-              <li>{{ 'portfolio.header.link-3' | translate }}</li>
-              <li>{{ 'portfolio.header.link-4' | translate }}</li>
-            </ul>
-            <div class="language">
-              <button>DE</button>
-              <button>EN</button>
-            </div>
+        <div class="mobile-menu">
+          <ul>
+            <li><a href="#why-me"> {{ 'portfolio.header.link-1' | translate }} </a></li>
+            <li><a href="#skills"> {{ 'portfolio.header.link-2' | translate }} </a></li>
+            <li><a href="#my-projects"> {{ 'portfolio.header.link-3' | translate }} </a></li>
+            <li><a href="#contact-me"> {{ 'portfolio.header.link-4' | translate }} </a></li>
+          </ul>
+          <div class="language">
+            <button (click)="changeLanguage('de')"
+              [class]="languageService.language() == 'deutsch' ? 'active-lang' : ''">
+              DE
+            </button>
+            <button (click)="changeLanguage('en')"
+              [class]="languageService.language() == 'english' ? 'active-lang' : ''">
+              EN
+            </button>
           </div>
+        </div>
         } @else {
-          <img src="assets/images/character-5.png" alt="character" class="profile__img" />
+        <img src="assets/images/character-7.png" alt="character" class="profile__img" />
         }
       </div>
       <div class="logo-media-title">
@@ -49,7 +55,7 @@
             <h1>Reza Behruz</h1>
             <p>{{ 'portfolio.hero.my-carrier' | translate }}</p>
           </div>
-          <a href="">
+          <a href="#why-me">
             <img src="assets/icons/arrow.png" alt="arrow" class="img-normal" />
             <img src="assets/icons/arrow-hover.png" alt="arrow" class="img-hover" />
           </a>

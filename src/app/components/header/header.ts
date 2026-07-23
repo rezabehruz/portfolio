@@ -1,6 +1,7 @@
 import { Component, inject, output } from '@angular/core';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { LanguageService } from '../../services/language-service';
+import { NavigationService } from '../../services/navigation-service';
 
 @Component({
   selector: 'app-header',
@@ -13,16 +14,19 @@ export class Header {
 
   translateService = inject(TranslateService);
   languageService = inject(LanguageService);
-  
+
 
   changeLanguage(lang: string) {
     this.translateService.use(lang);
 
-    if(lang === 'en')
-    this.languageService.language.set('english');
+    if (lang === 'en')
+      this.languageService.language.set('english');
 
-    if(lang === 'de')
-    this.languageService.language.set('deutsch');
-  
+    if (lang === 'de')
+      this.languageService.language.set('deutsch');
+
   }
+
+  navigationsService = inject(NavigationService);
+
 }

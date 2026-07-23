@@ -17,18 +17,34 @@
 
 <section>
   <div class="navigation">
-    <div class="logo-name">
+    <a class="logo-name" href="#hero">
       <div class="logo">
         <img src="assets/images/logo/logo-dark.png" alt="logo" class="img-normal" />
       </div>
       <p class="name">R.Behruz</p>
       <p class="profession">developer</p>
-    </div>
+    </a>
     <ul>
-      <li><a href="#why-me">{{ 'portfolio.header.link-1' | translate }}</a></li>
-      <li><a href="#skills">{{ 'portfolio.header.link-2' | translate }}</a></li>
-      <li><a href="#my-projects">{{ 'portfolio.header.link-3' | translate }}</a></li>
-      <li><a href="#contact-me">{{ 'portfolio.header.link-4' | translate }}</a></li>
+      <li [class]="navigationsService.showenSection() === 'whyMe' ? 'active-section' : ''">
+        <a href="#why-me" (click)="navigationsService.changeNavigationSection('whyMe')">{{
+          'portfolio.header.link-1' | translate }}
+        </a>
+      </li>
+      <li [class]="navigationsService.showenSection() === 'mySkills' ? 'active-section' : ''">
+        <a href="#skills" (click)="navigationsService.changeNavigationSection('mySkills')">
+          {{'portfolio.header.link-2' | translate }}
+        </a>
+      </li>
+      <li [class]="navigationsService.showenSection() === 'myProjects' ? 'active-section' : ''">
+        <a href="#my-projects" (click)="navigationsService.changeNavigationSection('myProjects')">
+          {{ 'portfolio.header.link-3' | translate }}
+        </a>
+      </li>
+      <li [class]="navigationsService.showenSection() === 'contactMe' ? 'active-section' : ''">
+        <a href="#contact-me" (click)="navigationsService.changeNavigationSection('contactMe')">
+          {{ 'portfolio.header.link-4' | translate }}
+        </a>
+      </li>
     </ul>
     <div class="language">
       <button (click)="changeLanguage('de')" [class]="languageService.language() == 'deutsch' ? 'active-lang' : ''">

@@ -2,15 +2,14 @@
   <div class="content" id="contact-me">
     <div class="header">
       <h2>{{ 'portfolio.contact-me.title' | translate}}</h2>
-      <a href="">
-        <img src="assets/icons/arrow.png" alt="arrow" class="arrow-normal"/>
-        <img src="assets/icons/arrow-hover.png" alt="arrow" class="arrow-hover"
-      /></a>
+      <a href="#hero">
+        <img src="assets/icons/arrow.png" alt="arrow" class="arrow-normal" />
+        <img src="assets/icons/arrow-hover.png" alt="arrow" class="arrow-hover" /></a>
     </div>
     <div class="details-contact">
       <p class="invitation">{{'portfolio.contact-me.invitation' | translate}}</p>
       <p class="details">
-       {{'portfolio.contact-me.details' | translate}}
+        {{'portfolio.contact-me.details' | translate}}
       </p>
       <div class="contact">
         <a href="mailto:behruz.mreza@gmail.com" class="mail">
@@ -29,62 +28,45 @@
       <div class="name-email">
         <label for="name">
           <span>{{ 'portfolio.contact-me.label-name' | translate}}</span>
-          <input
-            type="text"
-            id="name"
-            [class]="formSubmitted && name?.invalid ? 'error' : ''"
-            formControlName="name"
-          />
+          <input type="text" id="name" [class]="formSubmitted && name?.invalid ? 'error' : ''" formControlName="name" />
         </label>
         <label for="email">
           <span>{{ 'portfolio.contact-me.label-email' | translate}}</span>
-          <input
-            type="email"
-            id="email"
-            [class]="formSubmitted && email?.invalid ? 'error' : ''"
-            formControlName="email"
-          />
+          <input type="email" id="email" [class]="formSubmitted && email?.invalid ? 'error' : ''"
+            formControlName="email" />
         </label>
       </div>
       <label for="message" class="message-label">
         <span>{{ 'portfolio.contact-me.label-message' | translate}}</span>
-        <textarea
-          name="message"
-          id="message"
-          formControlName="message"
-          [class]="formSubmitted && message?.invalid ? 'error' : ''"
-        ></textarea>
+        <textarea name="message" id="message" formControlName="message"
+          [class]="formSubmitted && message?.invalid ? 'error' : ''"></textarea>
       </label>
       <div class="checkbox">
         <button type="button" (click)="toggleCheckBox()">
           @if (checkbox == 'checked') {
-            <img src="assets/icons/checkbox-checked.png" alt="checkbox" class="checkbox-checked" />
+          <img src="assets/icons/checkbox-checked.png" alt="checkbox" class="checkbox-checked" />
           }
 
           @if (checkbox == 'unChecked' && !formSubmitted) {
-            <img src="assets/icons/checkbox.png" alt="checkbox" class="checkbox-normal" />
-            <img src="assets/icons/checkbox-hover.png" alt="checkbox" class="checkbox-hover" />
+          <img src="assets/icons/checkbox.png" alt="checkbox" class="checkbox-normal" />
+          <img src="assets/icons/checkbox-hover.png" alt="checkbox" class="checkbox-hover" />
           }
 
           @if (checkbox == 'unChecked' && formSubmitted) {
-            <img
-              src="assets/icons/checkbox-warnning.png"
-              alt="checkbox"
-              class="checkbox-warnning"
-            />
+          <img src="assets/icons/checkbox-warnning.png" alt="checkbox" class="checkbox-warnning" />
           }
         </button>
         <p>
-          {{ 'portfolio.contact-me.checkbox-label-1' | translate}} <span> {{ 'portfolio.contact-me.checkbox-label-2' | translate }} </span> {{ 'portfolio.contact-me.checkbox-label-3' | translate }}
+          {{ 'portfolio.contact-me.checkbox-label-1' | translate}} <span> {{ 'portfolio.contact-me.checkbox-label-2' |
+            translate }} </span> {{ 'portfolio.contact-me.checkbox-label-3' | translate }}
         </p>
       </div>
 
       <button type="submit" class="btn-submit">{{'portfolio.contact-me.btn-submit' | translate}}</button>
     </form>
 
-    <a href="" class="nav-tablet">
+    <a href="#hero" class="nav-tablet">
       <img src="assets/icons/arrow.png" alt="arrow" class="arrow-normal" />
-      <img src="assets/icons/arrow-hover.png" alt="arrow" class="arrow-hover"
-    /></a>
+      <img src="assets/icons/arrow-hover.png" alt="arrow" class="arrow-hover" /></a>
   </div>
 </section>
