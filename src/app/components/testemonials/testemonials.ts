@@ -23,48 +23,48 @@ export class Testemonials {
 
   referencesEN: Reference[] = [
     {
-      name: 'Sahra Mueller',
-      project: 'DA Bublle',
-      statement:
-        '‘’Claudia had to develop, format and deliver content in collaboration with the team members. She is a reliable and friendly person.’’',
-      linkedIn: 'https://www.linkedin.com/',
-    },
-    {
-      name: 'James Rugman',
+      name: 'Vaish Dronum',
       project: 'Join',
       statement:
-        '‘’Claudia is a reliable and friendly person. Works in a structured way and write a clear code. I recommend her as a colleague.’’',
+        '‘’Reza had to develop, format and deliver content in collaboration with the team members. He is a reliable and friendly person.’’',
       linkedIn: 'https://www.linkedin.com/',
     },
     {
-      name: 'Evelyn Marx',
-      project: 'Sharkie',
+      name: 'Atahar Hossain',
+      project: 'Join',
       statement:
-        '‘’ She is a trustworthy teamplayer and can cope with the stress of deadlines. Structured work and clear code. ‘’',
+        '‘’Reza is a reliable and friendly person. Works in a structured way and write a clear code. I recommend him as a colleague.’’',
+      linkedIn: 'https://www.linkedin.com/',
+    },
+    {
+      name: 'Can Yeldiz',
+      project: 'Join',
+      statement:
+        '‘’ He is a trustworthy teamplayer and can cope with the stress of deadlines. Structured work and clear code. ‘’',
       linkedIn: 'https://www.linkedin.com/',
     },
   ];
 
   referencesDE: Reference[] = [
     {
-      name: 'Sahra Mueller',
-      project: 'DA Bublle',
+      name: 'Vaish Dronum',
+      project: 'Join',
       statement:
         '‘’Er musste Inhalte in Zusammenarbeit mit den Teammitgliedern entwickeln, formatieren und liefern. Er ist eine zuverlässige und freundliche Person.’’',
       linkedIn: 'https://www.linkedin.com/',
     },
     {
-      name: 'James Rugman',
+      name: 'Atahar Hossain',
       project: 'Join',
       statement:
-        '‘’Claudia ist eine zuverlässige und freundliche Person. Sie arbeitet strukturiert und schreibt klaren Code. Ich empfehle sie als Kollegin.’’',
+        '‘’Er ist eine zuverlässige und freundliche Person. Er arbeitet strukturiert und schreibt klaren Code. Ich empfehle ihm als Kollege.’’',
       linkedIn: 'https://www.linkedin.com/',
     },
     {
-      name: 'Evelyn Marx',
-      project: 'Sharkie',
+      name: 'Can Yeldiz',
+      project: 'Join',
       statement:
-        '‘’ Sie ist eine vertrauenswürdige Teamplayerin und kann mit dem Stress von Deadlines gut umgehen. Sie arbeitet strukturiert und schreibt klaren Code.‘’',
+        '‘’ Er ist eine vertrauenswürdige Teamplayer und kann mit dem Stress von Deadlines gut umgehen. Er arbeitet strukturiert und schreibt klaren Code.‘’',
       linkedIn: 'https://www.linkedin.com/',
     },
   ];

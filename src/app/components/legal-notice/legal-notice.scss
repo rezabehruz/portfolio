@@ -1,0 +1,46 @@
+@use '../../../../public/styles/main' as all;
+
+.content {
+  @include all.display-flex($direction: column);
+  height: 100vh;
+}
+
+section {
+  @include all.display-flex($justify: center);
+}
+
+.legal-notice-content {
+  @include all.display-flex($direction: column);
+
+  width: 100%;
+  max-width: 1440px;
+  margin-top: clamp(22px, 6vw, 54px);
+  margin-left: clamp(22px, 6vw, 54px);
+  font-family: 'Josefin Sans regular';
+  font-size: clamp(16px, 8vw, 28px);
+
+  h2 {
+    margin-bottom: clamp(16px, 4vw, 34px);
+    text-align: left;
+  }
+
+  h3 {
+    margin-top: clamp(22px, 5vw, 54px);
+    margin-bottom: clamp(16px, 3vw, 32px);
+    font-family: 'Anta regular';
+    font-size: clamp(22px, 4vw, 62px);
+    font-weight: 400;
+    color: #89bcd9;
+  }
+
+  .quelle {
+    margin-top: clamp(22px, 5vw, 54px);
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
