@@ -6,11 +6,41 @@ section {
 
 .content {
   @include all.display-flex($justify: center);
-
   width: 100%;
   max-width: 1440px;
   height: 95vh;
   margin-top: clamp(48px, 12vw, 120px);
+  font-family: 'Josefin Sans regular';
   font-size: clamp(22px, 6vw, 48px);
   color: all.$color-primary;
 }
+
+ .menu-mobile {
+    @include all.display-flex($direction: column, $gap: 12px, );
+    position: absolute;
+    top: -70px;
+    right: 20px;
+    padding: 12px 16px;
+    border-radius: 8px 0px 8px 8px;
+    font-size: 16px;
+    background-color: all.$color-primary;
+    color: all.$color-background;
+    z-index: 10;
+
+    ul {
+      @include all.display-flex($direction: column, $gap: 8px);
+      min-width: 80px;
+
+      li:hover {
+        color: white;
+      }
+    }
+
+    .language {
+      @include all.display-flex($justify: space-around);
+    }
+
+    .active-lang{
+      color: all.$color-secondary;
+    }
+  }

@@ -8,17 +8,41 @@ section {
 
 .content {
   @include all.display-flex($direction: column);
-
   width: 100%;
   max-width: 1440px;
   height: 90vh;
-  margin-top: clamp(22px, 9vw, 120px);
+  margin-top: clamp(72px, 9vw, 120px);
   margin-left: clamp(22px, 10vw, 150px);
   font-family: 'Josefin Sans regular';
   font-size: 28px;
 
   @include all.mobile {
     font-size: 16px;
+  }
+
+  .menu-mobile {
+    @include all.display-flex($direction: column, $gap: 12px, );
+    position: absolute;
+    top: -98px;
+    right: 20px;
+    padding: 12px 16px;
+    border-radius: 8px 0px 8px 8px;
+    background-color: all.$color-primary;
+    color: all.$color-background;
+    z-index: 1;
+
+    ul {
+      @include all.display-flex($direction: column, $gap: 8px);
+      min-width: 80px;
+    }
+
+    .language {
+      @include all.display-flex($justify: space-around);
+    }
+
+    .active-lang{
+      color: all.$color-secondary;
+    }
   }
 
   h2 {

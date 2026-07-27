@@ -26,6 +26,12 @@
 	"portfolio.contact-me.checkbox-label-2": "Datenschutzrichtlinie ",
 	"portfolio.contact-me.checkbox-label-3": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
 	"portfolio.contact-me.btn-submit": "senden",
+  
+	"portfolio.legal-notice.title-1": "Impressum",
+	"portfolio.legal-notice.title-2": "Kontakt",
+  "portfolio.legal-notice.source": "Quelle",
+	
+  "portfolio.not-found.title-1": "Oops! Nichts gefunden.",
 
   "portfolio.footer.legal-notice": "Impressum"
 }

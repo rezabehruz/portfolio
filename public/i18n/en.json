@@ -25,6 +25,12 @@
 	"portfolio.contact-me.checkbox-label-2": "privacy policy",
 	"portfolio.contact-me.checkbox-label-3": "and agree to the processing of my data asoutlined.",
 	"portfolio.contact-me.btn-submit": "send",
+
+    "portfolio.legal-notice.title-1": "Legal Notice",
+	"portfolio.legal-notice.title-2": "Contact",
+	"portfolio.legal-notice.source": "Source",
+	
+    "portfolio.not-found.title-1": "Oops! Nothing found.",
 	
 	"portfolio.footer.legal-notice": "Legal Notice"
 }

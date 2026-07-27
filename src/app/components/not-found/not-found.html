@@ -1,7 +1,40 @@
-<app-header></app-header>
+<app-header (openMenu)="toggleMenu()"></app-header>
 <section>
   <div class="content">
-    <h3>Oops! Nothing Found.</h3>
+       @if (isMenuOpen) {
+      <div class="menu-mobile">
+        <ul>
+          <li>
+            <a routerLink="/" fragment="why-me"> {{ 'portfolio.header.link-1' | translate }} </a>
+          </li>
+          <li>
+            <a routerLink="/" fragment="skills"> {{ 'portfolio.header.link-2' | translate }} </a>
+          </li>
+          <li>
+            <a routerLink="/" fragment="my-projects"> {{ 'portfolio.header.link-3' | translate }} </a>
+          </li>
+          <li>
+            <a routerLink="/" fragment="contact-me"> {{ 'portfolio.header.link-4' | translate }} </a>
+          </li>
+        </ul>
+
+        <div class="language">
+          <button
+            (click)="changeLanguage('de')"
+            [class]="languageService.language() == 'deutsch' ? 'active-lang' : ''"
+          >
+            DE
+          </button>
+          <button
+            (click)="changeLanguage('en')"
+            [class]="languageService.language() == 'english' ? 'active-lang' : ''"
+          >
+            EN
+          </button>
+        </div>
+      </div>
+    }
+    <h3>{{ 'portfolio.not-found.title-1' | translate }}</h3>
   </div>
 </section>
 <app-footer></app-footer>

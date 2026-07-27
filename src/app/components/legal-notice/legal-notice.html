@@ -1,18 +1,55 @@
-<app-header></app-header>
+<app-header (openMenu) = "toggleMenu()"></app-header>
 <section>
   <div class="content">
-    <h2>Impressum</h2>
+    @if (isMenuOpen) {
+      <div class="menu-mobile">
+        <ul>
+          <li>
+            <a routerLink="/" fragment="why-me"> {{ 'portfolio.header.link-1' | translate }} </a>
+          </li>
+          <li>
+            <a routerLink="/" fragment="skills"> {{ 'portfolio.header.link-2' | translate }} </a>
+          </li>
+          <li>
+            <a routerLink="/" fragment="my-projects"> {{ 'portfolio.header.link-3' | translate }} </a>
+          </li>
+          <li>
+            <a routerLink="/" fragment="contact-me"> {{ 'portfolio.header.link-4' | translate }} </a>
+          </li>
+        </ul>
+
+        <div class="language">
+          <button
+            (click)="changeLanguage('de')"
+            [class]="languageService.language() == 'deutsch' ? 'active-lang' : ''"
+          >
+            DE
+          </button>
+          <button
+            (click)="changeLanguage('en')"
+            [class]="languageService.language() == 'english' ? 'active-lang' : ''"
+          >
+            EN
+          </button>
+        </div>
+      </div>
+    }
+
+    <h2>{{ 'portfolio.legal-notice.title-1' | translate }}</h2>
     <p>
       Mohammad Reza Behruz <br />
-      Hindemithstra&szlig;e 06<br />
+      Hindemithstraße 06<br />
       85057 Ingolstadt
     </p>
-    <h3>Kontakt</h3>
+    <h3>{{ 'portfolio.legal-notice.title-2' | translate }}</h3>
     <p>
       Telefon: +49 (0) 15751492254<br />
       E-Mail: behruz.mreza@gmail.com
     </p>
-    <p class="quelle">Quelle: <a href="https://www.e-recht24.de">https://www.e-recht24.de</a></p>
+    <p class="quelle">
+      {{ 'portfolio.legal-notice.source' | translate }}:
+      <a href="https://www.e-recht24.de">https://www.e-recht24.de</a>
+    </p>
   </div>
 </section>
 <app-footer></app-footer>
