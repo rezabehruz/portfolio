@@ -2,7 +2,8 @@
 
 .content {
   @include all.display-flex($direction: column);
-  height: 100vh;
+  padding: 100px;
+  
 }
 
 section {
@@ -38,9 +39,3 @@ section {
   }
 }
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}

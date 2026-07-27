@@ -26,22 +26,23 @@
     </a>
     <ul>
       <li [class]="navigationsService.showenSection() === 'whyMe' ? 'active-section' : ''">
-        <a href="#why-me" (click)="navigationsService.changeNavigationSection('whyMe')">{{
-          'portfolio.header.link-1' | translate }}
+        <a routerLink="/" fragment="why-me" (click)="navigationsService.changeNavigationSection('whyMe')">
+          {{ 'portfolio.header.link-1' | translate }}
         </a>
       </li>
       <li [class]="navigationsService.showenSection() === 'mySkills' ? 'active-section' : ''">
-        <a href="#skills" (click)="navigationsService.changeNavigationSection('mySkills')">
-          {{'portfolio.header.link-2' | translate }}
+        <a routerLink="/" fragment="skills" (click)="navigationsService.changeNavigationSection('mySkills')">
+          {{ 'portfolio.header.link-2' | translate }}
         </a>
       </li>
       <li [class]="navigationsService.showenSection() === 'myProjects' ? 'active-section' : ''">
-        <a href="#my-projects" (click)="navigationsService.changeNavigationSection('myProjects')">
+        <a routerLink="/" fragment="my-projects" (click)="navigationsService.changeNavigationSection('myProjects')">
           {{ 'portfolio.header.link-3' | translate }}
         </a>
       </li>
       <li [class]="navigationsService.showenSection() === 'contactMe' ? 'active-section' : ''">
-        <a href="#contact-me" (click)="navigationsService.changeNavigationSection('contactMe')">
+        <a routerLink="/" fragment="contact-me"  (click)="navigationsService.changeNavigationSection('contactMe')">
+         
           {{ 'portfolio.header.link-4' | translate }}
         </a>
       </li>

@@ -2,10 +2,11 @@ import { Component, inject, output } from '@angular/core';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { LanguageService } from '../../services/language-service';
 import { NavigationService } from '../../services/navigation-service';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-header',
-  imports: [TranslatePipe],
+  imports: [TranslatePipe, RouterLink],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })

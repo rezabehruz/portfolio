@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
 import { NavigationService } from '../../services/navigation-service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-legal-notice',
@@ -14,5 +15,5 @@ export class LegalNotice {
 
   constructor() {
     this.navigationsService.changeNavigationSection('legal-notice');
-  }
+  } 
 }
