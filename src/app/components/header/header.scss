@@ -5,12 +5,12 @@ section {
   justify-content: center;
   width: 100%;
   background-color: all.$color-primary;
-
-
 }
 
 .navigation-mobile {
   display: none;
+  background-color: all.$color-background;
+  color: all.$color-secondary;
 
   @include all.mobile {
     display: flex;
@@ -54,7 +54,7 @@ section {
 
   width: 100%;
   max-width: 1440px;
-  @include all.fade-in($name: 'navigation', $time: 2s, $scale-0: 1.1, $scale-1: 1, $gap-0: 96px, $gap-1: 96px);
+  // @include all.fade-in($name: 'navigation', $time: 2s, $scale-0: 1.1, $scale-1: 1, $gap-0: 96px, $gap-1: 96px);
 
   @include all.notebook {
     gap: 46px;
