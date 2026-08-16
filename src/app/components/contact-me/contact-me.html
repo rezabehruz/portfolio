@@ -67,6 +67,12 @@
 
     <a href="#hero" class="nav-tablet">
       <img src="assets/icons/arrow.png" alt="arrow" class="arrow-normal" />
-      <img src="assets/icons/arrow-hover.png" alt="arrow" class="arrow-hover" /></a>
+      <img src="assets/icons/arrow-hover.png" alt="arrow" class="arrow-hover" />
+    </a>
+  </div>
+</section>
+<section [class]="messageSignal() ? 'alert-message' : 'd-none'">
+  <div class="content-alert-message">
+    <p>{{ alertMessage }}</p>
   </div>
 </section>

@@ -1,7 +1,10 @@
-import { Component, ElementRef, HostListener, inject, Renderer2 } from '@angular/core';
+import { Component, ElementRef, HostListener, inject, Renderer2, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
 import { NavigationService } from '../../services/navigation-service';
+import { HttpClient } from '@angular/common/http';
+
+type messageData = { name: string; email: string; message: string };
 
 @Component({
   selector: 'app-contact-me',
@@ -10,6 +13,9 @@ import { NavigationService } from '../../services/navigation-service';
   styleUrl: './contact-me.scss',
 })
 export class ContactMe {
+  http = inject(HttpClient);
+  navigationsService = inject(NavigationService);
+
   contactForm = new FormGroup({
     name: new FormControl('', { validators: [Validators.required] }),
     email: new FormControl('', { validators: [Validators.required, Validators.email] }),
@@ -28,7 +34,44 @@ export class ContactMe {
     if (!this.contactForm.valid || this.checkbox == 'unChecked') {
       console.log(this.contactForm.value);
       this.formSubmitted = true;
-    } else console.log('form submitted!');
+    } else {
+      const formData: messageData = {
+        name: this.contactForm.value.name as string,
+        email: this.contactForm.value.email as string,
+        message: this.contactForm.value.message as string,
+      };
+      this.sendMessage(formData);
+    }
+  }
+
+  messageSignal = signal<boolean>(false);
+  alertMessage: string = '';
+
+  sendMessage(formData: messageData) {
+    this.http.post('/api/contact.php', formData).subscribe({
+      next: (response) => {
+        this.alertMessage = 'Thank you! Your message has been sent successfully.';
+        this.triggerAlert();
+      },
+      error: (error) => {
+        this.alertMessage = 'fehler: ' + error.message;
+        this.triggerAlert();
+      },
+    });
+  }
+
+  triggerAlert() {
+    this.messageSignal.set(true);
+    this.contactForm.reset();
+    this.checkbox = 'unChecked';
+
+    setTimeout(() => {
+      this.stopAlert();
+    }, 3000);
+  }
+
+  stopAlert() {
+    this.messageSignal.set(false);
   }
 
   get name() {
@@ -43,18 +86,16 @@ export class ContactMe {
     return this.contactForm.get('message');
   }
 
-
   elementRef: ElementRef = inject(ElementRef);
   renderer: Renderer2 = inject(Renderer2);
-
-  navigationsService = inject(NavigationService);
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const imgArrow: HTMLElement = this.elementRef.nativeElement.querySelector('.arrow-normal');
     const parent: HTMLElement = this.elementRef.nativeElement.querySelector('#contact-me');
-    const contactForm: HTMLElement = this.elementRef.nativeElement.querySelector(".contact-form");
-    const contactDetails: HTMLElement = this.elementRef.nativeElement.querySelector(".details-contact");
+    const contactForm: HTMLElement = this.elementRef.nativeElement.querySelector('.contact-form');
+    const contactDetails: HTMLElement =
+      this.elementRef.nativeElement.querySelector('.details-contact');
     const parentRect: DOMRect = parent.getBoundingClientRect();
     const detailsRect: DOMRect = contactDetails.getBoundingClientRect();
 
@@ -62,13 +103,13 @@ export class ContactMe {
       this.renderer.addClass(imgArrow, 'up-animation');
       this.renderer.addClass(contactDetails, 'details-animation');
       this.renderer.addClass(contactForm, 'form-animation');
-    }
-    else {
+    } else {
       this.renderer.removeClass(imgArrow, 'up-animation');
       this.renderer.removeClass(contactDetails, 'details-animation');
       this.renderer.removeClass(contactForm, 'form-animation');
     }
 
-    if (window.innerHeight - parentRect.top > 400) this.navigationsService.changeNavigationSection('contactMe');
+    if (window.innerHeight - parentRect.top > 400)
+      this.navigationsService.changeNavigationSection('contactMe');
   }
 }
