@@ -1,10 +1,11 @@
 import { Component, ElementRef, HostListener, inject, Renderer2 } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { NavigationService } from '../../services/navigation-service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-why-me',
-  imports: [TranslatePipe],
+  imports: [TranslatePipe, RouterLink],
   templateUrl: './why-me.html',
   styleUrl: './why-me.scss',
 })

@@ -73,7 +73,7 @@ section {
         }
       }
 
-      button {
+      a {
         @include all.display-flex($justify: center, $align: center);
         border: 1px solid all.$color-primary;
         color: all.$color-primary;

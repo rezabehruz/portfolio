@@ -1,10 +1,11 @@
 import { Component, ElementRef, HostListener, inject, Renderer2 } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { NavigationService } from '../../services/navigation-service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-my-skills',
-  imports: [TranslatePipe],
+  imports: [TranslatePipe, RouterLink],
   templateUrl: './my-skills.html',
   styleUrl: './my-skills.scss',
 })

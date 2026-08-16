@@ -32,7 +32,6 @@ export class ContactMe {
 
   submitForm() {
     if (!this.contactForm.valid || this.checkbox == 'unChecked') {
-      console.log(this.contactForm.value);
       this.formSubmitted = true;
     } else {
       const formData: messageData = {
@@ -55,6 +54,7 @@ export class ContactMe {
       },
       error: (error) => {
         this.alertMessage = 'fehler: ' + error.message;
+        this.formSubmitted = false;
         this.triggerAlert();
       },
     });
@@ -64,14 +64,10 @@ export class ContactMe {
     this.messageSignal.set(true);
     this.contactForm.reset();
     this.checkbox = 'unChecked';
-
+    this.formSubmitted = false;
     setTimeout(() => {
-      this.stopAlert();
+      this.messageSignal.set(false);
     }, 3000);
-  }
-
-  stopAlert() {
-    this.messageSignal.set(false);
   }
 
   get name() {
