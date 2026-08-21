@@ -193,6 +193,9 @@ section {
 
       .photos {
         @include all.display-flex($gap: 32px);
+        img {
+          width: 40px;
+        }
       }
     }
 

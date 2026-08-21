@@ -25,7 +25,7 @@
               @for (des of project.description; track $index) {
                 <div class="description">
                   <p class="title">
-                    <img src="assets/icons/list-style.png" alt="list-style-icon"/>{{ des.title }}
+                    <img src="assets/icons/list-style.png" alt="list-style-icon" />{{ des.title }}
                     @if ($index == 0) {
                       <span class="duration"> Duration: {{ project.duration }}</span>
                     }
@@ -66,8 +66,8 @@
                 <img [src]="project.photo" [alt]="project.name" />
               </div>
               <div class="options">
-                <a href="" class="live">Live Test</a>
-                <a href="" class="github">GitHub</a>
+                <a [href]="project.urls.live" target="_blank" class="live">Live Test</a>
+                <a [href]="project.urls.github" target="_blank" class="github">GitHub</a>
               </div>
             </div>
           }

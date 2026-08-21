@@ -13,6 +13,10 @@ interface Project {
     title: string;
     details: string;
   }[];
+  urls: {
+    live: string;
+    github: string;
+  };
 }
 
 @Component({
@@ -22,14 +26,13 @@ interface Project {
   styleUrl: './my-projects.scss',
 })
 export class MyProjects {
-
   languageService = inject(LanguageService);
 
-  projects = computed<Project[]>(()=>{
-        if(this.languageService.language() == 'english') return this.projectsEN;
-        else return this.projectsDE;
+  projects = computed<Project[]>(() => {
+    if (this.languageService.language() == 'english') return this.projectsEN;
+    else return this.projectsDE;
   });
-  
+
   projectsEN: Project[] = [
     {
       name: 'El Pollo loco',
@@ -57,6 +60,10 @@ export class MyProjects {
             'I enjoyed this project as it strengthened my understanding of Object-Oriented Programming in JavaScript and key game concepts like game loops and collision detection. I also improved my use of JavaScript intervals to handle timed events and animations. Overall, it enhanced my coding skills and practical OOP knowledge.',
         },
       ],
+      urls: {
+        live: 'www.el-polo-loco.rezabehruz.de',
+        github: 'https://github.com/rezabehruz/el-pollo-loco',
+      },
     },
     {
       name: 'Join',
@@ -84,10 +91,14 @@ export class MyProjects {
             'Our team consisted of 4 members, and my role involved contributing to all parts of the project rather than focusing on just one area. I actively participated in developing various features and supported team collaboration. Strong teamwork and open communication were key to our successful cooperation and project delivery.',
         },
       ],
+      urls: {
+        live: 'https://join.rezabehruz.de',
+        github: 'https://github.com/c44n/join',
+      },
     },
   ];
 
-  projectsDE : Project[] = [
+  projectsDE: Project[] = [
     {
       name: 'El Pollo loco',
       photo: 'assets/images/projects/el-pollo-loco.png',
@@ -114,6 +125,10 @@ export class MyProjects {
             'Ich habe dieses Projekt sehr genossen, da es mein Verständnis von objektorientierter Programmierung in JavaScript sowie grundlegenden Spielkonzepten wie Spielschleifen und Kollisionserkennung vertieft hat. Außerdem habe ich meine Fähigkeiten im Umgang mit JavaScript-Intervallen zur Steuerung zeitgesteuerter Ereignisse und Animationen verbessert. Insgesamt hat es meine Programmierkenntnisse und mein praktisches Wissen in OOP erweitert.',
         },
       ],
+      urls: {
+        live: 'www.el-polo-loco.rezabehruz.de',
+        github: 'https://github.com/rezabehruz/el-pollo-loco',
+      },
     },
     {
       name: 'Join',
@@ -141,6 +156,10 @@ export class MyProjects {
             'Unser Team bestand aus 4 Mitgliedern, und meine Rolle bestand darin, zu allen Teilen des Projekts beizutragen, anstatt mich nur auf einen Bereich zu konzentrieren. Ich habe aktiv an der Entwicklung verschiedener Funktionen mitgewirkt und die Teamarbeit unterstützt. Starke Zusammenarbeit und offene Kommunikation waren der Schlüssel zu unserem erfolgreichen Miteinander und dem erfolgreichen Abschluss des Projekts.',
         },
       ],
+      urls: {
+        live: 'https://join.rezabehruz.de',
+        github: 'https://github.com/c44n/join',
+      },
     },
   ];
 
