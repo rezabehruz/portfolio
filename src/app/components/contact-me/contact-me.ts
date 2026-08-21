@@ -3,12 +3,13 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { TranslatePipe } from '@ngx-translate/core';
 import { NavigationService } from '../../services/navigation-service';
 import { HttpClient } from '@angular/common/http';
+import { RouterLink } from "@angular/router";
 
 type messageData = { name: string; email: string; message: string };
 
 @Component({
   selector: 'app-contact-me',
-  imports: [ReactiveFormsModule, TranslatePipe],
+  imports: [ReactiveFormsModule, TranslatePipe, RouterLink],
   templateUrl: './contact-me.html',
   styleUrl: './contact-me.scss',
 })

@@ -2,10 +2,11 @@ import { Component, computed, ElementRef, HostListener, inject, Renderer2 } from
 import { LanguageService } from '../../services/language-service';
 import { Reference } from '../../interfaces/reference';
 import { windowWhen } from 'rxjs';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-testemonials',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './testemonials.html',
   styleUrl: './testemonials.scss',
 })

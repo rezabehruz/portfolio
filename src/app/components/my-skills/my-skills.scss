@@ -18,15 +18,29 @@ section {
   }
 
   .my-animation {
-    @include all.fade-in($name: 'icons-learning' ,$time: 2s, $gap-0: 100px, $gap-1: 24px);
+    @include all.fade-in($name: 'icons-learning', $time: 2s, $gap-0: 100px, $gap-1: 24px);
   }
 
   .animation-icons-mobile {
-    @include all.fade-in($name: 'icons-mobile', $time: 3s, $scale-0: 1.2, $scale-1: 1,  $gap-0: clamp(16px, 2vw, 18px), $gap-1: clamp(16px, 2vw, 18px));
+    @include all.fade-in(
+      $name: 'icons-mobile',
+      $time: 3s,
+      $scale-0: 1.2,
+      $scale-1: 1,
+      $gap-0: clamp(16px, 2vw, 18px),
+      $gap-1: clamp(16px, 2vw, 18px)
+    );
   }
-  
+
   .animation-learning-mobile {
-    @include all.fade-in($name: 'learning-mobile', $time: 2s, $scale-0: 0.9, $scale-1: 1,  $gap-0: 22px, $gap-1: 22px);
+    @include all.fade-in(
+      $name: 'learning-mobile',
+      $time: 2s,
+      $scale-0: 0.9,
+      $scale-1: 1,
+      $gap-0: 22px,
+      $gap-1: 22px
+    );
   }
 
   .techs {
@@ -40,15 +54,34 @@ section {
 }
 
 .icons {
-  @include all.display-flex($justify: center, $gap: clamp(16px, 2vw, 18px), $wrap: wrap);
+  @include all.display-flex($justify: center, $gap: clamp(16px, 3vw, 22px), $wrap: wrap);
   width: 540px;
 
   .tech {
-    @include all.display-flex($direction: column, $align: center, $gap: 12px);
+    @include all.display-flex(
+      $direction: column,
+      $align: center,
+      $justify: space-around,
+      $gap: 12px
+    );
     width: 117px;
 
-    img {
-      width: 60px;
+    .tech-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 70px;
+      height: 60px;
+
+      img {
+        width: 60px;
+      }
+
+      &:hover {
+        img {
+          width: 100%;
+        }
+      }
     }
   }
 
@@ -58,9 +91,14 @@ section {
     .tech {
       width: 50px;
 
-      img {
+      .tech-icon {
+        width: 50px;
+        img {
         width: 40px;
       }
+      }
+
+      
 
       p {
         display: none;

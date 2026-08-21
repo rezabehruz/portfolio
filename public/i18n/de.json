@@ -16,21 +16,24 @@
   "portfolio.skills.p-1": "Ich lerne gerade",
   "portfolio.skills.p-2": "Ich möchte mich kontinuierlich weiterentwickeln und in meiner aktuellen Rolle wachsen. React und Vue.js sind weitere JavaScript-Frameworks, die meine Fähigkeiten stärken und mir helfen, umfassendere Verantwortungen zu übernehmen.",
 
-	"portfolio.contact-me.title": "Kontakt Mich",
+  "portfolio.teamplayer.title-1": "Suchen Sie einen Teamplayer?",
+  "portfolio.teamplayer.title-2": "Das sagen meine Kollegen über mich.",
+
+  "portfolio.contact-me.title": "Kontakt aufnehmen",
   "portfolio.contact-me.invitation": "Lass uns zusammenarbeiten!",
-	"portfolio.contact-me.details": "Zögern Sie nicht, mich bei Gelegenheiten im Bereich Webentwicklung zu kontaktieren. Ich bringe praktische Erfahrung aus realen Projekten und einen soliden Workflow mit Git mit, um effektiv zu Ihrem Team beizutragen.",
-	"portfolio.contact-me.label-name": "Ihr name",
-	"portfolio.contact-me.label-email": "Ihre Email",
-	"portfolio.contact-me.label-message": "Ihre message",
-	"portfolio.contact-me.checkbox-label-1": "Ich habe die ",
-	"portfolio.contact-me.checkbox-label-2": "Datenschutzrichtlinie ",
-	"portfolio.contact-me.checkbox-label-3": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
-	"portfolio.contact-me.btn-submit": "senden",
-  
-	"portfolio.legal-notice.title-1": "Impressum",
-	"portfolio.legal-notice.title-2": "Kontakt",
+  "portfolio.contact-me.details": "Zögern Sie nicht, mich bei Gelegenheiten im Bereich Webentwicklung zu kontaktieren. Ich bringe praktische Erfahrung aus realen Projekten und einen soliden Workflow mit Git mit, um effektiv zu Ihrem Team beizutragen.",
+  "portfolio.contact-me.label-name": "Ihr name",
+  "portfolio.contact-me.label-email": "Ihre Email",
+  "portfolio.contact-me.label-message": "Ihre message",
+  "portfolio.contact-me.checkbox-label-1": "Ich habe die ",
+  "portfolio.contact-me.checkbox-label-2": "Datenschutzrichtlinie ",
+  "portfolio.contact-me.checkbox-label-3": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+  "portfolio.contact-me.btn-submit": "senden",
+
+  "portfolio.legal-notice.title-1": "Impressum",
+  "portfolio.legal-notice.title-2": "Kontakt",
   "portfolio.legal-notice.source": "Quelle",
-	
+
   "portfolio.not-found.title-1": "Oops! Nichts gefunden.",
 
   "portfolio.footer.legal-notice": "Impressum"

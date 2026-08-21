@@ -1,36 +1,39 @@
 {
-	"portfolio.header.link-1": "Why me",
-	"portfolio.header.link-2": "Skills",
-	"portfolio.header.link-3": "Projects",
-	"portfolio.header.link-4": "Contact",
-	
-	"portfolio.hero.my-carrier": "Frontend Developer",
-	
-	"portfolio.why-me.title": "Why me",
-	"portfolio.why-me.location-1": "I am ",
-	"portfolio.why-me.location-2": "located in Bavaria..|",
-	"portfolio.why-me.p-1": "Building new Projects gives me great Satisfaction and Motivation to keep improving. Through feedback, I gain insight into different perspectives and allows me to work more effectively. The latest technologies deliver improved tools that boost efficiency and performance, fueling my enthusiasm to work with them.",
-	
-	"portfolio.skills.title": "My Skills", 
-	"portfolio.skills.p-1": "I am currently learning",
-	"portfolio.skills.p-2": "I want to continuously improve and grow within my current role. React and Vue Js are another JavaScript Frameworks which strengthen my skills and helps me to take on broader responsibilities.",
-	
-	"portfolio.contact-me.title": "Contact Me",
-	"portfolio.contact-me.invitation": "Let us work together!",
-	"portfolio.contact-me.details": "Feel free to contact me for opportunities in web development. I bring hands-on experience from real projects and a solid workflow with Git to contribute effectively to your team.",
-	"portfolio.contact-me.label-name": "Your name",
-	"portfolio.contact-me.label-email": "Your Email",
-	"portfolio.contact-me.label-message": "Your message",
-	"portfolio.contact-me.checkbox-label-1": "I've read the",
-	"portfolio.contact-me.checkbox-label-2": "privacy policy",
-	"portfolio.contact-me.checkbox-label-3": "and agree to the processing of my data asoutlined.",
-	"portfolio.contact-me.btn-submit": "send",
+  "portfolio.header.link-1": "Why me",
+  "portfolio.header.link-2": "Skills",
+  "portfolio.header.link-3": "Projects",
+  "portfolio.header.link-4": "Contact",
 
-    "portfolio.legal-notice.title-1": "Legal Notice",
-	"portfolio.legal-notice.title-2": "Contact",
-	"portfolio.legal-notice.source": "Source",
-	
-    "portfolio.not-found.title-1": "Oops! Nothing found.",
-	
-	"portfolio.footer.legal-notice": "Legal Notice"
+  "portfolio.hero.my-carrier": "Frontend Developer",
+
+  "portfolio.why-me.title": "Why me",
+  "portfolio.why-me.location-1": "I am ",
+  "portfolio.why-me.location-2": "located in Bavaria..|",
+  "portfolio.why-me.p-1": "Building new Projects gives me great Satisfaction and Motivation to keep improving. Through feedback, I gain insight into different perspectives and allows me to work more effectively. The latest technologies deliver improved tools that boost efficiency and performance, fueling my enthusiasm to work with them.",
+
+  "portfolio.skills.title": "My Skills",
+  "portfolio.skills.p-1": "I am currently learning",
+  "portfolio.skills.p-2": "I want to continuously improve and grow within my current role. React and Vue Js are another JavaScript Frameworks which strengthen my skills and helps me to take on broader responsibilities.",
+
+  "portfolio.teamplayer.title-1": "Need a teamplayer?",
+  "portfolio.teamplayer.title-2": "Here’s what my colleagues say about me",
+
+  "portfolio.contact-me.title": "Contact Me",
+  "portfolio.contact-me.invitation": "Let us work together!",
+  "portfolio.contact-me.details": "Feel free to contact me for opportunities in web development. I bring hands-on experience from real projects and a solid workflow with Git to contribute effectively to your team.",
+  "portfolio.contact-me.label-name": "Your name",
+  "portfolio.contact-me.label-email": "Your Email",
+  "portfolio.contact-me.label-message": "Your message",
+  "portfolio.contact-me.checkbox-label-1": "I've read the",
+  "portfolio.contact-me.checkbox-label-2": "privacy policy",
+  "portfolio.contact-me.checkbox-label-3": "and agree to the processing of my data asoutlined.",
+  "portfolio.contact-me.btn-submit": "send",
+
+  "portfolio.legal-notice.title-1": "Legal Notice",
+  "portfolio.legal-notice.title-2": "Contact",
+  "portfolio.legal-notice.source": "Source",
+
+  "portfolio.not-found.title-1": "Oops! Nothing found.",
+
+  "portfolio.footer.legal-notice": "Legal Notice"
 }

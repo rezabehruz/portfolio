@@ -5,7 +5,7 @@ import { Hero } from '../hero/hero';
 
 @Component({
   selector: 'app-footer',
-  imports: [TranslatePipe, RouterLink, Hero],
+  imports: [TranslatePipe, RouterLink],
   templateUrl: './footer.html',
   styleUrl: './footer.scss',
 })

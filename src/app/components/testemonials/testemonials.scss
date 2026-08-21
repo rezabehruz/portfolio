@@ -43,12 +43,8 @@ section {
     @include all.display-flex($justify: space-around, $gap: 12px);
     width: 100%;
     padding: clamp(10px, 3vw, 24px);
-    overflow-x: scroll;
+    overflow-x: hidden;
     z-index: 50;
-
-    @include all.bigscreen {
-      overflow: visible;
-    }
 
     .my-animation {
       @include all.fade-in($name: 'reference', $time: 4s, $left-0: 1400px, $left-1: 0px, $gap-0: 4px, $gap-1: 4px);
