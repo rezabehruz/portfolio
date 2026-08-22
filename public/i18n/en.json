@@ -29,6 +29,13 @@
   "portfolio.contact-me.checkbox-label-3": "and agree to the processing of my data asoutlined.",
   "portfolio.contact-me.btn-submit": "send",
 
+  "portfolio.name.requird": "Name is required",
+  "portfolio.email.requird": "Email is required",
+  "portfolio.email.notcorrect": "Email is not correct",
+  "portfolio.message.requird": "Message is required",
+  "portfolio.message.minlength": "Message must be at least 12 characters",
+  "portfolio.checkbox.required": "Please check the box to agree to the Privacy Policy",
+
   "portfolio.legal-notice.title-1": "Legal Notice",
   "portfolio.legal-notice.title-2": "Contact",
   "portfolio.legal-notice.source": "Source",

@@ -29,60 +29,69 @@
       <div class="name-email">
         <label for="name">
           <span>{{ 'portfolio.contact-me.label-name' | translate }}</span>
-          <input
-            type="text"
-            id="name"
-            [class]="formSubmitted && name?.invalid ? 'error' : ''"
-            formControlName="name"
-          />
+          <input type="text" id="name" formControlName="name" />
+          <span [class]="formSubmitted && name?.invalid ? 'invalid' : 'v-invisible'">
+            @if (email?.hasError('required')) {
+              {{ 'portfolio.name.requird' | translate }}
+            }
+          </span>
         </label>
         <label for="email">
           <span>{{ 'portfolio.contact-me.label-email' | translate }}</span>
-          <input
-            type="email"
-            id="email"
-            [class]="formSubmitted && email?.invalid ? 'error' : ''"
-            formControlName="email"
-          />
+          <input type="email" id="email" formControlName="email" />
+          <span [class]="formSubmitted && email?.invalid ? 'invalid' : 'v-invisible'">
+            @if (email?.hasError('required')) {
+              {{ 'portfolio.email.requird' | translate }}
+            }
+
+            @if (email?.hasError('email')) {
+              {{ 'portfolio.email.notcorrect' | translate }}
+            }
+          </span>
         </label>
       </div>
       <label for="message" class="message-label">
         <span>{{ 'portfolio.contact-me.label-message' | translate }}</span>
-        <textarea
-          name="message"
-          id="message"
-          formControlName="message"
-          [class]="formSubmitted && message?.invalid ? 'error' : ''"
-        ></textarea>
+        <textarea name="message" id="message" formControlName="message"> </textarea>
+        <span [class]="formSubmitted && message?.invalid ? 'invalid' : 'v-invisible'">
+          @if (message?.hasError('required')) {
+            {{ 'portfolio.message.requird' | translate }}
+          }
+
+          @if (message?.hasError('minlength')) {
+            {{ 'portfolio.message.minlength' | translate }}
+          }
+        </span>
       </label>
-      <div class="checkbox">
-        <button type="button" (click)="toggleCheckBox()">
-          @if (checkbox == 'checked') {
-            <img src="assets/icons/checkbox-checked.png" alt="checkbox" class="checkbox-checked" />
-          }
+      <div class="content-checkbox">
+        <div class="checkbox">
+          <button type="button" (click)="toggleCheckBox()">
+            @if (checkbox == 'checked') {
+              <img
+                src="assets/icons/checkbox-checked.png"
+                alt="checkbox"
+                class="checkbox-checked"
+              />
+            }
 
-          @if (checkbox == 'unChecked' && !formSubmitted) {
-            <img src="assets/icons/checkbox.png" alt="checkbox" class="checkbox-normal" />
-            <img src="assets/icons/checkbox-hover.png" alt="checkbox" class="checkbox-hover" />
-          }
-
-          @if (checkbox == 'unChecked' && formSubmitted) {
-            <img
-              src="assets/icons/checkbox-warnning.png"
-              alt="checkbox"
-              class="checkbox-warnning"
-            />
-          }
-        </button>
-        <p>
-          {{ 'portfolio.contact-me.checkbox-label-1' | translate }}
-          <span
-            ><a routerLink="/legal-notice">
-              {{ 'portfolio.contact-me.checkbox-label-2' | translate }}</a
-            >
-          </span>
-          {{ 'portfolio.contact-me.checkbox-label-3' | translate }}
-        </p>
+            @if (checkbox == 'unChecked') {
+              <img src="assets/icons/checkbox.png" alt="checkbox" class="checkbox-normal" />
+              <img src="assets/icons/checkbox-hover.png" alt="checkbox" class="checkbox-hover" />
+            }
+          </button>
+          <p>
+            {{ 'portfolio.contact-me.checkbox-label-1' | translate }}
+            <span>
+              <a routerLink="/legal-notice">
+                {{ 'portfolio.contact-me.checkbox-label-2' | translate }}
+              </a>
+            </span>
+            {{ 'portfolio.contact-me.checkbox-label-3' | translate }}
+          </p>
+        </div>
+        <span [class]="checkbox == 'unChecked' && formSubmitted ? 'invalid' : 'v-invisible'">
+          {{ 'portfolio.checkbox.required' | translate }}
+        </span>
       </div>
 
       <button type="submit" class="btn-submit">

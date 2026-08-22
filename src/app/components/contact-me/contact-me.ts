@@ -3,7 +3,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { TranslatePipe } from '@ngx-translate/core';
 import { NavigationService } from '../../services/navigation-service';
 import { HttpClient } from '@angular/common/http';
-import { RouterLink } from "@angular/router";
+import { RouterLink } from '@angular/router';
 
 type messageData = { name: string; email: string; message: string };
 
@@ -20,7 +20,7 @@ export class ContactMe {
   contactForm = new FormGroup({
     name: new FormControl('', { validators: [Validators.required] }),
     email: new FormControl('', { validators: [Validators.required, Validators.email] }),
-    message: new FormControl('', { validators: [Validators.required] }),
+    message: new FormControl('', { validators: [Validators.required, Validators.minLength(12)] }),
   });
 
   formSubmitted: boolean = false;

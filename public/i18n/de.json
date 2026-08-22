@@ -30,6 +30,13 @@
   "portfolio.contact-me.checkbox-label-3": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
   "portfolio.contact-me.btn-submit": "senden",
 
+  "portfolio.name.requird": "Name ist erforderlich",
+  "portfolio.email.requird": "Email ist erforderlich",
+  "portfolio.email.notcorrect": "Email ist nicht korrekt",
+  "portfolio.message.requird": "Message ist erforderlich",
+  "portfolio.message.minlength": "Die Nachricht muss mindestens 12 Zeichen lang sein",
+  "portfolio.checkbox.required": "Bitte stimmen Sie der Datenschutzerklärung zu",
+
   "portfolio.legal-notice.title-1": "Impressum",
   "portfolio.legal-notice.title-2": "Kontakt",
   "portfolio.legal-notice.source": "Quelle",
