@@ -20,7 +20,7 @@ section {
 
 .header {
   @include all.display-flex($justify: center);
-  margin-top: clamp(68px, 15vw, 112px);
+  margin-top: clamp(84px, 15vw, 112px);
   width: 100%;
 
   h2 {
@@ -78,27 +78,27 @@ section {
 }
 
 .details-animation {
-  @include all.desktop {
-    @include all.fade-in(
-      $name: 'details-animation',
-      $time: 3s,
-      $scale-0: 0.8,
-      $scale-1: 1,
-      $gap-0: 24px,
-      $gap-1: 24px
-    );
-  }
+  // @include all.desktop {
+  //   @include all.fade-in(
+  //     $name: 'details-animation',
+  //     $time: 3s,
+  //     $scale-0: 0.8,
+  //     $scale-1: 1,
+  //     $gap-0: 24px,
+  //     $gap-1: 24px
+  //   );
+  // }
 
-  @include all.notebook {
-    @include all.fade-in(
-      $name: 'details-animation',
-      $time: 3s,
-      $scale-0: 0.9,
-      $scale-1: 1,
-      $gap-0: 24px,
-      $gap-1: 24px
-    );
-  }
+  // @include all.notebook {
+  //   @include all.fade-in(
+  //     $name: 'details-animation',
+  //     $time: 3s,
+  //     $scale-0: 0.9,
+  //     $scale-1: 1,
+  //     $gap-0: 24px,
+  //     $gap-1: 24px
+  //   );
+  // }
 }
 
 .details-contact {
@@ -194,16 +194,6 @@ section {
     );
   }
 
-  @include all.notebook {
-    @include all.fade-in(
-      $name: 'form-animation',
-      $time: 3s,
-      $scale-0: 1.08,
-      $scale-1: 1,
-      $gap-0: 6px,
-      $gap-1: 6px
-    );
-  }
 }
 
 form {

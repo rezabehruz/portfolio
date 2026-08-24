@@ -23,12 +23,10 @@ export class WhyMe {
     const rect: DOMRect = locationAbout.getBoundingClientRect();
 
     if (rect.top <= window.innerHeight) {
-      if (window.innerWidth <= 640) this.renderer.addClass(locationAbout, 'my-animation-mobile');
-      else this.renderer.addClass(locationAbout, 'my-animation');
+      if (window.innerWidth > 640) this.renderer.addClass(locationAbout, 'my-animation');
     }
     else {
-      if (window.innerWidth <= 640) this.renderer.removeClass(locationAbout, 'my-animation-mobile');
-      else this.renderer.removeClass(locationAbout, 'my-animation');
+      if (window.innerWidth > 640) this.renderer.removeClass(locationAbout, 'my-animation');
     }
 
     if (headerRect.top < -100) this.navigationsService.changeNavigationSection('mySkills');

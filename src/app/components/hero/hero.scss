@@ -14,7 +14,8 @@ section {
   background-color: all.$color-background;
 
   @include all.mobile {
-    justify-content: space-between;
+    justify-content: center;
+    height: 100%;
   }
 }
 
@@ -23,6 +24,13 @@ section {
 
   @include all.mobile {
     display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+
+    background-color: beige;
   }
 }
 
@@ -31,6 +39,7 @@ section {
 
   @include all.mobile {
     @include all.display-flex($direction: column, $align: center);
+    padding-top: 84px;
   }
 
   .image-menu {
@@ -53,7 +62,13 @@ section {
       width: clamp(206px, 36vw, 484px);
       padding: 0;
 
-      @include all.fade-in($name: 'character', $scale-0: 1.3, $scale-1: 1, $time: 1s, $ease: ease-out);
+      // @include all.fade-in(
+      //   $name: 'character',
+      //   $scale-0: 1.3,
+      //   $scale-1: 1,
+      //   $time: 1s,
+      //   $ease: ease-out
+      // );
     }
 
     .mobile-menu {
@@ -101,7 +116,17 @@ section {
     transform: rotate(-35deg);
     transition: 500ms;
 
-    @include all.fade-in($name: 'background', $time: 1.5s, $ease: ease-in-out, $scale-0: 0.7, $scale-1: 1, $rotate-0: 0deg, $rotate-1: -35deg, $translateY-0: -80px, $translateY-1: 0px);
+    @include all.fade-in(
+      $name: 'background',
+      $time: 1.5s,
+      $ease: ease-in-out,
+      $scale-0: 0.7,
+      $scale-1: 1,
+      $rotate-0: 0deg,
+      $rotate-1: -35deg,
+      $translateY-0: -80px,
+      $translateY-1: 0px
+    );
 
     @include all.mobile {
       height: 310px;
@@ -128,7 +153,15 @@ section {
       @include all.display-flex($justify: space-between, $align: end);
       width: clamp(0px, 28vw, 452px);
 
-      @include all.fade-in($name: 'logo-media', $time: 2s, $ease: ease-out, $scale-0: 1.2, $scale-1: 1, $top-0: -43px, $top-1: 0px);
+      @include all.fade-in(
+        $name: 'logo-media',
+        $time: 2s,
+        $ease: ease-out,
+        $scale-0: 1.2,
+        $scale-1: 1,
+        $top-0: -43px,
+        $top-1: 0px
+      );
 
       @include all.mobile {
         display: none;
@@ -209,12 +242,17 @@ section {
     }
 
     .title {
-      @include all.display-flex($direction: column,
+      @include all.display-flex(
+        $direction: column,
         $justify: space-between,
         $align: center,
-        $grow: 1);
+        $grow: 1
+      );
 
-      @include all.fade-in($name: 'title', $time: 1s, $scale-0: 1.1, $scale-1: 1);
+      @include all.desktop {
+
+        @include all.fade-in($name: 'title', $time: 1s, $scale-0: 1.1, $scale-1: 1);
+      }
 
       @include all.mobile {
         gap: 6vw;
@@ -271,6 +309,36 @@ section {
         }
       }
     }
+  }
+}
+
+.mobile-menu-2 {
+  @include all.display-flex($direction: column, $gap: 12px);
+  width: fit-content;
+  padding: 14px;
+  font-size: 22px;
+  color: all.$color-background;
+  background-color: all.$color-primary;
+
+  position: fixed;
+  top: 80px;
+  right: 8px;
+  z-index: 2000;
+
+  border-radius: 0px 12px 0 12px;
+
+  ul {
+    li {
+      padding-bottom: 4px;
+    }
+  }
+
+  .language {
+    @include all.display-flex($justify: space-around);
+  }
+
+  .active-lang {
+    color: all.$color-secondary;
   }
 }
 

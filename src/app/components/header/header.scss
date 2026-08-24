@@ -12,6 +12,7 @@ section {
   display: none;
   background-color: all.$color-background;
   color: all.$color-secondary;
+  border-bottom: 2px solid all.$color-primary;
 
   @include all.mobile {
     display: flex;
