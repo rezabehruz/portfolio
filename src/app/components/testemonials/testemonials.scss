@@ -9,7 +9,7 @@ section {
   @include all.display-flex($direction: column, $align: center, $gap: clamp(36px, 12vw, 88px));
   width: 100%;
   max-width: 1440px;
-  padding: clamp(36px, 12vw, 88px) 0;
+  padding: clamp(36px, 12vw, 88px) 0 0 0;
   font-family: 'Josefin Sans regular';
   font-size: 16px;
   color: all.$color-secondary;
@@ -47,12 +47,25 @@ section {
     z-index: 50;
 
     .my-animation {
-      @include all.fade-in($name: 'reference', $time: 4s, $left-0: 1400px, $left-1: 0px, $gap-0: 4px, $gap-1: 4px);
-
+      @include all.fade-in(
+        $name: 'reference',
+        $time: 4s,
+        $left-0: 1400px,
+        $left-1: 0px,
+        $gap-0: 4px,
+        $gap-1: 4px
+      );
     }
 
     .animation-mobile {
-      @include all.fade-in($name: 'reference-mobile', $time: 3s, $left-0: 600px, $left-1: 0px, $gap-0: 4px, $gap-1: 4px);
+      @include all.fade-in(
+        $name: 'reference-mobile',
+        $time: 3s,
+        $left-0: 600px,
+        $left-1: 0px,
+        $gap-0: 4px,
+        $gap-1: 4px
+      );
     }
 
     .reference {
@@ -113,5 +126,10 @@ section {
         text-decoration: underline;
       }
     }
+  }
+
+  .scroll-to-next {
+    position: absolute;
+    bottom: 42px;
   }
 }

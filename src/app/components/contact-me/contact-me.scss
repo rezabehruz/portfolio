@@ -6,7 +6,7 @@ section {
 }
 
 .content {
-  @include all.display-flex($direction: column, $align: center, $gap: clamp(48px, 15vw, 78px));
+  @include all.display-flex($direction: column, $align: center, $gap: clamp(14px, 3vw, 32px));
   width: 100%;
   max-width: 1440px;
   margin-bottom: clamp(68px, 15vw, 78px);
@@ -20,7 +20,7 @@ section {
 
 .header {
   @include all.display-flex($justify: center);
-  margin-top: clamp(84px, 15vw, 112px);
+  margin-top: clamp(64px, 8vw, 92px);
   width: 100%;
 
   h2 {
@@ -77,36 +77,12 @@ section {
   }
 }
 
-.details-animation {
-  // @include all.desktop {
-  //   @include all.fade-in(
-  //     $name: 'details-animation',
-  //     $time: 3s,
-  //     $scale-0: 0.8,
-  //     $scale-1: 1,
-  //     $gap-0: 24px,
-  //     $gap-1: 24px
-  //   );
-  // }
-
-  // @include all.notebook {
-  //   @include all.fade-in(
-  //     $name: 'details-animation',
-  //     $time: 3s,
-  //     $scale-0: 0.9,
-  //     $scale-1: 1,
-  //     $gap-0: 24px,
-  //     $gap-1: 24px
-  //   );
-  // }
-}
-
 .details-contact {
   @include all.display-flex($justify: center, $gap: 24px);
 
-  @include all.tablet {
-    margin-top: 16px;
-  }
+  // @include all.tablet {
+  //   margin-top: 16px;
+  // }
 
   .details {
     width: 444px;

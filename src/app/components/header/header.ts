@@ -20,12 +20,15 @@ export class Header {
   changeLanguage(lang: string) {
     this.translateService.use(lang);
 
-    if (lang === 'en')
+    if (lang === 'en'){
       this.languageService.language.set('english');
+      localStorage.setItem("language_p", 'english');
+    }
 
-    if (lang === 'de')
+    if (lang === 'de'){
       this.languageService.language.set('deutsch');
-
+      localStorage.setItem("language_p", 'deutsch');
+    }
   }
 
   navigationsService = inject(NavigationService);

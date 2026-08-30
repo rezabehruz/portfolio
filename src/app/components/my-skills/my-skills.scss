@@ -21,28 +21,6 @@ section {
     @include all.fade-in($name: 'icons-learning', $time: 2s, $gap-0: 100px, $gap-1: 24px);
   }
 
-  // .animation-icons-mobile {
-  //   @include all.fade-in(
-  //     $name: 'icons-mobile',
-  //     $time: 3s,
-  //     $scale-0: 1.1,
-  //     $scale-1: 1,
-  //     $gap-0: clamp(16px, 2vw, 18px),
-  //     $gap-1: clamp(16px, 2vw, 18px)
-  //   );
-  // }
-
-  .animation-learning-mobile {
-    // @include all.fade-in(
-    //   $name: 'learning-mobile',
-    //   $time: 2s,
-    //   $scale-0: 0.9,
-    //   $scale-1: 1,
-    //   $gap-0: 22px,
-    //   $gap-1: 22px
-    // );
-  }
-
   .techs {
     @include all.display-flex($justify: center, $gap: 24px);
     padding-top: clamp(48px, 4vw, 82px);
@@ -76,12 +54,6 @@ section {
       img {
         width: 60px;
       }
-
-      &:hover {
-        img {
-          width: 100%;
-        }
-      }
     }
   }
 
@@ -94,11 +66,9 @@ section {
       .tech-icon {
         width: 50px;
         img {
-        width: 40px;
+          width: 40px;
+        }
       }
-      }
-
-      
 
       p {
         display: none;
@@ -193,4 +163,11 @@ section {
       @include all.display-flex($justify: center, $align: center);
     }
   }
+}
+
+.scroll-to-next {
+  position: absolute;
+  bottom: 22px;
+
+  
 }

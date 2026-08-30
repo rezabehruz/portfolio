@@ -29,7 +29,11 @@ export const appConfig: ApplicationConfig = {
 
     provideAppInitializer(() => {
       const translate = inject(TranslateService);
-      translate.use(translate.getBrowserLang() || 'en');
+
+      const lang = localStorage.getItem("language_p");
+
+      if(lang == "english") translate.use('en');
+      else translate.use('de');
     }),
   ],
 };

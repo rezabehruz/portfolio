@@ -26,22 +26,22 @@
     </a>
     <ul>
       <li [class]="navigationsService.showenSection() === 'whyMe' ? 'active-section' : ''">
-        <a routerLink="/" fragment="why-me" (click)="navigationsService.changeNavigationSection('whyMe')">
+        <a routerLink="/" fragment="why-me-0" (click)="navigationsService.changeNavigationSection('whyMe')">
           {{ 'portfolio.header.link-1' | translate }}
         </a>
       </li>
       <li [class]="navigationsService.showenSection() === 'mySkills' ? 'active-section' : ''">
-        <a routerLink="/" fragment="skills" (click)="navigationsService.changeNavigationSection('mySkills')">
+        <a routerLink="/" fragment="skills-0" (click)="navigationsService.changeNavigationSection('mySkills')">
           {{ 'portfolio.header.link-2' | translate }}
         </a>
       </li>
       <li [class]="navigationsService.showenSection() === 'myProjects' ? 'active-section' : ''">
-        <a routerLink="/" fragment="my-projects" (click)="navigationsService.changeNavigationSection('myProjects')">
+        <a routerLink="/" fragment="my-projects-0" (click)="navigationsService.changeNavigationSection('myProjects')">
           {{ 'portfolio.header.link-3' | translate }}
         </a>
       </li>
       <li [class]="navigationsService.showenSection() === 'contactMe' ? 'active-section' : ''">
-        <a routerLink="/" fragment="contact-me"  (click)="navigationsService.changeNavigationSection('contactMe')">
+        <a routerLink="/" fragment="contact-me-0"  (click)="navigationsService.changeNavigationSection('contactMe')">
          
           {{ 'portfolio.header.link-4' | translate }}
         </a>

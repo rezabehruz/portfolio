@@ -10,7 +10,7 @@ section {
   max-width: 1440px;
   background-color: all.$color-background;
   font-family: 'Josefin Sans regular';
-  padding-top: clamp(84px, 15vw, 112px);
+   
 
   .my-animation {
     @include all.fade-in($name: 'location-about', $time: 2s, $gap-0: 200px, $gap-1: 62px);
@@ -81,4 +81,9 @@ section {
       }
     }
   }
+}
+
+.scroll-to-next {
+  position: absolute;
+  bottom: 22px;
 }

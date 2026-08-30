@@ -1,5 +1,6 @@
 import { Component, computed, inject, Signal, signal } from '@angular/core';
 import { LanguageService } from '../../services/language-service';
+import { TranslatePipe } from '@ngx-translate/core';
 
 interface Project {
   name: string;
@@ -21,7 +22,7 @@ interface Project {
 
 @Component({
   selector: 'app-my-projects',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './my-projects.html',
   styleUrl: './my-projects.scss',
 })

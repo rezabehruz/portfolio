@@ -9,7 +9,7 @@ section {
   @include all.display-flex($direction: column);
   width: 100%;
   max-width: 1440px;
-  padding-top: clamp(84px, 15vw, 112px);
+  margin-top: clamp(84px, 15vw, 112px);
   font-family: 'Josefin Sans regular';
   background: all.$color-background;
 
