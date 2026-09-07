@@ -291,6 +291,7 @@ section {
 
 .scroll-to-next {
   @include all.mobile {
-    bottom: 56px;
+    position: absolute;
+    bottom: 74px;
   }
 }

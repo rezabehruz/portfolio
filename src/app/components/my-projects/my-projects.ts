@@ -62,7 +62,7 @@ export class MyProjects {
         },
       ],
       urls: {
-        live: 'www.el-polo-loco.rezabehruz.de',
+        live: 'https://el-pollo-loco.rezabehruz.de',
         github: 'https://github.com/rezabehruz/el-pollo-loco',
       },
     },

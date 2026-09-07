@@ -9,7 +9,7 @@ section {
   @include all.display-flex($direction: column);
   width: 100%;
   max-width: 1440px;
-  margin-top: clamp(84px, 15vw, 112px);
+  margin-top: clamp(66px, 8vw, 112px);
   font-family: 'Josefin Sans regular';
   background: all.$color-background;
 
@@ -19,7 +19,7 @@ section {
 }
 
 .navigation {
-  padding: clamp(68px, 15vw, 78px) clamp(10px, 3vw, 98px) 0;
+  padding: 32px clamp(10px, 3vw, 98px) 0;
 
   ol {
     @include all.display-flex($gap: clamp(6px, 2vw, 32px));

@@ -12,7 +12,7 @@ section {
   max-width: 1440px;
   background-color: all.$color-background;
   font-family: 'Josefin Sans regular';
-  padding: clamp(56px, 8vw, 72px) 0 clamp(56px, 8vw, 72px) 0;
+  padding: clamp(32px, 4vw, 58px) 0 clamp(32px, 4vw, 58px) 0;
    
 
   .my-animation {
@@ -20,7 +20,7 @@ section {
   }
 
   .location-about {
-    margin: 56px 12px 0;
+    margin: 44px 12px 0;
     color: all.$color-secondary;
     @include all.display-flex($justify: center, $gap: 62px);
 
@@ -88,14 +88,9 @@ section {
 
 .scroll-to-next {
   position: absolute;
-  bottom: clamp(100px, 15vw, 112px);
+  bottom: clamp(88px, 11vw, 132px);
 
   @include all.mobile {
     bottom: 96px;
   }
-
-  width: 5px;
-  height: 5px;
-  background-color: blue;
-  z-index: 300;
 }

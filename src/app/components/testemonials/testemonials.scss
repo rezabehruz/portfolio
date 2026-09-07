@@ -6,10 +6,10 @@ section {
 }
 
 .content {
-  @include all.display-flex($direction: column, $align: center, $gap: clamp(36px, 12vw, 88px));
+  @include all.display-flex($direction: column, $align: center, $gap: clamp(28px, 3vw, 38px));
   width: 100%;
   max-width: 1440px;
-  padding: clamp(36px, 12vw, 88px) 0 0 0;
+  padding: clamp(36px, 6vw, 66px) 0 0 0;
   font-family: 'Josefin Sans regular';
   font-size: 16px;
   color: all.$color-secondary;
@@ -131,8 +131,5 @@ section {
   .scroll-to-next {
     position: absolute;
     bottom: 42px;
-    // width: 5px;
-    // height: 5px;
-    // background: blue;
   }
 }

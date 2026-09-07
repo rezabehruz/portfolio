@@ -4,7 +4,7 @@
       <h2>{{ 'portfolio.contact-me.title' | translate }}</h2>
       <a href="#hero">
         <img src="assets/icons/arrow.png" alt="arrow" class="arrow-normal" />
-        <img src="assets/icons/arrow-hover.png" alt="arrow" class="arrow-hover"/>
+        <img src="assets/icons/arrow-hover.png" alt="arrow" class="arrow-hover" />
       </a>
     </div>
     <div class="details-contact">
@@ -31,7 +31,7 @@
           <span>{{ 'portfolio.contact-me.label-name' | translate }}</span>
           <input type="text" id="name" formControlName="name" />
           <span [class]="formSubmitted && name?.invalid ? 'invalid' : 'v-invisible'">
-            @if (email?.hasError('required')) {
+            @if (name?.hasError('required')) {
               {{ 'portfolio.name.requird' | translate }}
             }
           </span>
@@ -44,7 +44,7 @@
               {{ 'portfolio.email.requird' | translate }}
             }
 
-            @if (email?.hasError('email')) {
+            @if (email?.hasError('email') || email?.hasError('pattern')) {
               {{ 'portfolio.email.notcorrect' | translate }}
             }
           </span>

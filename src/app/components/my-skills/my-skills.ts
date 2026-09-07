@@ -26,24 +26,24 @@ export class MySkills {
     const contentRect: DOMRect = contentElement.getBoundingClientRect();
     const techRect: DOMRect = techsElement.getBoundingClientRect();
 
-    // if (techRect.top <= window.innerHeight) {
-    //   if (window.innerWidth <= 640) {
-    //     this.renderer.addClass(iconsElement, 'animation-icons-mobile');
-    //     this.renderer.addClass(learningElement, 'animation-learning-mobile');
-    //   }
-    //   else this.renderer.addClass(techsElement, 'my-animation');
-    // }
-    // else {
-    //   if (window.innerWidth <= 640) {
-    //     this.renderer.removeClass(iconsElement, 'animation-icons-mobile');
-    //     this.renderer.removeClass(learningElement, 'animation-learning-mobile');
-    //   }
-    //   else
-    //     this.renderer.removeClass(techsElement, 'my-animation');
-    // }
-    // if (contentRect.top > 0) this.navigationsSerive.changeNavigationSection('mySkills');
+    if (techRect.top <= window.innerHeight) {
+      if (window.innerWidth <= 640) {
+        this.renderer.addClass(iconsElement, 'animation-icons-mobile');
+        this.renderer.addClass(learningElement, 'animation-learning-mobile');
+      }
+      else this.renderer.addClass(techsElement, 'my-animation');
+    }
+    else {
+      if (window.innerWidth <= 640) {
+        this.renderer.removeClass(iconsElement, 'animation-icons-mobile');
+        this.renderer.removeClass(learningElement, 'animation-learning-mobile');
+      }
+      else
+        this.renderer.removeClass(techsElement, 'my-animation');
+    }
+    if (contentRect.top < 200) this.navigationsSerive.changeNavigationSection('mySkills');
    
-    // if (techRect.top > -100) this.navigationsSerive.changeNavigationSection('myProjects');
+    if (techRect.bottom < 150) this.navigationsSerive.changeNavigationSection('myProjects');
 
   }
 }

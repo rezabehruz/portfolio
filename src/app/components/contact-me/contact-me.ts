@@ -19,7 +19,13 @@ export class ContactMe {
 
   contactForm = new FormGroup({
     name: new FormControl('', { validators: [Validators.required] }),
-    email: new FormControl('', { validators: [Validators.required, Validators.email] }),
+    email: new FormControl('', {
+      validators: [
+        Validators.required,
+        Validators.email,
+        Validators.pattern('^(?!.*@[0-9])[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'),
+      ],
+    }),
     message: new FormControl('', { validators: [Validators.required, Validators.minLength(12)] }),
   });
 
