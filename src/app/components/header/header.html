@@ -5,9 +5,21 @@
     <p class="profession">developer</p>
   </a>
 
-  <button (click)="openMenu.emit()">
-    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"
-      stroke-linejoin="round" class="burger-icon" role="button" aria-label="Toggle menu" tabindex="0">
+  <button (click)="toggleMenu()">
+    <svg
+      width="30"
+      height="30"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#333"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      [class]="navigationsService.toggleMobileNavigation() ? 'burger-icon active' : 'burger-icon'"
+      role="button"
+      aria-label="Toggle menu"
+      tabindex="0"
+    >
       <line x1="3" y1="5" x2="38" y2="5"></line>
       <line x1="3" y1="14" x2="38" y2="14"></line>
       <line x1="3" y1="23" x2="38" y2="23"></line>
@@ -25,35 +37,77 @@
       <p class="profession">developer</p>
     </a>
     <ul>
-      <li [class]="navigationsService.showenSection() === 'whyMe' ? 'active-section' : ''">
-        <a routerLink="/" fragment="why-me-0" (click)="navigationsService.changeNavigationSection('whyMe')">
+      <li [class]="isSectionActive('whyMe') ? 'active-section' : ''">
+        <a routerLink="/" fragment="why-me-0" (click)="updateHeader('whyMe')">
           {{ 'portfolio.header.link-1' | translate }}
         </a>
       </li>
-      <li [class]="navigationsService.showenSection() === 'mySkills' ? 'active-section' : ''">
-        <a routerLink="/" fragment="skills-0" (click)="navigationsService.changeNavigationSection('mySkills')">
+      <li [class]="isSectionActive('mySkills') ? 'active-section' : ''">
+        <a routerLink="/" fragment="skills-0" (click)="updateHeader('mySkills')">
           {{ 'portfolio.header.link-2' | translate }}
         </a>
       </li>
-      <li [class]="navigationsService.showenSection() === 'myProjects' ? 'active-section' : ''">
-        <a routerLink="/" fragment="my-projects-0" (click)="navigationsService.changeNavigationSection('myProjects')">
+      <li [class]="isSectionActive('myProjects') ? 'active-section' : ''">
+        <a routerLink="/" fragment="my-projects-0" (click)="updateHeader('myProjects')">
           {{ 'portfolio.header.link-3' | translate }}
         </a>
       </li>
-      <li [class]="navigationsService.showenSection() === 'contactMe' ? 'active-section' : ''">
-        <a routerLink="/" fragment="contact-me-0"  (click)="navigationsService.changeNavigationSection('contactMe')">
-         
+      <li [class]="isSectionActive('contactMe') ? 'active-section' : ''">
+        <a routerLink="/" fragment="contact-me-0" (click)="updateHeader('contactMe')">
           {{ 'portfolio.header.link-4' | translate }}
         </a>
       </li>
     </ul>
     <div class="language">
-      <button (click)="changeLanguage('de')" [class]="languageService.language() == 'deutsch' ? 'active-lang' : ''">
+      <button
+        (click)="changeLanguage('de')"
+        [class]="languageService.language() == 'deutsch' ? 'active-lang' : ''"
+      >
         DE
       </button>
-      <button (click)="changeLanguage('en')" [class]="languageService.language() == 'english' ? 'active-lang' : ''">
+      <button
+        (click)="changeLanguage('en')"
+        [class]="languageService.language() == 'english' ? 'active-lang' : ''"
+      >
         EN
       </button>
     </div>
   </div>
 </section>
+
+@if (this.navigationsService.openMobileNav_2() && navigationsService.toggleMobileNavigation()) {
+  <div class="mobile-menu-2">
+    <ul>
+      <li>
+        <a href="#why-me-0" (click)="closeMenu()"> {{ 'portfolio.header.link-1' | translate }} </a>
+      </li>
+      <li>
+        <a href="#skills-0" (click)="closeMenu()"> {{ 'portfolio.header.link-2' | translate }} </a>
+      </li>
+      <li>
+        <a href="#my-projects-0" (click)="closeMenu()">
+          {{ 'portfolio.header.link-3' | translate }}
+        </a>
+      </li>
+      <li>
+        <a href="#contact-me-0" (click)="closeMenu()">
+          {{ 'portfolio.header.link-4' | translate }}
+        </a>
+      </li>
+    </ul>
+    <div class="language">
+      <button
+        (click)="changeLanguage('de')"
+        [class]="languageService.language() == 'deutsch' ? 'active-lang' : ''"
+      >
+        DE
+      </button>
+      <button
+        (click)="changeLanguage('en')"
+        [class]="languageService.language() == 'english' ? 'active-lang' : ''"
+      >
+        EN
+      </button>
+    </div>
+  </div>
+}

@@ -6,6 +6,10 @@ section {
   width: 100%;
   background-color: all.$color-primary;
   font-family: 'Josefin Sans regular';
+
+  position: sticky;
+  top: 0;
+  z-index: 2000;
 }
 
 .navigation-mobile {
@@ -18,6 +22,12 @@ section {
     display: flex;
     justify-content: space-between;
     padding: 8px 16px;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
 
     .logo-name {
       display: flex;
@@ -41,11 +51,45 @@ section {
       transition: stroke 0.3s ease;
       stroke: all.$color-secondary;
       outline: none;
-
+      stroke: #eae5e5;
       &:hover {
-        stroke: #a8a2a2;
+        stroke: #6c6868;
       }
     }
+
+    .active {
+      stroke: #a8a2a2;
+    }
+  }
+}
+
+.mobile-menu-2 {
+  @include all.display-flex($direction: column, $gap: 12px);
+  width: fit-content;
+  padding: 14px;
+  font-size: 22px;
+  color: all.$color-background;
+  background-color: all.$color-primary;
+
+  position: fixed;
+  top: 80px;
+  right: 8px;
+  z-index: 2000;
+
+  border-radius: 0px 12px 0 12px;
+
+  ul {
+    li {
+      padding-bottom: 4px;
+    }
+  }
+
+  .language {
+    @include all.display-flex($justify: space-around);
+  }
+
+  .active-lang {
+    color: all.$color-secondary;
   }
 }
 
@@ -53,7 +97,6 @@ section {
   @include all.display-flex($align: center, $gap: 96px);
   padding: 12px 86px;
   color: all.$color-background;
-
   width: 100%;
   max-width: 1440px;
   // @include all.fade-in($name: 'navigation', $time: 2s, $scale-0: 1.1, $scale-1: 1, $gap-0: 96px, $gap-1: 96px);

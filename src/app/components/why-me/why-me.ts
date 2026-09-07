@@ -22,16 +22,15 @@ export class WhyMe {
     const headerRect: DOMRect = header.getBoundingClientRect();
     const rect: DOMRect = locationAbout.getBoundingClientRect();
 
-    if (rect.top <= window.innerHeight) {
-      if (window.innerWidth > 640) this.renderer.addClass(locationAbout, 'my-animation');
-    }
-    else {
-      if (window.innerWidth > 640) this.renderer.removeClass(locationAbout, 'my-animation');
-    }
+    // if (rect.top <= window.innerHeight) {
+    //   if (window.innerWidth > 640) this.renderer.addClass(locationAbout, 'my-animation');
+    // }
+    // else {
+    //   if (window.innerWidth > 640) this.renderer.removeClass(locationAbout, 'my-animation');
+    // }
 
-    if (headerRect.top < -100) this.navigationsService.changeNavigationSection('mySkills');
-    else if (window.innerHeight - headerRect.top > 200) this.navigationsService.changeNavigationSection('whyMe');
-    else this.navigationsService.changeNavigationSection('hero');
+    // if (window.innerHeight - headerRect.top > 100) this.navigationsService.changeNavigationSection('whyMe');
+    // else this.navigationsService.changeNavigationSection('hero');
 
   }
 }

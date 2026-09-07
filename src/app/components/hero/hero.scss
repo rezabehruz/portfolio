@@ -3,33 +3,18 @@
 section {
   @include all.my-section;
   @include all.display-flex(column, center, center);
-  padding: 6vh 0 6vh 0;
 }
 
 .content {
   @include all.display-flex(column, center);
   width: 100%;
   max-width: 1440px;
+  margin-top: 6vh;
   background-color: all.$color-background;
 
   @include all.mobile {
     justify-content: center;
     height: 100%;
-  }
-}
-
-.navigation-mobile {
-  display: none;
-
-  @include all.mobile {
-    display: block;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1000;
-
-    background-color: beige;
   }
 }
 
@@ -53,6 +38,8 @@ section {
     }
 
     @include all.mobile {
+      height: 310px;
+      width: 250px;
       padding: 8px 22px;
     }
 
@@ -302,51 +289,8 @@ section {
   }
 }
 
-.mobile-menu-2 {
-  @include all.display-flex($direction: column, $gap: 12px);
-  width: fit-content;
-  padding: 14px;
-  font-size: 22px;
-  color: all.$color-background;
-  background-color: all.$color-primary;
-
-  position: fixed;
-  top: 80px;
-  right: 8px;
-  z-index: 2000;
-
-  border-radius: 0px 12px 0 12px;
-
-  ul {
-    li {
-      padding-bottom: 4px;
-    }
-  }
-
-  .language {
-    @include all.display-flex($justify: space-around);
-  }
-
-  .active-lang {
-    color: all.$color-secondary;
-  }
-}
-
-.navigation-bar {
-  width: 100%;
-
-  @include all.mobile {
-    display: none;
-  }
-}
-
-.navigation-fixed {
-  position: fixed;
-  top: 0;
-  z-index: 100;
-}
-
 .scroll-to-next {
-  position: absolute;
-  bottom: clamp(100px, 15vw, 112px);
+  @include all.mobile {
+    bottom: 56px;
+  }
 }

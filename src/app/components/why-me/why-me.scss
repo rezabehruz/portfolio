@@ -6,10 +6,13 @@ section {
 }
 
 .content {
+  @include all.display-flex($direction: column, $align:center);
+
   width: 100%;
   max-width: 1440px;
   background-color: all.$color-background;
   font-family: 'Josefin Sans regular';
+  padding: clamp(56px, 8vw, 72px) 0 clamp(56px, 8vw, 72px) 0;
    
 
   .my-animation {
@@ -85,5 +88,14 @@ section {
 
 .scroll-to-next {
   position: absolute;
-  bottom: 22px;
+  bottom: clamp(100px, 15vw, 112px);
+
+  @include all.mobile {
+    bottom: 96px;
+  }
+
+  width: 5px;
+  height: 5px;
+  background-color: blue;
+  z-index: 300;
 }

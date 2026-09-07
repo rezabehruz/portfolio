@@ -6,11 +6,12 @@ section {
 }
 
 .content {
+  @include all.display-flex($direction:column, $align: center, $justify:center);
   width: 100%;
   max-width: 1440px;
   font-family: 'Josefin Sans regular';
   font-size: 16px;
-  margin: clamp(84px, 15vw, 112px) clamp(10px, 3vw, 88px) 0 clamp(10px, 3vw, 88px);
+  margin: 0 clamp(10px, 3vw, 88px) 0 clamp(10px, 3vw, 88px);
   color: all.$color-primary;
 
   @include all.mobile {
@@ -168,6 +169,7 @@ section {
 .scroll-to-next {
   position: absolute;
   bottom: 22px;
-
-  
+  width: 5px;
+  height: 5px;
+  background: blue;
 }
