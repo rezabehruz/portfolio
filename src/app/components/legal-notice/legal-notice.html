@@ -1,55 +1,25 @@
-<app-header (openMenu) = "toggleMenu()"></app-header>
+<app-header></app-header>
 <section>
   <div class="content">
-    @if (isMenuOpen) {
-      <div class="menu-mobile">
-        <ul>
-          <li>
-            <a routerLink="/" fragment="why-me"> {{ 'portfolio.header.link-1' | translate }} </a>
-          </li>
-          <li>
-            <a routerLink="/" fragment="skills"> {{ 'portfolio.header.link-2' | translate }} </a>
-          </li>
-          <li>
-            <a routerLink="/" fragment="my-projects"> {{ 'portfolio.header.link-3' | translate }} </a>
-          </li>
-          <li>
-            <a routerLink="/" fragment="contact-me"> {{ 'portfolio.header.link-4' | translate }} </a>
-          </li>
-        </ul>
-
-        <div class="language">
-          <button
-            (click)="changeLanguage('de')"
-            [class]="languageService.language() == 'deutsch' ? 'active-lang' : ''"
-          >
-            DE
-          </button>
-          <button
-            (click)="changeLanguage('en')"
-            [class]="languageService.language() == 'english' ? 'active-lang' : ''"
-          >
-            EN
-          </button>
-        </div>
-      </div>
-    }
-
     <h2>{{ 'portfolio.legal-notice.title-1' | translate }}</h2>
-    <p>
-      Mohammad Reza Behruz <br />
-      Hindemithstraße 06<br />
+    <p>1. {{ 'portfolio.legal-notice.p-1' | translate }}</p>
+
+    <pre>
+      Mohammad Reza Behruz
       85057 Ingolstadt
-    </p>
-    <h3>{{ 'portfolio.legal-notice.title-2' | translate }}</h3>
-    <p>
-      Telefon: +49 (0) 15751492254<br />
-      E-Mail: behruz.mreza@gmail.com
-    </p>
-    <p class="quelle">
-      {{ 'portfolio.legal-notice.source' | translate }}:
-      <a href="https://www.e-recht24.de">https://www.e-recht24.de</a>
-    </p>
+      E-Mail: contact@rezabehruz.de
+    </pre>
+
+    <p>2. {{ 'portfolio.legal-notice.p-2' | translate }}</p>
+    <p>3. {{ 'portfolio.legal-notice.p-3' | translate }}</p>
+    <p>4. {{ 'portfolio.legal-notice.p-4' | translate }}</p>
+    <p>5. {{ 'portfolio.legal-notice.p-5' | translate }}</p>
+    <p>6. {{ 'portfolio.legal-notice.p-6' | translate }}</p>
+    <p>7. {{ 'portfolio.legal-notice.p-7' | translate }}</p>
+    <p>8. {{ 'portfolio.legal-notice.p-8' | translate }}</p>
+    <p>9. {{ 'portfolio.legal-notice.p-9' | translate }}</p>
+    <p>10. {{ 'portfolio.legal-notice.p-10' | translate }}</p>
+    <p>11. {{ 'portfolio.legal-notice.p-11' | translate }}</p>
   </div>
 </section>
 <app-footer></app-footer>

@@ -1,4 +1,5 @@
 @use '../../../../public/styles/main' as all;
+
 section {
  @include all.display-flex($justify: center);
  background-color: all.$color-background;
@@ -6,17 +7,17 @@ section {
 }
 
 .content {
-  @include all.display-flex($direction: column, $gap: 16px);
+  @include all.display-flex($direction: column);
   width: 100%;
   max-width: 1440px;
-  margin: 22px clamp(16px, 8vw, 150px);
- 
+  height: 90vh;
+  margin-top: clamp(103px, 9vw, 120px);
+  margin-left: clamp(22px, 10vw, 150px);
   font-family: 'Josefin Sans regular';
   font-size: 28px;
 
   @include all.mobile {
     font-size: 16px;
-    margin-top: 116px;
   }
 
   h2 {
@@ -33,4 +34,8 @@ section {
     color: #89bcd9;
   }
 
+  .quelle {
+    margin-top: clamp(22px, 5vw, 54px);
   }
+}
+

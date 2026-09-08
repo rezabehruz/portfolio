@@ -1,6 +1,6 @@
 import { Injectable, signal } from '@angular/core';
 
-export type SECTION = 'hero' | 'whyMe' | 'mySkills' | 'myProjects' | 'contactMe' | 'legal-notice';
+export type SECTION = 'hero' | 'whyMe' | 'mySkills' | 'myProjects' | 'contactMe' | 'legal-notice' | 'imprint';
 
 @Injectable({
   providedIn: 'root',

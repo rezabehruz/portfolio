@@ -1,18 +1,18 @@
 import { Component, inject } from '@angular/core';
-import { Header } from '../header/header';
-import { Footer } from '../footer/footer';
 import { NavigationService } from '../../services/navigation-service';
-import { TranslatePipe } from '@ngx-translate/core';
+import { TranslatePipe} from '@ngx-translate/core';
+import { Footer } from '../footer/footer';
+import { Header } from '../header/header';
 
 @Component({
-  selector: 'app-legal-notice',
+  selector: 'app-imprint',
   imports: [Header, Footer, TranslatePipe],
-  templateUrl: './legal-notice.html',
-  styleUrl: './legal-notice.scss',
+  templateUrl: './imprint.html',
+  styleUrl: './imprint.scss',
 })
-export class LegalNotice {
+export class Imprint {
   constructor() {
-    this.navigationsService.changeNavigationSection('legal-notice');
+    this.navigationsService.changeNavigationSection('imprint');
     this.navigationsService.openMobileNav_2.set(true);
     this.navigationsService.toggleMobileNavigation.set(false);
     window.scrollTo(0, 0);
